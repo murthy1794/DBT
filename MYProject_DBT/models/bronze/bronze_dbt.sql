@@ -1,0 +1,1 @@
+select * from dbt_catalog.source.accounts
