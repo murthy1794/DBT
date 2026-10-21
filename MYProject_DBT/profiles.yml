@@ -7,6 +7,6 @@ MYProject_DBT:
       http_path: /sql/1.0/warehouses/3120972042a6908a
       schema: default
       threads: 1
-      token: "{{ env_var('DBT_DATABRICKS_TOKEN') }}"
+      token: "{{env_var('DBT_DATABRICKS_TOKEN')}}"
       type: databricks
   target: dev

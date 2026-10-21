@@ -1,3 +1,6 @@
 {
-    "dbt.perspectiveTheme": "Pro Dark"
+    "dbt.perspectiveTheme": "Pro Dark",
+    "python.terminal.useEnvFile": true,
+    "python-envs.defaultEnvManager": "ms-python.python:system",
+    "dbt.dbtPythonPathOverride": "C:\\Banking_DBT\\.venv\\Scripts\\python.exe"
 }
