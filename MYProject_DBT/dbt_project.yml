@@ -33,4 +33,4 @@ models:
     example:
       +materialized: view
     bronze:
-      +materialized: view
+      +materialized: view 

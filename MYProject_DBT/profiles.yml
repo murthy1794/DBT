@@ -2,10 +2,10 @@
 MYProject_DBT:
   outputs:
     dev:
-      catalog: dbt_catalog
-      host: dbc-306b8a1b-87ab.cloud.databricks.com
-      http_path: /sql/1.0/warehouses/3120972042a6908a
-      schema: default
+      catalog: "{{env_var('catalog')}}"
+      host: "{{env_var('host')}}"
+      http_path: "{{env_var('http_path')}}"
+      schema: "{{env_var('schema')}}"
       threads: 1
       token: "{{env_var('DBT_DATABRICKS_TOKEN')}}"
       type: databricks
