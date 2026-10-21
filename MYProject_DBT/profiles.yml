@@ -6,17 +6,6 @@ MYProject_DBT:
       http_path: /sql/1.0/warehouses/3120972042a6908a
       schema: default
       threads: 1
-      token: dapi0779a0172cf1fd8771287c9a9654e71f
-      type: databricks
-  target: dev
-MyProject_DBT:
-  outputs:
-    dev:
-      catalog: dbt_catalog
-      host: dbc-306b8a1b-87ab.cloud.databricks.com
-      http_path: /sql/1.0/warehouses/3120972042a6908a
-      schema: default
-      threads: 1
-      token: dapi1234567890abcdef1234567890abcdef-2
+      token: "{{ env_var('DBT_DATABRICKS_TOKEN') }}"
       type: databricks
   target: dev
