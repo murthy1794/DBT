@@ -1,0 +1,32 @@
+{
+  "configVersion": "3.0",
+  "configName": "ReferenceDataHRSourceToLandingEntityConfig",
+  "description": "Controls HR ReferenceData entities copied to the Landing layer.",
+  "subjectArea": "HR",
+  "sourceId": "REF_HR",
+  "sourceSystem": "ReferenceData",
+  "fileType": "CSV",
+  "isActive": true,
+  "entities": [
+    {
+      "entityName": "ApplicationStatusCode",
+      "isEnabled": true,
+      "objectType": "Folder",
+      "cdcColumn": "CreatedDate",
+      "targetRelativePath": "Tenant1/Landing/ReferenceData/HR/ADP/ApplicationStatusCode",
+      "enableDatePartitioning": true,
+      "loadControl": {
+        "initialLoadEnabled": true,
+        "incrementalLoadEnabled": true
+      },
+      "loadSettings": {
+        "initialLoad": {
+          "isFolder": false
+        },
+        "incrementalLoad": {
+          "isFolder": false
+        }
+      }
+    }
+  ]
+}

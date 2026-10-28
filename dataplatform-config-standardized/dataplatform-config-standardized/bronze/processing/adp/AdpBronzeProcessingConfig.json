@@ -1,0 +1,5119 @@
+{
+  "configVersion": "3.0",
+  "configName": "ADPBronzeProcessingConfig",
+  "description": "Controls ADP Landing-to-Bronze processing for both initial API snapshots and incremental event files.",
+  "sourceSystem": "ADP",
+  "targetSchema": "ADP",
+  "processingStrategy": "API",
+  "isActive": true,
+  "subjectAreas": [
+    "HR"
+  ],
+  "sourceType": "ADLS",
+  "fileType": "json",
+  "entities": [
+    {
+      "entityName": "worker",
+      "columnMappings": [
+        {
+          "sourceField": "associateOID",
+          "targetColumn": "AssociateOid"
+        },
+        {
+          "sourceField": "workerID.idValue",
+          "targetColumn": "WorkerId"
+        },
+        {
+          "sourceField": "person.legalName.formattedName",
+          "targetColumn": "LegalFullName"
+        },
+        {
+          "sourceField": "person.legalName.givenName",
+          "targetColumn": "LegalFirstName"
+        },
+        {
+          "sourceField": "person.legalName.middleName",
+          "targetColumn": "LegalMiddleName"
+        },
+        {
+          "sourceField": "person.legalName.familyName1",
+          "targetColumn": "LegalLastName"
+        },
+        {
+          "sourceField": "person.legalName.nickName",
+          "targetColumn": "NickName"
+        },
+        {
+          "sourceField": "person.legalName.preferredSalutations.salutationCode.codeValue",
+          "targetColumn": "NamePrefixCode"
+        },
+        {
+          "sourceField": "person.legalName.preferredSalutations.salutationCode.shortName",
+          "targetColumn": "NamePrefixDescription"
+        },
+        {
+          "sourceField": "person.legalName.generationAffixCode.codeValue",
+          "targetColumn": "NameSuffixCode"
+        },
+        {
+          "sourceField": "person.legalName.generationAffixCode.shortName",
+          "targetColumn": "NameSuffixDescription"
+        },
+        {
+          "sourceField": "person.legalName.qualificationAffixCode.codeValue",
+          "targetColumn": "ProfessionalQualificationCode"
+        },
+        {
+          "sourceField": "person.legalName.qualificationAffixCode.longName",
+          "targetColumn": "ProfessionalQualificationDescription"
+        },
+        {
+          "sourceField": "person.legalName.titleAffixCodes.affixCode.longName",
+          "targetColumn": "FormalTitle"
+        },
+        {
+          "sourceField": "person.birthName.familyName1",
+          "targetColumn": "BirthLastName"
+        },
+        {
+          "sourceField": "person.preferredName.givenName",
+          "targetColumn": "PreferredFirstName"
+        },
+        {
+          "sourceField": "person.preferredName.middleName",
+          "targetColumn": "PreferredMiddleName"
+        },
+        {
+          "sourceField": "person.preferredName.familyName1",
+          "targetColumn": "PreferredLastName"
+        },
+        {
+          "sourceField": "person.birthDate",
+          "targetColumn": "BirthDate"
+        },
+        {
+          "sourceField": "person.deathDate",
+          "targetColumn": "DeathDate"
+        },
+        {
+          "sourceField": "person.legalAddress.lineOne",
+          "targetColumn": "AddressLine1"
+        },
+        {
+          "sourceField": "person.legalAddress.lineTwo",
+          "targetColumn": "AddressLine2"
+        },
+        {
+          "sourceField": "person.legalAddress.lineThree",
+          "targetColumn": "AddressLine3"
+        },
+        {
+          "sourceField": "person.legalAddress.cityName",
+          "targetColumn": "City"
+        },
+        {
+          "sourceField": "person.legalAddress.countrySubdivisionLevel1.codeValue",
+          "targetColumn": "StateCode"
+        },
+        {
+          "sourceField": "person.legalAddress.countrySubdivisionLevel1.shortName",
+          "targetColumn": "StateName"
+        },
+        {
+          "sourceField": "person.legalAddress.countrySubdivisionLevel1.subdivisionType",
+          "targetColumn": "StateSubdivisionType"
+        },
+        {
+          "sourceField": "person.legalAddress.countrySubdivisionLevel2.codeValue",
+          "targetColumn": "CountyCode"
+        },
+        {
+          "sourceField": "person.legalAddress.countrySubdivisionLevel2.shortName",
+          "targetColumn": "County"
+        },
+        {
+          "sourceField": "person.legalAddress.postalCode",
+          "targetColumn": "PostalCode"
+        },
+        {
+          "sourceField": "person.legalAddress.countryCode",
+          "targetColumn": "CountryCode"
+        },
+        {
+          "sourceField": "person.studentIndicator",
+          "targetColumn": "IsFullTimeStudent"
+        },
+        {
+          "sourceField": "person.highestEducationLevelCode.codeValue",
+          "targetColumn": "HighestEducationLevelCode"
+        },
+        {
+          "sourceField": "person.highestEducationLevelCode.longName",
+          "targetColumn": "HighestEducationLevelDescription"
+        },
+        {
+          "sourceField": "workerDates.originalHireDate",
+          "targetColumn": "OriginalHireDate"
+        },
+        {
+          "sourceField": "workerDates.rehireDate",
+          "targetColumn": "RehireDate"
+        },
+        {
+          "sourceField": "workerDates.adjustedServiceDate",
+          "targetColumn": "AdjustedServiceDate"
+        },
+        {
+          "sourceField": "workerDates.acquisitionDate",
+          "targetColumn": "AcquisitionDate"
+        },
+        {
+          "sourceField": "workerDates.retirementDate",
+          "targetColumn": "RetirementDate"
+        },
+        {
+          "sourceField": "workerDates.terminationDate",
+          "targetColumn": "TerminationDate"
+        },
+        {
+          "sourceField": "workerStatus.statusCode.codeValue",
+          "targetColumn": "WorkerStatusCode"
+        },
+        {
+          "sourceField": "workerStatus.statusCode.longName",
+          "targetColumn": "WorkerStatusDescription"
+        },
+        {
+          "sourceField": "photos[0].links[0].href",
+          "targetColumn": "PhotoUri"
+        },
+        {
+          "sourceField": "_run_id",
+          "targetColumn": "SourceRunId"
+        },
+        {
+          "sourceField": "_extracted_at",
+          "targetColumn": "SourceExtractedAt"
+        },
+        {
+          "sourceField": "_extraction_mode",
+          "targetColumn": "SourceExtractionMode"
+        }
+      ],
+      "primaryKeyColumns": [
+        "AssociateOid"
+      ],
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true,
+          "sourceFilePattern": "workers_full*.json",
+          "latestDataConfig": {
+            "isEnabled": false,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/HR/ADP/workers"
+        },
+        "incrementalLoad": {
+          "isEnabled": true,
+          "unmaskColumns": [
+            "BirthDate"
+          ],
+          "sourceFilePattern": "worker*.json",
+          "latestDataConfig": {
+            "isEnabled": true,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Events_Shortcut/HR/ADP/Events",
+          "eventPayloadRoot": "worker"
+        }
+      }
+    },
+    {
+      "entityName": "worker_former_name",
+      "columnMappings": [
+        {
+          "sourceField": "associateOID",
+          "targetColumn": "AssociateOid"
+        },
+        {
+          "sourceField": "person.formerNames.formattedName",
+          "targetColumn": "FormerName"
+        }
+      ],
+      "primaryKeyColumns": [
+        "AssociateOid",
+        "FormerNameSeq"
+      ],
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true,
+          "sourceFilePattern": "workers_full*.json",
+          "latestDataConfig": {
+            "isEnabled": false,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/HR/ADP/workers"
+        },
+        "incrementalLoad": {
+          "isEnabled": true,
+          "sourceFilePattern": "worker*.json",
+          "latestDataConfig": {
+            "isEnabled": true,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Events_Shortcut/HR/ADP/Events",
+          "eventPayloadRoot": "worker"
+        }
+      }
+    },
+    {
+      "entityName": "worker_address",
+      "columnMappings": [
+        {
+          "sourceField": "associateOID",
+          "targetColumn": "AssociateOid"
+        },
+        {
+          "sourceField": "person.otherPersonalAddresses.lineOne",
+          "targetColumn": "AddressLine1"
+        },
+        {
+          "sourceField": "person.otherPersonalAddresses.lineTwo",
+          "targetColumn": "AddressLine2"
+        },
+        {
+          "sourceField": "person.otherPersonalAddresses.lineThree",
+          "targetColumn": "AddressLine3"
+        },
+        {
+          "sourceField": "person.otherPersonalAddresses.cityName",
+          "targetColumn": "City"
+        },
+        {
+          "sourceField": "person.otherPersonalAddresses.countrySubdivisionLevel1.codeValue",
+          "targetColumn": "StateCode"
+        },
+        {
+          "sourceField": "person.otherPersonalAddresses.countrySubdivisionLevel1.longName",
+          "targetColumn": "StateDescription"
+        },
+        {
+          "sourceField": "person.otherPersonalAddresses.countryCode",
+          "targetColumn": "CountryCode"
+        },
+        {
+          "sourceField": "person.otherPersonalAddresses.postalCode",
+          "targetColumn": "PostalCode"
+        }
+      ],
+      "primaryKeyColumns": [
+        "AssociateOid",
+        "AddressSeq"
+      ],
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true,
+          "sourceFilePattern": "workers_full*.json",
+          "latestDataConfig": {
+            "isEnabled": false,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/HR/ADP/workers"
+        },
+        "incrementalLoad": {
+          "isEnabled": true,
+          "sourceFilePattern": "worker*.json",
+          "latestDataConfig": {
+            "isEnabled": true,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Events_Shortcut/HR/ADP/Events",
+          "eventPayloadRoot": "worker"
+        }
+      }
+    },
+    {
+      "entityName": "worker_citizenship",
+      "columnMappings": [
+        {
+          "sourceField": "associateOID",
+          "targetColumn": "AssociateOid"
+        },
+        {
+          "sourceField": "person.citizenshipCountryCodes",
+          "targetColumn": "CitizenshipCountryCode"
+        }
+      ],
+      "primaryKeyColumns": [
+        "AssociateOid",
+        "CitizenshipSeq"
+      ],
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true,
+          "sourceFilePattern": "workers_full*.json",
+          "latestDataConfig": {
+            "isEnabled": false,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/HR/ADP/workers"
+        },
+        "incrementalLoad": {
+          "isEnabled": true,
+          "sourceFilePattern": "worker*.json",
+          "latestDataConfig": {
+            "isEnabled": true,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Events_Shortcut/HR/ADP/Events",
+          "eventPayloadRoot": "worker"
+        }
+      }
+    },
+    {
+      "entityName": "worker_immigration_document",
+      "columnMappings": [
+        {
+          "sourceField": "associateOID",
+          "targetColumn": "AssociateOid"
+        },
+        {
+          "sourceField": "person.immigrationDocuments.documentID",
+          "targetColumn": "DocumentId"
+        },
+        {
+          "sourceField": "person.immigrationDocuments.typeCode.codeValue",
+          "targetColumn": "VisaTypeCode"
+        },
+        {
+          "sourceField": "person.immigrationDocuments.typeCode.longName",
+          "targetColumn": "VisaTypeDescription"
+        },
+        {
+          "sourceField": "person.immigrationDocuments.expirationDate",
+          "targetColumn": "ExpirationDate"
+        }
+      ],
+      "primaryKeyColumns": [
+        "AssociateOid",
+        "DocumentId"
+      ],
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true,
+          "sourceFilePattern": "workers_full*.json",
+          "latestDataConfig": {
+            "isEnabled": false,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/HR/ADP/workers"
+        },
+        "incrementalLoad": {
+          "isEnabled": true,
+          "sourceFilePattern": "worker*.json",
+          "latestDataConfig": {
+            "isEnabled": true,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Events_Shortcut/HR/ADP/Events",
+          "eventPayloadRoot": "worker"
+        }
+      }
+    },
+    {
+      "entityName": "worker_passport",
+      "columnMappings": [
+        {
+          "sourceField": "associateOID",
+          "targetColumn": "AssociateOid"
+        },
+        {
+          "sourceField": "person.passports.documentID",
+          "targetColumn": "DocumentId"
+        },
+        {
+          "sourceField": "person.passports.countryCode",
+          "targetColumn": "IssuingCountryCode"
+        },
+        {
+          "sourceField": "person.passports.expirationDate",
+          "targetColumn": "ExpirationDate"
+        }
+      ],
+      "primaryKeyColumns": [
+        "AssociateOid",
+        "DocumentId"
+      ],
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true,
+          "sourceFilePattern": "workers_full*.json",
+          "latestDataConfig": {
+            "isEnabled": false,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/HR/ADP/workers"
+        },
+        "incrementalLoad": {
+          "isEnabled": true,
+          "sourceFilePattern": "worker*.json",
+          "latestDataConfig": {
+            "isEnabled": true,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Events_Shortcut/HR/ADP/Events",
+          "eventPayloadRoot": "worker"
+        }
+      }
+    },
+    {
+      "entityName": "worker_military_classification",
+      "columnMappings": [
+        {
+          "sourceField": "associateOID",
+          "targetColumn": "AssociateOid"
+        },
+        {
+          "sourceField": "person.militaryClassificationCodes.codeValue",
+          "targetColumn": "ClassificationCode"
+        },
+        {
+          "sourceField": "person.militaryClassificationCodes.longName",
+          "targetColumn": "ClassificationDescription"
+        }
+      ],
+      "primaryKeyColumns": [
+        "AssociateOid",
+        "ClassificationCode"
+      ],
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true,
+          "sourceFilePattern": "workers_full*.json",
+          "latestDataConfig": {
+            "isEnabled": false,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/HR/ADP/workers"
+        },
+        "incrementalLoad": {
+          "isEnabled": true,
+          "sourceFilePattern": "worker*.json",
+          "latestDataConfig": {
+            "isEnabled": true,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Events_Shortcut/HR/ADP/Events",
+          "eventPayloadRoot": "worker"
+        }
+      }
+    },
+    {
+      "entityName": "worker_disability_type",
+      "columnMappings": [
+        {
+          "sourceField": "associateOID",
+          "targetColumn": "AssociateOid"
+        },
+        {
+          "sourceField": "person.disabilityTypeCodes.codeValue",
+          "targetColumn": "DisabilityTypeCode"
+        },
+        {
+          "sourceField": "person.disabilityTypeCodes.longName",
+          "targetColumn": "DisabilityTypeDescription"
+        }
+      ],
+      "primaryKeyColumns": [
+        "AssociateOid",
+        "DisabilityTypeCode"
+      ],
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true,
+          "sourceFilePattern": "workers_full*.json",
+          "latestDataConfig": {
+            "isEnabled": false,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/HR/ADP/workers"
+        },
+        "incrementalLoad": {
+          "isEnabled": true,
+          "sourceFilePattern": "worker*.json",
+          "latestDataConfig": {
+            "isEnabled": true,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Events_Shortcut/HR/ADP/Events",
+          "eventPayloadRoot": "worker"
+        }
+      }
+    },
+    {
+      "entityName": "worker_demographics",
+      "columnMappings": [
+        {
+          "sourceField": "associateOID",
+          "targetColumn": "AssociateOid"
+        },
+        {
+          "sourceField": "person.genderCode.codeValue",
+          "targetColumn": "GenderCode"
+        },
+        {
+          "sourceField": "person.genderCode.longName",
+          "targetColumn": "GenderDescription"
+        },
+        {
+          "sourceField": "person.genderSelfIdentityCode.codeValue",
+          "targetColumn": "GenderSelfIdentityCode"
+        },
+        {
+          "sourceField": "person.genderSelfIdentityCode.longName",
+          "targetColumn": "GenderSelfIdentityDescription"
+        },
+        {
+          "sourceField": "person.preferredGenderPronounCode.codeValue",
+          "targetColumn": "PreferredPronounCode"
+        },
+        {
+          "sourceField": "person.preferredGenderPronounCode.longName",
+          "targetColumn": "PreferredPronounDescription"
+        },
+        {
+          "sourceField": "person.transgenderIdentificationCode.codeValue",
+          "targetColumn": "TransgenderIdentificationCode"
+        },
+        {
+          "sourceField": "person.lgbqIdentificationCode.codeValue",
+          "targetColumn": "LgbqIdentificationCode"
+        },
+        {
+          "sourceField": "person.maritalStatusCode.codeValue",
+          "targetColumn": "MaritalStatusCode"
+        },
+        {
+          "sourceField": "person.maritalStatusCode.shortName",
+          "targetColumn": "MaritalStatusDescription"
+        },
+        {
+          "sourceField": "person.maritalStatusCode.effectiveDate",
+          "targetColumn": "MaritalStatusEffectiveDate"
+        },
+        {
+          "sourceField": "person.ethnicityCode.codeValue",
+          "targetColumn": "EthnicityCode"
+        },
+        {
+          "sourceField": "person.ethnicityCode.longName",
+          "targetColumn": "EthnicityDescription"
+        },
+        {
+          "sourceField": "person.raceCode.codeValue",
+          "targetColumn": "RaceCode"
+        },
+        {
+          "sourceField": "person.raceCode.longName",
+          "targetColumn": "RaceDescription"
+        },
+        {
+          "sourceField": "person.raceCode.identificationMethodCode.codeValue",
+          "targetColumn": "RaceIdentificationMethodCode"
+        },
+        {
+          "sourceField": "person.raceCode.identificationMethodCode.shortName",
+          "targetColumn": "RaceIdentificationMethodDescription"
+        },
+        {
+          "sourceField": "person.militaryStatusCode.codeValue",
+          "targetColumn": "MilitaryStatusCode"
+        },
+        {
+          "sourceField": "person.militaryStatusCode.longName",
+          "targetColumn": "MilitaryStatusDescription"
+        },
+        {
+          "sourceField": "person.militaryDischargeDate",
+          "targetColumn": "MilitaryDischargeDate"
+        },
+        {
+          "sourceField": "person.disabledIndicator",
+          "targetColumn": "IsDisabled"
+        },
+        {
+          "sourceField": "person.disabilityIdentificationDeclinedIndicator",
+          "targetColumn": "IsDisabilityIdentificationDeclined"
+        },
+        {
+          "sourceField": "person.tobaccoUserIndicator",
+          "targetColumn": "IsTobaccoUser"
+        },
+        {
+          "sourceField": "_parent_key",
+          "targetColumn": "ParentAssociateOid"
+        },
+        {
+          "sourceField": "_run_id",
+          "targetColumn": "SourceRunId"
+        },
+        {
+          "sourceField": "_extracted_at",
+          "targetColumn": "SourceExtractedAt"
+        }
+      ],
+      "primaryKeyColumns": [
+        "AssociateOid"
+      ],
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true,
+          "sourceFilePattern": "worker-demographics_full*.json",
+          "latestDataConfig": {
+            "isEnabled": false,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/HR/ADP/worker-demographics"
+        },
+        "incrementalLoad": {
+          "isEnabled": true,
+          "sourceFilePattern": "worker*.json",
+          "latestDataConfig": {
+            "isEnabled": true,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Events_Shortcut/HR/ADP/Events",
+          "eventPayloadRoot": "worker"
+        }
+      }
+    },
+    {
+      "entityName": "worker_email",
+      "columnMappings": [
+        {
+          "sourceField": "associateOID",
+          "targetColumn": "AssociateOid"
+        },
+        {
+          "sourceField": "person.communication.emails.itemID",
+          "targetColumn": "EmailItemId"
+        },
+        {
+          "sourceField": "person.communication.emails.nameCode.codeValue",
+          "targetColumn": "EmailType"
+        },
+        {
+          "sourceField": "person.communication.emails.nameCode.shortName",
+          "targetColumn": "EmailTypeDescription"
+        },
+        {
+          "sourceField": "person.communication.emails.emailUri",
+          "targetColumn": "EmailAddress"
+        },
+        {
+          "sourceField": "person.communication.emails.notificationIndicator",
+          "targetColumn": "IsNotificationEmail"
+        },
+        {
+          "sourceField": "LITERAL(person.communication.emails)=Personal",
+          "targetColumn": "EmailScope"
+        },
+        {
+          "sourceField": "businessCommunication.emails.itemID",
+          "targetColumn": "EmailItemId"
+        },
+        {
+          "sourceField": "businessCommunication.emails.nameCode.codeValue",
+          "targetColumn": "EmailType"
+        },
+        {
+          "sourceField": "businessCommunication.emails.nameCode.shortName",
+          "targetColumn": "EmailTypeDescription"
+        },
+        {
+          "sourceField": "businessCommunication.emails.emailUri",
+          "targetColumn": "EmailAddress"
+        },
+        {
+          "sourceField": "businessCommunication.emails.notificationIndicator",
+          "targetColumn": "IsNotificationEmail"
+        },
+        {
+          "sourceField": "LITERAL(businessCommunication.emails)=Business",
+          "targetColumn": "EmailScope"
+        }
+      ],
+      "primaryKeyColumns": [
+        "AssociateOid",
+        "EmailScope",
+        "EmailAddress"
+      ],
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true,
+          "sourceFilePattern": "workers_full*.json",
+          "latestDataConfig": {
+            "isEnabled": false,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/HR/ADP/workers"
+        },
+        "incrementalLoad": {
+          "isEnabled": true,
+          "sourceFilePattern": "worker*.json",
+          "latestDataConfig": {
+            "isEnabled": true,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Events_Shortcut/HR/ADP/Events",
+          "eventPayloadRoot": "worker"
+        }
+      }
+    },
+    {
+      "entityName": "worker_phone",
+      "columnMappings": [
+        {
+          "sourceField": "associateOID",
+          "targetColumn": "AssociateOid"
+        },
+        {
+          "sourceField": "person.communication.landlines.itemID",
+          "targetColumn": "PhoneItemId"
+        },
+        {
+          "sourceField": "person.communication.landlines.nameCode.codeValue",
+          "targetColumn": "PhoneTypeCode"
+        },
+        {
+          "sourceField": "person.communication.landlines.nameCode.shortName",
+          "targetColumn": "PhoneTypeDescription"
+        },
+        {
+          "sourceField": "person.communication.landlines.countryDialing",
+          "targetColumn": "CountryDialCode"
+        },
+        {
+          "sourceField": "person.communication.landlines.areaDialing",
+          "targetColumn": "AreaDialCode"
+        },
+        {
+          "sourceField": "person.communication.landlines.extension",
+          "targetColumn": "Extension"
+        },
+        {
+          "sourceField": "person.communication.landlines.access",
+          "targetColumn": "AccessCode"
+        },
+        {
+          "sourceField": "person.communication.landlines.dialNumber",
+          "targetColumn": "DialNumber"
+        },
+        {
+          "sourceField": "person.communication.landlines.formattedNumber",
+          "targetColumn": "FormattedNumber"
+        },
+        {
+          "sourceField": "LITERAL(person.communication.landlines)=Personal",
+          "targetColumn": "PhoneScope"
+        },
+        {
+          "sourceField": "LITERAL(person.communication.landlines)=Landline",
+          "targetColumn": "PhoneCategory"
+        },
+        {
+          "sourceField": "person.communication.mobiles.itemID",
+          "targetColumn": "PhoneItemId"
+        },
+        {
+          "sourceField": "person.communication.mobiles.nameCode.codeValue",
+          "targetColumn": "PhoneTypeCode"
+        },
+        {
+          "sourceField": "person.communication.mobiles.nameCode.shortName",
+          "targetColumn": "PhoneTypeDescription"
+        },
+        {
+          "sourceField": "person.communication.mobiles.countryDialing",
+          "targetColumn": "CountryDialCode"
+        },
+        {
+          "sourceField": "person.communication.mobiles.areaDialing",
+          "targetColumn": "AreaDialCode"
+        },
+        {
+          "sourceField": "person.communication.mobiles.extension",
+          "targetColumn": "Extension"
+        },
+        {
+          "sourceField": "person.communication.mobiles.access",
+          "targetColumn": "AccessCode"
+        },
+        {
+          "sourceField": "person.communication.mobiles.dialNumber",
+          "targetColumn": "DialNumber"
+        },
+        {
+          "sourceField": "person.communication.mobiles.formattedNumber",
+          "targetColumn": "FormattedNumber"
+        },
+        {
+          "sourceField": "LITERAL(person.communication.mobiles)=Personal",
+          "targetColumn": "PhoneScope"
+        },
+        {
+          "sourceField": "LITERAL(person.communication.mobiles)=Mobile",
+          "targetColumn": "PhoneCategory"
+        },
+        {
+          "sourceField": "person.communication.faxes.itemID",
+          "targetColumn": "PhoneItemId"
+        },
+        {
+          "sourceField": "person.communication.faxes.nameCode.codeValue",
+          "targetColumn": "PhoneTypeCode"
+        },
+        {
+          "sourceField": "person.communication.faxes.nameCode.shortName",
+          "targetColumn": "PhoneTypeDescription"
+        },
+        {
+          "sourceField": "person.communication.faxes.countryDialing",
+          "targetColumn": "CountryDialCode"
+        },
+        {
+          "sourceField": "person.communication.faxes.areaDialing",
+          "targetColumn": "AreaDialCode"
+        },
+        {
+          "sourceField": "person.communication.faxes.extension",
+          "targetColumn": "Extension"
+        },
+        {
+          "sourceField": "person.communication.faxes.access",
+          "targetColumn": "AccessCode"
+        },
+        {
+          "sourceField": "person.communication.faxes.dialNumber",
+          "targetColumn": "DialNumber"
+        },
+        {
+          "sourceField": "person.communication.faxes.formattedNumber",
+          "targetColumn": "FormattedNumber"
+        },
+        {
+          "sourceField": "LITERAL(person.communication.faxes)=Personal",
+          "targetColumn": "PhoneScope"
+        },
+        {
+          "sourceField": "LITERAL(person.communication.faxes)=Fax",
+          "targetColumn": "PhoneCategory"
+        },
+        {
+          "sourceField": "person.communication.pagers.itemID",
+          "targetColumn": "PhoneItemId"
+        },
+        {
+          "sourceField": "person.communication.pagers.nameCode.codeValue",
+          "targetColumn": "PhoneTypeCode"
+        },
+        {
+          "sourceField": "person.communication.pagers.nameCode.shortName",
+          "targetColumn": "PhoneTypeDescription"
+        },
+        {
+          "sourceField": "person.communication.pagers.countryDialing",
+          "targetColumn": "CountryDialCode"
+        },
+        {
+          "sourceField": "person.communication.pagers.areaDialing",
+          "targetColumn": "AreaDialCode"
+        },
+        {
+          "sourceField": "person.communication.pagers.extension",
+          "targetColumn": "Extension"
+        },
+        {
+          "sourceField": "person.communication.pagers.access",
+          "targetColumn": "AccessCode"
+        },
+        {
+          "sourceField": "person.communication.pagers.dialNumber",
+          "targetColumn": "DialNumber"
+        },
+        {
+          "sourceField": "person.communication.pagers.formattedNumber",
+          "targetColumn": "FormattedNumber"
+        },
+        {
+          "sourceField": "LITERAL(person.communication.pagers)=Personal",
+          "targetColumn": "PhoneScope"
+        },
+        {
+          "sourceField": "LITERAL(person.communication.pagers)=Pager",
+          "targetColumn": "PhoneCategory"
+        },
+        {
+          "sourceField": "businessCommunication.landlines.itemID",
+          "targetColumn": "PhoneItemId"
+        },
+        {
+          "sourceField": "businessCommunication.landlines.nameCode.codeValue",
+          "targetColumn": "PhoneTypeCode"
+        },
+        {
+          "sourceField": "businessCommunication.landlines.nameCode.shortName",
+          "targetColumn": "PhoneTypeDescription"
+        },
+        {
+          "sourceField": "businessCommunication.landlines.countryDialing",
+          "targetColumn": "CountryDialCode"
+        },
+        {
+          "sourceField": "businessCommunication.landlines.areaDialing",
+          "targetColumn": "AreaDialCode"
+        },
+        {
+          "sourceField": "businessCommunication.landlines.extension",
+          "targetColumn": "Extension"
+        },
+        {
+          "sourceField": "businessCommunication.landlines.access",
+          "targetColumn": "AccessCode"
+        },
+        {
+          "sourceField": "businessCommunication.landlines.dialNumber",
+          "targetColumn": "DialNumber"
+        },
+        {
+          "sourceField": "businessCommunication.landlines.formattedNumber",
+          "targetColumn": "FormattedNumber"
+        },
+        {
+          "sourceField": "LITERAL(businessCommunication.landlines)=Business",
+          "targetColumn": "PhoneScope"
+        },
+        {
+          "sourceField": "LITERAL(businessCommunication.landlines)=Landline",
+          "targetColumn": "PhoneCategory"
+        },
+        {
+          "sourceField": "businessCommunication.mobiles.itemID",
+          "targetColumn": "PhoneItemId"
+        },
+        {
+          "sourceField": "businessCommunication.mobiles.nameCode.codeValue",
+          "targetColumn": "PhoneTypeCode"
+        },
+        {
+          "sourceField": "businessCommunication.mobiles.nameCode.shortName",
+          "targetColumn": "PhoneTypeDescription"
+        },
+        {
+          "sourceField": "businessCommunication.mobiles.countryDialing",
+          "targetColumn": "CountryDialCode"
+        },
+        {
+          "sourceField": "businessCommunication.mobiles.areaDialing",
+          "targetColumn": "AreaDialCode"
+        },
+        {
+          "sourceField": "businessCommunication.mobiles.extension",
+          "targetColumn": "Extension"
+        },
+        {
+          "sourceField": "businessCommunication.mobiles.access",
+          "targetColumn": "AccessCode"
+        },
+        {
+          "sourceField": "businessCommunication.mobiles.dialNumber",
+          "targetColumn": "DialNumber"
+        },
+        {
+          "sourceField": "businessCommunication.mobiles.formattedNumber",
+          "targetColumn": "FormattedNumber"
+        },
+        {
+          "sourceField": "LITERAL(businessCommunication.mobiles)=Business",
+          "targetColumn": "PhoneScope"
+        },
+        {
+          "sourceField": "LITERAL(businessCommunication.mobiles)=Mobile",
+          "targetColumn": "PhoneCategory"
+        },
+        {
+          "sourceField": "businessCommunication.faxes.itemID",
+          "targetColumn": "PhoneItemId"
+        },
+        {
+          "sourceField": "businessCommunication.faxes.nameCode.codeValue",
+          "targetColumn": "PhoneTypeCode"
+        },
+        {
+          "sourceField": "businessCommunication.faxes.nameCode.shortName",
+          "targetColumn": "PhoneTypeDescription"
+        },
+        {
+          "sourceField": "businessCommunication.faxes.countryDialing",
+          "targetColumn": "CountryDialCode"
+        },
+        {
+          "sourceField": "businessCommunication.faxes.areaDialing",
+          "targetColumn": "AreaDialCode"
+        },
+        {
+          "sourceField": "businessCommunication.faxes.extension",
+          "targetColumn": "Extension"
+        },
+        {
+          "sourceField": "businessCommunication.faxes.access",
+          "targetColumn": "AccessCode"
+        },
+        {
+          "sourceField": "businessCommunication.faxes.dialNumber",
+          "targetColumn": "DialNumber"
+        },
+        {
+          "sourceField": "businessCommunication.faxes.formattedNumber",
+          "targetColumn": "FormattedNumber"
+        },
+        {
+          "sourceField": "LITERAL(businessCommunication.faxes)=Business",
+          "targetColumn": "PhoneScope"
+        },
+        {
+          "sourceField": "LITERAL(businessCommunication.faxes)=Fax",
+          "targetColumn": "PhoneCategory"
+        },
+        {
+          "sourceField": "businessCommunication.pagers.itemID",
+          "targetColumn": "PhoneItemId"
+        },
+        {
+          "sourceField": "businessCommunication.pagers.nameCode.codeValue",
+          "targetColumn": "PhoneTypeCode"
+        },
+        {
+          "sourceField": "businessCommunication.pagers.nameCode.shortName",
+          "targetColumn": "PhoneTypeDescription"
+        },
+        {
+          "sourceField": "businessCommunication.pagers.countryDialing",
+          "targetColumn": "CountryDialCode"
+        },
+        {
+          "sourceField": "businessCommunication.pagers.areaDialing",
+          "targetColumn": "AreaDialCode"
+        },
+        {
+          "sourceField": "businessCommunication.pagers.extension",
+          "targetColumn": "Extension"
+        },
+        {
+          "sourceField": "businessCommunication.pagers.access",
+          "targetColumn": "AccessCode"
+        },
+        {
+          "sourceField": "businessCommunication.pagers.dialNumber",
+          "targetColumn": "DialNumber"
+        },
+        {
+          "sourceField": "businessCommunication.pagers.formattedNumber",
+          "targetColumn": "FormattedNumber"
+        },
+        {
+          "sourceField": "LITERAL(businessCommunication.pagers)=Business",
+          "targetColumn": "PhoneScope"
+        },
+        {
+          "sourceField": "LITERAL(businessCommunication.pagers)=Pager",
+          "targetColumn": "PhoneCategory"
+        }
+      ],
+      "primaryKeyColumns": [
+        "AssociateOid",
+        "PhoneScope",
+        "PhoneCategory",
+        "PhoneItemId"
+      ],
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true,
+          "sourceFilePattern": "workers_full*.json",
+          "latestDataConfig": {
+            "isEnabled": false,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/HR/ADP/workers"
+        },
+        "incrementalLoad": {
+          "isEnabled": true,
+          "sourceFilePattern": "worker*.json",
+          "latestDataConfig": {
+            "isEnabled": true,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Events_Shortcut/HR/ADP/Events",
+          "eventPayloadRoot": "worker"
+        }
+      }
+    },
+    {
+      "entityName": "worker_government_id",
+      "columnMappings": [
+        {
+          "sourceField": "associateOID",
+          "targetColumn": "AssociateOid"
+        },
+        {
+          "sourceField": "person.governmentIDs.itemID",
+          "targetColumn": "GovIdItemId"
+        },
+        {
+          "sourceField": "person.governmentIDs.nameCode.codeValue",
+          "targetColumn": "GovIdType"
+        },
+        {
+          "sourceField": "person.governmentIDs.nameCode.longName",
+          "targetColumn": "GovIdTypeDescription"
+        },
+        {
+          "sourceField": "person.governmentIDs.idValue",
+          "targetColumn": "GovIdValue"
+        },
+        {
+          "sourceField": "person.governmentIDs.countryCode",
+          "targetColumn": "CountryCode"
+        }
+      ],
+      "primaryKeyColumns": [
+        "AssociateOid",
+        "GovIdItemId"
+      ],
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true,
+          "sourceFilePattern": "workers_full*.json",
+          "latestDataConfig": {
+            "isEnabled": false,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/HR/ADP/workers"
+        },
+        "incrementalLoad": {
+          "isEnabled": true,
+          "unmaskColumns": [
+            "GovIdItemId"
+          ],
+          "sourceFilePattern": "worker-government-id*.json",
+          "latestDataConfig": {
+            "isEnabled": true,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Events_Shortcut/HR/ADP/Events",
+          "eventPayloadRoot": "worker"
+        }
+      }
+    },
+    {
+      "entityName": "worker_social_insurance",
+      "columnMappings": [
+        {
+          "sourceField": "associateOID",
+          "targetColumn": "AssociateOid"
+        },
+        {
+          "sourceField": "person.socialInsurancePrograms.nameCode.codeValue",
+          "targetColumn": "ProgramCode"
+        },
+        {
+          "sourceField": "person.socialInsurancePrograms.coveredIndicator",
+          "targetColumn": "IsCovered"
+        }
+      ],
+      "primaryKeyColumns": [
+        "AssociateOid",
+        "ProgramCode"
+      ],
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true,
+          "sourceFilePattern": "workers_full*.json",
+          "latestDataConfig": {
+            "isEnabled": false,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/HR/ADP/workers"
+        },
+        "incrementalLoad": {
+          "isEnabled": true,
+          "sourceFilePattern": "worker*.json",
+          "latestDataConfig": {
+            "isEnabled": true,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Events_Shortcut/HR/ADP/Events",
+          "eventPayloadRoot": "worker"
+        }
+      }
+    },
+    {
+      "entityName": "worker_custom_field",
+      "columnMappings": [
+        {
+          "sourceField": "customFieldGroup.codeFields.itemID",
+          "targetColumn": "ItemId"
+        },
+        {
+          "sourceField": "customFieldGroup.codeFields.nameCode.codeValue",
+          "targetColumn": "FieldNameCode"
+        },
+        {
+          "sourceField": "customFieldGroup.codeFields.nameCode.shortName",
+          "targetColumn": "FieldNameShortDescription"
+        },
+        {
+          "sourceField": "customFieldGroup.codeFields.nameCode.longName",
+          "targetColumn": "FieldNameLongDescription"
+        },
+        {
+          "sourceField": "customFieldGroup.codeFields.codeValue",
+          "targetColumn": "FieldValue"
+        },
+        {
+          "sourceField": "customFieldGroup.codeFields.shortName",
+          "targetColumn": "FieldValueShortLabel"
+        },
+        {
+          "sourceField": "LITERAL(customFieldGroup.codeFields)=Worker",
+          "targetColumn": "FieldLevel"
+        },
+        {
+          "sourceField": "LITERAL(customFieldGroup.codeFields)=code",
+          "targetColumn": "FieldCategory"
+        },
+        {
+          "sourceField": "LITERAL(customFieldGroup.codeFields)=",
+          "targetColumn": "AssignmentId"
+        },
+        {
+          "sourceField": "customFieldGroup.dateFields.itemID",
+          "targetColumn": "ItemId"
+        },
+        {
+          "sourceField": "customFieldGroup.dateFields.nameCode.codeValue",
+          "targetColumn": "FieldNameCode"
+        },
+        {
+          "sourceField": "customFieldGroup.dateFields.nameCode.shortName",
+          "targetColumn": "FieldNameShortDescription"
+        },
+        {
+          "sourceField": "customFieldGroup.dateFields.nameCode.longName",
+          "targetColumn": "FieldNameLongDescription"
+        },
+        {
+          "sourceField": "customFieldGroup.dateFields.dateValue",
+          "targetColumn": "FieldValue"
+        },
+        {
+          "sourceField": "LITERAL(customFieldGroup.dateFields)=",
+          "targetColumn": "FieldValueShortLabel"
+        },
+        {
+          "sourceField": "LITERAL(customFieldGroup.dateFields)=Worker",
+          "targetColumn": "FieldLevel"
+        },
+        {
+          "sourceField": "LITERAL(customFieldGroup.dateFields)=date",
+          "targetColumn": "FieldCategory"
+        },
+        {
+          "sourceField": "LITERAL(customFieldGroup.dateFields)=",
+          "targetColumn": "AssignmentId"
+        },
+        {
+          "sourceField": "customFieldGroup.numberFields.itemID",
+          "targetColumn": "ItemId"
+        },
+        {
+          "sourceField": "customFieldGroup.numberFields.nameCode.codeValue",
+          "targetColumn": "FieldNameCode"
+        },
+        {
+          "sourceField": "customFieldGroup.numberFields.nameCode.shortName",
+          "targetColumn": "FieldNameShortDescription"
+        },
+        {
+          "sourceField": "customFieldGroup.numberFields.nameCode.longName",
+          "targetColumn": "FieldNameLongDescription"
+        },
+        {
+          "sourceField": "customFieldGroup.numberFields.numberValue",
+          "targetColumn": "FieldValue"
+        },
+        {
+          "sourceField": "LITERAL(customFieldGroup.numberFields)=",
+          "targetColumn": "FieldValueShortLabel"
+        },
+        {
+          "sourceField": "LITERAL(customFieldGroup.numberFields)=Worker",
+          "targetColumn": "FieldLevel"
+        },
+        {
+          "sourceField": "LITERAL(customFieldGroup.numberFields)=number",
+          "targetColumn": "FieldCategory"
+        },
+        {
+          "sourceField": "LITERAL(customFieldGroup.numberFields)=",
+          "targetColumn": "AssignmentId"
+        },
+        {
+          "sourceField": "customFieldGroup.stringFields.itemID",
+          "targetColumn": "ItemId"
+        },
+        {
+          "sourceField": "customFieldGroup.stringFields.nameCode.codeValue",
+          "targetColumn": "FieldNameCode"
+        },
+        {
+          "sourceField": "customFieldGroup.stringFields.nameCode.shortName",
+          "targetColumn": "FieldNameShortDescription"
+        },
+        {
+          "sourceField": "customFieldGroup.stringFields.nameCode.longName",
+          "targetColumn": "FieldNameLongDescription"
+        },
+        {
+          "sourceField": "customFieldGroup.stringFields.stringValue",
+          "targetColumn": "FieldValue"
+        },
+        {
+          "sourceField": "LITERAL(customFieldGroup.stringFields)=",
+          "targetColumn": "FieldValueShortLabel"
+        },
+        {
+          "sourceField": "LITERAL(customFieldGroup.stringFields)=Worker",
+          "targetColumn": "FieldLevel"
+        },
+        {
+          "sourceField": "LITERAL(customFieldGroup.stringFields)=string",
+          "targetColumn": "FieldCategory"
+        },
+        {
+          "sourceField": "LITERAL(customFieldGroup.stringFields)=",
+          "targetColumn": "AssignmentId"
+        },
+        {
+          "sourceField": "customFieldGroup.indicatorFields.itemID",
+          "targetColumn": "ItemId"
+        },
+        {
+          "sourceField": "customFieldGroup.indicatorFields.nameCode.codeValue",
+          "targetColumn": "FieldNameCode"
+        },
+        {
+          "sourceField": "customFieldGroup.indicatorFields.nameCode.shortName",
+          "targetColumn": "FieldNameShortDescription"
+        },
+        {
+          "sourceField": "customFieldGroup.indicatorFields.nameCode.longName",
+          "targetColumn": "FieldNameLongDescription"
+        },
+        {
+          "sourceField": "customFieldGroup.indicatorFields.indicatorValue",
+          "targetColumn": "FieldValue"
+        },
+        {
+          "sourceField": "LITERAL(customFieldGroup.indicatorFields)=",
+          "targetColumn": "FieldValueShortLabel"
+        },
+        {
+          "sourceField": "LITERAL(customFieldGroup.indicatorFields)=Worker",
+          "targetColumn": "FieldLevel"
+        },
+        {
+          "sourceField": "LITERAL(customFieldGroup.indicatorFields)=indicator",
+          "targetColumn": "FieldCategory"
+        },
+        {
+          "sourceField": "LITERAL(customFieldGroup.indicatorFields)=",
+          "targetColumn": "AssignmentId"
+        },
+        {
+          "sourceField": "person.customFieldGroup.codeFields.itemID",
+          "targetColumn": "ItemId"
+        },
+        {
+          "sourceField": "person.customFieldGroup.codeFields.nameCode.codeValue",
+          "targetColumn": "FieldNameCode"
+        },
+        {
+          "sourceField": "person.customFieldGroup.codeFields.nameCode.shortName",
+          "targetColumn": "FieldNameShortDescription"
+        },
+        {
+          "sourceField": "person.customFieldGroup.codeFields.nameCode.longName",
+          "targetColumn": "FieldNameLongDescription"
+        },
+        {
+          "sourceField": "person.customFieldGroup.codeFields.codeValue",
+          "targetColumn": "FieldValue"
+        },
+        {
+          "sourceField": "person.customFieldGroup.codeFields.shortName",
+          "targetColumn": "FieldValueShortLabel"
+        },
+        {
+          "sourceField": "LITERAL(person.customFieldGroup.codeFields)=Person",
+          "targetColumn": "FieldLevel"
+        },
+        {
+          "sourceField": "LITERAL(person.customFieldGroup.codeFields)=code",
+          "targetColumn": "FieldCategory"
+        },
+        {
+          "sourceField": "LITERAL(person.customFieldGroup.codeFields)=",
+          "targetColumn": "AssignmentId"
+        },
+        {
+          "sourceField": "person.customFieldGroup.dateFields.itemID",
+          "targetColumn": "ItemId"
+        },
+        {
+          "sourceField": "person.customFieldGroup.dateFields.nameCode.codeValue",
+          "targetColumn": "FieldNameCode"
+        },
+        {
+          "sourceField": "person.customFieldGroup.dateFields.nameCode.shortName",
+          "targetColumn": "FieldNameShortDescription"
+        },
+        {
+          "sourceField": "person.customFieldGroup.dateFields.nameCode.longName",
+          "targetColumn": "FieldNameLongDescription"
+        },
+        {
+          "sourceField": "person.customFieldGroup.dateFields.dateValue",
+          "targetColumn": "FieldValue"
+        },
+        {
+          "sourceField": "LITERAL(person.customFieldGroup.dateFields)=",
+          "targetColumn": "FieldValueShortLabel"
+        },
+        {
+          "sourceField": "LITERAL(person.customFieldGroup.dateFields)=Person",
+          "targetColumn": "FieldLevel"
+        },
+        {
+          "sourceField": "LITERAL(person.customFieldGroup.dateFields)=date",
+          "targetColumn": "FieldCategory"
+        },
+        {
+          "sourceField": "LITERAL(person.customFieldGroup.dateFields)=",
+          "targetColumn": "AssignmentId"
+        },
+        {
+          "sourceField": "person.customFieldGroup.numberFields.itemID",
+          "targetColumn": "ItemId"
+        },
+        {
+          "sourceField": "person.customFieldGroup.numberFields.nameCode.codeValue",
+          "targetColumn": "FieldNameCode"
+        },
+        {
+          "sourceField": "person.customFieldGroup.numberFields.nameCode.shortName",
+          "targetColumn": "FieldNameShortDescription"
+        },
+        {
+          "sourceField": "person.customFieldGroup.numberFields.nameCode.longName",
+          "targetColumn": "FieldNameLongDescription"
+        },
+        {
+          "sourceField": "person.customFieldGroup.numberFields.numberValue",
+          "targetColumn": "FieldValue"
+        },
+        {
+          "sourceField": "LITERAL(person.customFieldGroup.numberFields)=",
+          "targetColumn": "FieldValueShortLabel"
+        },
+        {
+          "sourceField": "LITERAL(person.customFieldGroup.numberFields)=Person",
+          "targetColumn": "FieldLevel"
+        },
+        {
+          "sourceField": "LITERAL(person.customFieldGroup.numberFields)=number",
+          "targetColumn": "FieldCategory"
+        },
+        {
+          "sourceField": "LITERAL(person.customFieldGroup.numberFields)=",
+          "targetColumn": "AssignmentId"
+        },
+        {
+          "sourceField": "person.customFieldGroup.stringFields.itemID",
+          "targetColumn": "ItemId"
+        },
+        {
+          "sourceField": "person.customFieldGroup.stringFields.nameCode.codeValue",
+          "targetColumn": "FieldNameCode"
+        },
+        {
+          "sourceField": "person.customFieldGroup.stringFields.nameCode.shortName",
+          "targetColumn": "FieldNameShortDescription"
+        },
+        {
+          "sourceField": "person.customFieldGroup.stringFields.nameCode.longName",
+          "targetColumn": "FieldNameLongDescription"
+        },
+        {
+          "sourceField": "person.customFieldGroup.stringFields.stringValue",
+          "targetColumn": "FieldValue"
+        },
+        {
+          "sourceField": "LITERAL(person.customFieldGroup.stringFields)=",
+          "targetColumn": "FieldValueShortLabel"
+        },
+        {
+          "sourceField": "LITERAL(person.customFieldGroup.stringFields)=Person",
+          "targetColumn": "FieldLevel"
+        },
+        {
+          "sourceField": "LITERAL(person.customFieldGroup.stringFields)=string",
+          "targetColumn": "FieldCategory"
+        },
+        {
+          "sourceField": "LITERAL(person.customFieldGroup.stringFields)=",
+          "targetColumn": "AssignmentId"
+        },
+        {
+          "sourceField": "person.customFieldGroup.indicatorFields.itemID",
+          "targetColumn": "ItemId"
+        },
+        {
+          "sourceField": "person.customFieldGroup.indicatorFields.nameCode.codeValue",
+          "targetColumn": "FieldNameCode"
+        },
+        {
+          "sourceField": "person.customFieldGroup.indicatorFields.nameCode.shortName",
+          "targetColumn": "FieldNameShortDescription"
+        },
+        {
+          "sourceField": "person.customFieldGroup.indicatorFields.nameCode.longName",
+          "targetColumn": "FieldNameLongDescription"
+        },
+        {
+          "sourceField": "person.customFieldGroup.indicatorFields.indicatorValue",
+          "targetColumn": "FieldValue"
+        },
+        {
+          "sourceField": "LITERAL(person.customFieldGroup.indicatorFields)=",
+          "targetColumn": "FieldValueShortLabel"
+        },
+        {
+          "sourceField": "LITERAL(person.customFieldGroup.indicatorFields)=Person",
+          "targetColumn": "FieldLevel"
+        },
+        {
+          "sourceField": "LITERAL(person.customFieldGroup.indicatorFields)=indicator",
+          "targetColumn": "FieldCategory"
+        },
+        {
+          "sourceField": "LITERAL(person.customFieldGroup.indicatorFields)=",
+          "targetColumn": "AssignmentId"
+        },
+        {
+          "sourceField": "workAssignments.customFieldGroup.codeFields.itemID",
+          "targetColumn": "ItemId"
+        },
+        {
+          "sourceField": "workAssignments.customFieldGroup.codeFields.nameCode.codeValue",
+          "targetColumn": "FieldNameCode"
+        },
+        {
+          "sourceField": "workAssignments.customFieldGroup.codeFields.nameCode.shortName",
+          "targetColumn": "FieldNameShortDescription"
+        },
+        {
+          "sourceField": "workAssignments.customFieldGroup.codeFields.nameCode.longName",
+          "targetColumn": "FieldNameLongDescription"
+        },
+        {
+          "sourceField": "workAssignments.customFieldGroup.codeFields.codeValue",
+          "targetColumn": "FieldValue"
+        },
+        {
+          "sourceField": "workAssignments.customFieldGroup.codeFields.shortName",
+          "targetColumn": "FieldValueShortLabel"
+        },
+        {
+          "sourceField": "LITERAL(workAssignments.customFieldGroup.codeFields)=WorkAssignment",
+          "targetColumn": "FieldLevel"
+        },
+        {
+          "sourceField": "LITERAL(workAssignments.customFieldGroup.codeFields)=code",
+          "targetColumn": "FieldCategory"
+        },
+        {
+          "sourceField": "workAssignments.itemID",
+          "targetColumn": "AssignmentId"
+        },
+        {
+          "sourceField": "workAssignments.customFieldGroup.dateFields.itemID",
+          "targetColumn": "ItemId"
+        },
+        {
+          "sourceField": "workAssignments.customFieldGroup.dateFields.nameCode.codeValue",
+          "targetColumn": "FieldNameCode"
+        },
+        {
+          "sourceField": "workAssignments.customFieldGroup.dateFields.nameCode.shortName",
+          "targetColumn": "FieldNameShortDescription"
+        },
+        {
+          "sourceField": "workAssignments.customFieldGroup.dateFields.nameCode.longName",
+          "targetColumn": "FieldNameLongDescription"
+        },
+        {
+          "sourceField": "workAssignments.customFieldGroup.dateFields.dateValue",
+          "targetColumn": "FieldValue"
+        },
+        {
+          "sourceField": "LITERAL(workAssignments.customFieldGroup.dateFields)=",
+          "targetColumn": "FieldValueShortLabel"
+        },
+        {
+          "sourceField": "LITERAL(workAssignments.customFieldGroup.dateFields)=WorkAssignment",
+          "targetColumn": "FieldLevel"
+        },
+        {
+          "sourceField": "LITERAL(workAssignments.customFieldGroup.dateFields)=date",
+          "targetColumn": "FieldCategory"
+        },
+        {
+          "sourceField": "workAssignments.customFieldGroup.numberFields.itemID",
+          "targetColumn": "ItemId"
+        },
+        {
+          "sourceField": "workAssignments.customFieldGroup.numberFields.nameCode.codeValue",
+          "targetColumn": "FieldNameCode"
+        },
+        {
+          "sourceField": "workAssignments.customFieldGroup.numberFields.nameCode.shortName",
+          "targetColumn": "FieldNameShortDescription"
+        },
+        {
+          "sourceField": "workAssignments.customFieldGroup.numberFields.nameCode.longName",
+          "targetColumn": "FieldNameLongDescription"
+        },
+        {
+          "sourceField": "workAssignments.customFieldGroup.numberFields.numberValue",
+          "targetColumn": "FieldValue"
+        },
+        {
+          "sourceField": "LITERAL(workAssignments.customFieldGroup.numberFields)=",
+          "targetColumn": "FieldValueShortLabel"
+        },
+        {
+          "sourceField": "LITERAL(workAssignments.customFieldGroup.numberFields)=WorkAssignment",
+          "targetColumn": "FieldLevel"
+        },
+        {
+          "sourceField": "LITERAL(workAssignments.customFieldGroup.numberFields)=number",
+          "targetColumn": "FieldCategory"
+        },
+        {
+          "sourceField": "workAssignments.customFieldGroup.stringFields.itemID",
+          "targetColumn": "ItemId"
+        },
+        {
+          "sourceField": "workAssignments.customFieldGroup.stringFields.nameCode.codeValue",
+          "targetColumn": "FieldNameCode"
+        },
+        {
+          "sourceField": "workAssignments.customFieldGroup.stringFields.nameCode.shortName",
+          "targetColumn": "FieldNameShortDescription"
+        },
+        {
+          "sourceField": "workAssignments.customFieldGroup.stringFields.nameCode.longName",
+          "targetColumn": "FieldNameLongDescription"
+        },
+        {
+          "sourceField": "workAssignments.customFieldGroup.stringFields.stringValue",
+          "targetColumn": "FieldValue"
+        },
+        {
+          "sourceField": "LITERAL(workAssignments.customFieldGroup.stringFields)=",
+          "targetColumn": "FieldValueShortLabel"
+        },
+        {
+          "sourceField": "LITERAL(workAssignments.customFieldGroup.stringFields)=WorkAssignment",
+          "targetColumn": "FieldLevel"
+        },
+        {
+          "sourceField": "LITERAL(workAssignments.customFieldGroup.stringFields)=string",
+          "targetColumn": "FieldCategory"
+        },
+        {
+          "sourceField": "workAssignments.customFieldGroup.indicatorFields.itemID",
+          "targetColumn": "ItemId"
+        },
+        {
+          "sourceField": "workAssignments.customFieldGroup.indicatorFields.nameCode.codeValue",
+          "targetColumn": "FieldNameCode"
+        },
+        {
+          "sourceField": "workAssignments.customFieldGroup.indicatorFields.nameCode.shortName",
+          "targetColumn": "FieldNameShortDescription"
+        },
+        {
+          "sourceField": "workAssignments.customFieldGroup.indicatorFields.nameCode.longName",
+          "targetColumn": "FieldNameLongDescription"
+        },
+        {
+          "sourceField": "workAssignments.customFieldGroup.indicatorFields.indicatorValue",
+          "targetColumn": "FieldValue"
+        },
+        {
+          "sourceField": "LITERAL(workAssignments.customFieldGroup.indicatorFields)=",
+          "targetColumn": "FieldValueShortLabel"
+        },
+        {
+          "sourceField": "LITERAL(workAssignments.customFieldGroup.indicatorFields)=WorkAssignment",
+          "targetColumn": "FieldLevel"
+        },
+        {
+          "sourceField": "LITERAL(workAssignments.customFieldGroup.indicatorFields)=indicator",
+          "targetColumn": "FieldCategory"
+        }
+      ],
+      "primaryKeyColumns": [
+        "AssociateOid",
+        "FieldLevel",
+        "AssignmentId",
+        "FieldCategory",
+        "ItemId"
+      ],
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true,
+          "sourceFilePattern": "workers_full*.json",
+          "latestDataConfig": {
+            "isEnabled": false,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/HR/ADP/workers"
+        },
+        "incrementalLoad": {
+          "isEnabled": true,
+          "sourceFilePattern": "worker*.json",
+          "latestDataConfig": {
+            "isEnabled": true,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Events_Shortcut/HR/ADP/Events",
+          "eventPayloadRoot": "worker"
+        }
+      }
+    },
+    {
+      "entityName": "worker_assignment",
+      "columnMappings": [
+        {
+          "sourceField": "associateOID",
+          "targetColumn": "AssociateOid"
+        },
+        {
+          "sourceField": "workAssignments.itemID",
+          "targetColumn": "AssignmentId"
+        },
+        {
+          "sourceField": "workAssignments.positionID",
+          "targetColumn": "PositionId"
+        },
+        {
+          "sourceField": "workAssignments.jobTitle",
+          "targetColumn": "JobTitle"
+        },
+        {
+          "sourceField": "workAssignments.jobCode.codeValue",
+          "targetColumn": "JobCode"
+        },
+        {
+          "sourceField": "workAssignments.jobCode.shortName",
+          "targetColumn": "JobCodeShortDescription"
+        },
+        {
+          "sourceField": "workAssignments.jobCode.longName",
+          "targetColumn": "JobCodeDescription"
+        },
+        {
+          "sourceField": "workAssignments.jobFunctionCode.codeValue",
+          "targetColumn": "JobFunctionCode"
+        },
+        {
+          "sourceField": "workAssignments.jobFunctionCode.shortName",
+          "targetColumn": "JobFunctionDescription"
+        },
+        {
+          "sourceField": "workAssignments.positionTitle",
+          "targetColumn": "PositionTitle"
+        },
+        {
+          "sourceField": "workAssignments.workerTypeCode.codeValue",
+          "targetColumn": "WorkerTypeCode"
+        },
+        {
+          "sourceField": "workAssignments.workerTypeCode.shortName",
+          "targetColumn": "WorkerTypeDescription"
+        },
+        {
+          "sourceField": "workAssignments.assignmentTermCode.codeValue",
+          "targetColumn": "AssignmentTermCode"
+        },
+        {
+          "sourceField": "workAssignments.assignmentTermCode.longName",
+          "targetColumn": "AssignmentTermDescription"
+        },
+        {
+          "sourceField": "workAssignments.workLevelCode.codeValue",
+          "targetColumn": "WorkLevelCode"
+        },
+        {
+          "sourceField": "workAssignments.workLevelCode.longName",
+          "targetColumn": "WorkLevelDescription"
+        },
+        {
+          "sourceField": "workAssignments.officerTypeCode.codeValue",
+          "targetColumn": "OfficerTypeCode"
+        },
+        {
+          "sourceField": "workAssignments.legalEntityID",
+          "targetColumn": "LegalEntityId"
+        },
+        {
+          "sourceField": "workAssignments.stockOwnerIndicator",
+          "targetColumn": "IsStockOwner5PctOrMore"
+        },
+        {
+          "sourceField": "workAssignments.primaryIndicator",
+          "targetColumn": "IsPrimaryAssignment"
+        },
+        {
+          "sourceField": "workAssignments.hireDate",
+          "targetColumn": "HireDate"
+        },
+        {
+          "sourceField": "workAssignments.actualStartDate",
+          "targetColumn": "ActualStartDate"
+        },
+        {
+          "sourceField": "workAssignments.seniorityDate",
+          "targetColumn": "SeniorityDate"
+        },
+        {
+          "sourceField": "workAssignments.assignmentRehireDate",
+          "targetColumn": "AssignmentRehireDate"
+        },
+        {
+          "sourceField": "workAssignments.assignmentServiceDate",
+          "targetColumn": "AssignmentServiceDate"
+        },
+        {
+          "sourceField": "workAssignments.terminationDate",
+          "targetColumn": "TerminationDate"
+        },
+        {
+          "sourceField": "workAssignments.rehireEligibleIndicator",
+          "targetColumn": "IsRehireEligible"
+        },
+        {
+          "sourceField": "workAssignments.voluntaryIndicator",
+          "targetColumn": "IsVoluntaryTermination"
+        },
+        {
+          "sourceField": "workAssignments.assignmentStatus.statusCode.codeValue",
+          "targetColumn": "AssignmentStatusCode"
+        },
+        {
+          "sourceField": "workAssignments.assignmentStatus.statusCode.shortName",
+          "targetColumn": "AssignmentStatusDescription"
+        },
+        {
+          "sourceField": "workAssignments.assignmentStatus.reasonCode.codeValue",
+          "targetColumn": "AssignmentStatusReasonCode"
+        },
+        {
+          "sourceField": "workAssignments.assignmentStatus.reasonCode.shortName",
+          "targetColumn": "AssignmentStatusReasonDescription"
+        },
+        {
+          "sourceField": "workAssignments.assignmentStatus.reasonCode.longName",
+          "targetColumn": "AssignmentStatusReasonLongDescription"
+        },
+        {
+          "sourceField": "workAssignments.assignmentStatus.effectiveDate",
+          "targetColumn": "AssignmentStatusEffectiveDate"
+        },
+        {
+          "sourceField": "workAssignments.managementPositionIndicator",
+          "targetColumn": "IsManagementPosition"
+        },
+        {
+          "sourceField": "workAssignments.overtimeEligibilityIndicator",
+          "targetColumn": "IsOvertimeEligible"
+        },
+        {
+          "sourceField": "workAssignments.workerTimeProfile.timeAndAttendanceIndicator",
+          "targetColumn": "IsTimeAndAttendanceTracked"
+        },
+        {
+          "sourceField": "workAssignments.lastChangeEvent.changeEventDate",
+          "targetColumn": "LastActionDate"
+        },
+        {
+          "sourceField": "workAssignments.lastChangeEvent.eventNameCode.codeValue",
+          "targetColumn": "LastActionCode"
+        },
+        {
+          "sourceField": "workAssignments.lastChangeEvent.eventNameCode.longName",
+          "targetColumn": "LastActionDescription"
+        },
+        {
+          "sourceField": "workAssignments.lastChangeEvent.eventReasonCode.codeValue",
+          "targetColumn": "LastActionReasonCode"
+        },
+        {
+          "sourceField": "workAssignments.lastChangeEvent.eventReasonCode.longName",
+          "targetColumn": "LastActionReasonDescription"
+        },
+        {
+          "sourceField": "workAssignments.remunerationBasisCode.codeValue",
+          "targetColumn": "RemunerationBasisCode"
+        },
+        {
+          "sourceField": "workAssignments.remunerationBasisCode.longName",
+          "targetColumn": "RemunerationBasisDescription"
+        },
+        {
+          "sourceField": "workAssignments.payCycleCode.codeValue",
+          "targetColumn": "PayCycleCode"
+        },
+        {
+          "sourceField": "workAssignments.payCycleCode.shortName",
+          "targetColumn": "PayCycleName"
+        },
+        {
+          "sourceField": "workAssignments.standardPayPeriodHours.hoursQuantity",
+          "targetColumn": "StandardPayPeriodHours"
+        },
+        {
+          "sourceField": "workAssignments.payScaleCode.codeValue",
+          "targetColumn": "PayScaleCode"
+        },
+        {
+          "sourceField": "workAssignments.payGradeCode.codeValue",
+          "targetColumn": "PayGradeCode"
+        },
+        {
+          "sourceField": "workAssignments.payGradeStepCode.codeValue",
+          "targetColumn": "PayGradeStepCode"
+        },
+        {
+          "sourceField": "workAssignments.nextPayGradeStepDate",
+          "targetColumn": "NextPayGradeStepDate"
+        },
+        {
+          "sourceField": "workAssignments.payGradePayRange.minimumRate.amountValue",
+          "targetColumn": "PayGradeMinRate"
+        },
+        {
+          "sourceField": "workAssignments.payGradePayRange.medianRate.amountValue",
+          "targetColumn": "PayGradeMedianRate"
+        },
+        {
+          "sourceField": "workAssignments.payGradePayRange.maximumRate.amountValue",
+          "targetColumn": "PayGradeMaxRate"
+        },
+        {
+          "sourceField": "workAssignments.compaRatio",
+          "targetColumn": "CompaRatio"
+        },
+        {
+          "sourceField": "workAssignments.geographicPayDifferentialCode.codeValue",
+          "targetColumn": "GeographicPayDifferentialCode"
+        },
+        {
+          "sourceField": "workAssignments.geographicPayDifferentialPercentage",
+          "targetColumn": "GeographicPayDifferentialPct"
+        },
+        {
+          "sourceField": "workAssignments.payrollGroupCode",
+          "targetColumn": "PayrollGroupCode"
+        },
+        {
+          "sourceField": "workAssignments.payrollFileNumber",
+          "targetColumn": "PayrollFileNumber"
+        },
+        {
+          "sourceField": "workAssignments.payrollRegionCode",
+          "targetColumn": "PayrollRegionCode"
+        },
+        {
+          "sourceField": "workAssignments.payrollScheduleGroupID",
+          "targetColumn": "PayrollScheduleGroupId"
+        },
+        {
+          "sourceField": "workAssignments.payrollProcessingStatusCode.codeValue",
+          "targetColumn": "PayrollProcessingStatusCode"
+        },
+        {
+          "sourceField": "workAssignments.payrollProcessingStatusCode.longName",
+          "targetColumn": "PayrollProcessingStatusDescription"
+        },
+        {
+          "sourceField": "workAssignments.annualBenefitBaseRate.amountValue",
+          "targetColumn": "AnnualBenefitBaseRate"
+        },
+        {
+          "sourceField": "workAssignments.standardHours.hoursQuantity",
+          "targetColumn": "StandardHours"
+        },
+        {
+          "sourceField": "workAssignments.standardHours.unitCode.codeValue",
+          "targetColumn": "StandardHoursUnit"
+        },
+        {
+          "sourceField": "workAssignments.fullTimeEquivalenceRatio",
+          "targetColumn": "FullTimeEquivalenceRatio"
+        },
+        {
+          "sourceField": "workAssignments.workShiftCode.codeValue",
+          "targetColumn": "WorkShiftCode"
+        },
+        {
+          "sourceField": "workAssignments.laborUnion.laborUnionCode.codeValue",
+          "targetColumn": "LaborUnionCode"
+        },
+        {
+          "sourceField": "workAssignments.laborUnion.seniorityDate",
+          "targetColumn": "LaborUnionSeniorityDate"
+        },
+        {
+          "sourceField": "workAssignments.bargainingUnit.bargainingUnitCode.codeValue",
+          "targetColumn": "BargainingUnitCode"
+        },
+        {
+          "sourceField": "workAssignments.bargainingUnit.bargainingUnitCode.longName",
+          "targetColumn": "BargainingUnitDescription"
+        },
+        {
+          "sourceField": "workAssignments.bargainingUnit.seniorityDate",
+          "targetColumn": "BargainingUnitSeniorityDate"
+        },
+        {
+          "sourceField": "workAssignments.wageLawCoverage.coverageCode.codeValue",
+          "targetColumn": "WageLawCoverageCode"
+        },
+        {
+          "sourceField": "workAssignments.wageLawCoverage.wageLawNameCode.codeValue",
+          "targetColumn": "WageLawNameCode"
+        },
+        {
+          "sourceField": "workAssignments.baseRemuneration.recordingBasisCode.codeValue",
+          "targetColumn": "PayFrequencyCode"
+        },
+        {
+          "sourceField": "workAssignments.baseRemuneration.hourlyRateAmount.amountValue",
+          "targetColumn": "HourlyRateAmount"
+        },
+        {
+          "sourceField": "workAssignments.baseRemuneration.dailyRateAmount.amountValue",
+          "targetColumn": "DailyRateAmount"
+        },
+        {
+          "sourceField": "workAssignments.baseRemuneration.weeklyRateAmount.amountValue",
+          "targetColumn": "WeeklyRateAmount"
+        },
+        {
+          "sourceField": "workAssignments.baseRemuneration.biweeklyRateAmount.amountValue",
+          "targetColumn": "BiweeklyRateAmount"
+        },
+        {
+          "sourceField": "workAssignments.baseRemuneration.semiMonthlyRateAmount.amountValue",
+          "targetColumn": "SemiMonthlyRateAmount"
+        },
+        {
+          "sourceField": "workAssignments.baseRemuneration.monthlyRateAmount.amountValue",
+          "targetColumn": "MonthlyRateAmount"
+        },
+        {
+          "sourceField": "workAssignments.baseRemuneration.annualRateAmount.amountValue",
+          "targetColumn": "AnnualRateAmount"
+        },
+        {
+          "sourceField": "workAssignments.baseRemuneration.payPeriodRateAmount.nameCode.codeValue",
+          "targetColumn": "PayPeriodRateTypeCode"
+        },
+        {
+          "sourceField": "workAssignments.baseRemuneration.payPeriodRateAmount.amountValue",
+          "targetColumn": "PayPeriodRateAmount"
+        },
+        {
+          "sourceField": "workAssignments.baseRemuneration.annualRateAmount.currencyCode",
+          "targetColumn": "RateCurrency"
+        },
+        {
+          "sourceField": "workAssignments.baseRemuneration.effectiveDate",
+          "targetColumn": "RemunerationEffectiveDate"
+        },
+        {
+          "sourceField": "workAssignments.homeWorkLocation.nameCode.codeValue",
+          "targetColumn": "WorkLocationCode"
+        },
+        {
+          "sourceField": "workAssignments.homeWorkLocation.nameCode.shortName",
+          "targetColumn": "WorkLocationName"
+        },
+        {
+          "sourceField": "workAssignments.homeWorkLocation.nameCode.longName",
+          "targetColumn": "WorkLocationLongName"
+        },
+        {
+          "sourceField": "workAssignments.homeWorkLocation.address.lineOne",
+          "targetColumn": "WorkLocationAddressLine1"
+        },
+        {
+          "sourceField": "workAssignments.homeWorkLocation.address.cityName",
+          "targetColumn": "WorkLocationCity"
+        },
+        {
+          "sourceField": "workAssignments.homeWorkLocation.address.countrySubdivisionLevel1.codeValue",
+          "targetColumn": "WorkLocationStateCode"
+        },
+        {
+          "sourceField": "workAssignments.homeWorkLocation.address.countryCode",
+          "targetColumn": "WorkLocationCountryCode"
+        },
+        {
+          "sourceField": "workAssignments.homeWorkLocation.address.postalCode",
+          "targetColumn": "WorkLocationPostalCode"
+        },
+        {
+          "sourceField": "workAssignments.reportsTo.associateOID",
+          "targetColumn": "ReportingAssociateOid"
+        },
+        {
+          "sourceField": "workAssignments.reportsTo.positionID",
+          "targetColumn": "ReportingPositionId"
+        },
+        {
+          "sourceField": "workAssignments.reportsTo.workerID.idValue",
+          "targetColumn": "ReportingWorkerId"
+        },
+        {
+          "sourceField": "workAssignments.reportsTo.reportsToWorkerName.formattedName",
+          "targetColumn": "ReportingName"
+        }
+      ],
+      "primaryKeyColumns": [
+        "AssociateOid",
+        "AssignmentId",
+        "ReportingAssociateOid"
+      ],
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true,
+          "sourceFilePattern": "workers_full*.json",
+          "latestDataConfig": {
+            "isEnabled": false,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/HR/ADP/workers"
+        },
+        "incrementalLoad": {
+          "isEnabled": true,
+          "sourceFilePattern": "worker-work-assignment*.json",
+          "latestDataConfig": {
+            "isEnabled": true,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Events_Shortcut/HR/ADP/Events",
+          "eventPayloadRoot": "worker"
+        }
+      }
+    },
+    {
+      "entityName": "worker_assignment_org_unit",
+      "columnMappings": [
+        {
+          "sourceField": "associateOID",
+          "targetColumn": "AssociateOid"
+        },
+        {
+          "sourceField": "workAssignments.itemID",
+          "targetColumn": "AssignmentId"
+        },
+        {
+          "sourceField": "workAssignments.homeOrganizationalUnits.typeCode.codeValue",
+          "targetColumn": "OrgUnitTypeCode"
+        },
+        {
+          "sourceField": "workAssignments.homeOrganizationalUnits.typeCode.shortName",
+          "targetColumn": "OrgUnitTypeDescription"
+        },
+        {
+          "sourceField": "workAssignments.homeOrganizationalUnits.nameCode.codeValue",
+          "targetColumn": "OrgUnitCode"
+        },
+        {
+          "sourceField": "workAssignments.homeOrganizationalUnits.nameCode.shortName",
+          "targetColumn": "OrgUnitName"
+        },
+        {
+          "sourceField": "workAssignments.homeOrganizationalUnits.nameCode.longName",
+          "targetColumn": "OrgUnitLongName"
+        },
+        {
+          "sourceField": "LITERAL(workAssignments.homeOrganizationalUnits)=Home",
+          "targetColumn": "OrgUnitScope"
+        },
+        {
+          "sourceField": "workAssignments.assignedOrganizationalUnits.typeCode.codeValue",
+          "targetColumn": "OrgUnitTypeCode"
+        },
+        {
+          "sourceField": "workAssignments.assignedOrganizationalUnits.typeCode.shortName",
+          "targetColumn": "OrgUnitTypeDescription"
+        },
+        {
+          "sourceField": "workAssignments.assignedOrganizationalUnits.nameCode.codeValue",
+          "targetColumn": "OrgUnitCode"
+        },
+        {
+          "sourceField": "workAssignments.assignedOrganizationalUnits.nameCode.shortName",
+          "targetColumn": "OrgUnitName"
+        },
+        {
+          "sourceField": "workAssignments.assignedOrganizationalUnits.nameCode.longName",
+          "targetColumn": "OrgUnitLongName"
+        },
+        {
+          "sourceField": "LITERAL(workAssignments.assignedOrganizationalUnits)=Assigned",
+          "targetColumn": "OrgUnitScope"
+        }
+      ],
+      "primaryKeyColumns": [
+        "AssociateOid",
+        "AssignmentId",
+        "OrgUnitScope",
+        "OrgUnitTypeCode"
+      ],
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true,
+          "sourceFilePattern": "workers_full*.json",
+          "latestDataConfig": {
+            "isEnabled": false,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/HR/ADP/workers"
+        },
+        "incrementalLoad": {
+          "isEnabled": true,
+          "sourceFilePattern": "worker*.json",
+          "latestDataConfig": {
+            "isEnabled": true,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Events_Shortcut/HR/ADP/Events",
+          "eventPayloadRoot": "worker"
+        }
+      }
+    },
+    {
+      "entityName": "worker_assignment_classification",
+      "columnMappings": [
+        {
+          "sourceField": "associateOID",
+          "targetColumn": "AssociateOid"
+        },
+        {
+          "sourceField": "workAssignments.itemID",
+          "targetColumn": "AssignmentId"
+        },
+        {
+          "sourceField": "workAssignments.industryClassifications.classificationCode.codeValue",
+          "targetColumn": "ClassificationCode"
+        },
+        {
+          "sourceField": "workAssignments.industryClassifications.classificationCode.shortName",
+          "targetColumn": "ClassificationDescription"
+        },
+        {
+          "sourceField": "workAssignments.industryClassifications.classificationCode.longName",
+          "targetColumn": "ClassificationLongDescription"
+        },
+        {
+          "sourceField": "workAssignments.industryClassifications.nameCode.codeValue",
+          "targetColumn": "ClassificationSystemCode"
+        },
+        {
+          "sourceField": "LITERAL(workAssignments.industryClassifications)=Industry",
+          "targetColumn": "ClassificationScope"
+        },
+        {
+          "sourceField": "workAssignments.occupationalClassifications.classificationCode.codeValue",
+          "targetColumn": "ClassificationCode"
+        },
+        {
+          "sourceField": "workAssignments.occupationalClassifications.classificationCode.shortName",
+          "targetColumn": "ClassificationDescription"
+        },
+        {
+          "sourceField": "workAssignments.occupationalClassifications.classificationCode.longName",
+          "targetColumn": "ClassificationLongDescription"
+        },
+        {
+          "sourceField": "workAssignments.occupationalClassifications.nameCode.codeValue",
+          "targetColumn": "ClassificationSystemCode"
+        },
+        {
+          "sourceField": "LITERAL(workAssignments.occupationalClassifications)=Occupational",
+          "targetColumn": "ClassificationScope"
+        }
+      ],
+      "primaryKeyColumns": [
+        "AssociateOid",
+        "AssignmentId",
+        "ClassificationScope",
+        "ClassificationCode"
+      ],
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true,
+          "sourceFilePattern": "workers_full*.json",
+          "latestDataConfig": {
+            "isEnabled": false,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/HR/ADP/workers"
+        },
+        "incrementalLoad": {
+          "isEnabled": true,
+          "sourceFilePattern": "worker*.json",
+          "latestDataConfig": {
+            "isEnabled": true,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Events_Shortcut/HR/ADP/Events",
+          "eventPayloadRoot": "worker"
+        }
+      }
+    },
+    {
+      "entityName": "worker_assignment_group",
+      "columnMappings": [
+        {
+          "sourceField": "associateOID",
+          "targetColumn": "AssociateOid"
+        },
+        {
+          "sourceField": "workAssignments.itemID",
+          "targetColumn": "AssignmentId"
+        },
+        {
+          "sourceField": "workAssignments.workerGroups.groupCode.codeValue",
+          "targetColumn": "GroupCode"
+        },
+        {
+          "sourceField": "workAssignments.workerGroups.nameCode.codeValue",
+          "targetColumn": "GroupNameCode"
+        },
+        {
+          "sourceField": "workAssignments.workerGroups.nameCode.longName",
+          "targetColumn": "GroupNameDescription"
+        }
+      ],
+      "primaryKeyColumns": [
+        "AssociateOid",
+        "AssignmentId",
+        "GroupCode"
+      ],
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true,
+          "sourceFilePattern": "workers_full*.json",
+          "latestDataConfig": {
+            "isEnabled": false,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/HR/ADP/workers"
+        },
+        "incrementalLoad": {
+          "isEnabled": true,
+          "sourceFilePattern": "worker*.json",
+          "latestDataConfig": {
+            "isEnabled": true,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Events_Shortcut/HR/ADP/Events",
+          "eventPayloadRoot": "worker"
+        }
+      }
+    },
+    {
+      "entityName": "worker_assignment_location",
+      "columnMappings": [
+        {
+          "sourceField": "associateOID",
+          "targetColumn": "AssociateOid"
+        },
+        {
+          "sourceField": "workAssignments.itemID",
+          "targetColumn": "AssignmentId"
+        },
+        {
+          "sourceField": "workAssignments.assignedWorkLocations.address.nameCode.codeValue",
+          "targetColumn": "LocationId"
+        },
+        {
+          "sourceField": "workAssignments.assignedWorkLocations.address.nameCode.longName",
+          "targetColumn": "LocationName"
+        },
+        {
+          "sourceField": "workAssignments.assignedWorkLocations.address.lineOne",
+          "targetColumn": "AddressLine1"
+        },
+        {
+          "sourceField": "workAssignments.assignedWorkLocations.address.lineTwo",
+          "targetColumn": "AddressLine2"
+        },
+        {
+          "sourceField": "workAssignments.assignedWorkLocations.address.cityName",
+          "targetColumn": "City"
+        },
+        {
+          "sourceField": "workAssignments.assignedWorkLocations.address.countrySubdivisionLevel1.codeValue",
+          "targetColumn": "StateCode"
+        },
+        {
+          "sourceField": "workAssignments.assignedWorkLocations.address.countryCode",
+          "targetColumn": "CountryCode"
+        },
+        {
+          "sourceField": "workAssignments.assignedWorkLocations.address.postalCode",
+          "targetColumn": "PostalCode"
+        }
+      ],
+      "primaryKeyColumns": [
+        "AssociateOid",
+        "AssignmentId",
+        "LocationId"
+      ],
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true,
+          "sourceFilePattern": "workers_full*.json",
+          "latestDataConfig": {
+            "isEnabled": false,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/HR/ADP/workers"
+        },
+        "incrementalLoad": {
+          "isEnabled": true,
+          "sourceFilePattern": "worker*.json",
+          "latestDataConfig": {
+            "isEnabled": true,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Events_Shortcut/HR/ADP/Events",
+          "eventPayloadRoot": "worker"
+        }
+      }
+    },
+    {
+      "entityName": "worker_assignment_additional_pay",
+      "columnMappings": [
+        {
+          "sourceField": "associateOID",
+          "targetColumn": "AssociateOid"
+        },
+        {
+          "sourceField": "workAssignments.itemID",
+          "targetColumn": "AssignmentId"
+        },
+        {
+          "sourceField": "workAssignments.additionalRemunerations.itemID",
+          "targetColumn": "RemunerationItemId"
+        },
+        {
+          "sourceField": "workAssignments.additionalRemunerations.typeCode.codeValue",
+          "targetColumn": "RemunerationTypeCode"
+        },
+        {
+          "sourceField": "workAssignments.additionalRemunerations.typeCode.longName",
+          "targetColumn": "RemunerationTypeDescription"
+        },
+        {
+          "sourceField": "workAssignments.additionalRemunerations.rate.amountValue",
+          "targetColumn": "RateAmount"
+        },
+        {
+          "sourceField": "workAssignments.additionalRemunerations.rate.currencyCode",
+          "targetColumn": "RateCurrency"
+        },
+        {
+          "sourceField": "workAssignments.additionalRemunerations.rate.unitCode.codeValue",
+          "targetColumn": "RateUnitCode"
+        },
+        {
+          "sourceField": "workAssignments.additionalRemunerations.rate.baseUnitCode.codeValue",
+          "targetColumn": "RateBaseUnitCode"
+        }
+      ],
+      "primaryKeyColumns": [
+        "AssociateOid",
+        "AssignmentId",
+        "RemunerationItemId"
+      ],
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true,
+          "sourceFilePattern": "workers_full*.json",
+          "latestDataConfig": {
+            "isEnabled": false,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/HR/ADP/workers"
+        },
+        "incrementalLoad": {
+          "isEnabled": true,
+          "sourceFilePattern": "worker-work-assignment-additional-remuneration*.json",
+          "latestDataConfig": {
+            "isEnabled": true,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Events_Shortcut/HR/ADP/Events",
+          "eventPayloadRoot": "worker"
+        }
+      }
+    },
+    {
+      "entityName": "job_requisition",
+      "columnMappings": [
+        {
+          "sourceField": "itemID",
+          "targetColumn": "RequisitionId"
+        },
+        {
+          "sourceField": "clientRequisitionID",
+          "targetColumn": "ClientRequisitionId"
+        },
+        {
+          "sourceField": "companyName",
+          "targetColumn": "CompanyName"
+        },
+        {
+          "sourceField": "job.jobTitle",
+          "targetColumn": "JobTitle"
+        },
+        {
+          "sourceField": "job.jobCode.codeValue",
+          "targetColumn": "JobCode"
+        },
+        {
+          "sourceField": "job.jobCode.shortName",
+          "targetColumn": "JobCodeShortDescription"
+        },
+        {
+          "sourceField": "job.jobCode.longName",
+          "targetColumn": "JobCodeDescription"
+        },
+        {
+          "sourceField": "workerTypeCode.codeValue",
+          "targetColumn": "WorkerTypeCode"
+        },
+        {
+          "sourceField": "workerTypeCode.shortName",
+          "targetColumn": "WorkerTypeDescription"
+        },
+        {
+          "sourceField": "requisitionStatusCode.codeValue",
+          "targetColumn": "RequisitionStatusCode"
+        },
+        {
+          "sourceField": "requisitionStatusCode.shortName",
+          "targetColumn": "RequisitionStatusDescription"
+        },
+        {
+          "sourceField": "requisitionStatusCode.effectiveDate",
+          "targetColumn": "RequisitionStatusEffectiveDate"
+        },
+        {
+          "sourceField": "requisitionReasonCode.codeValue",
+          "targetColumn": "RequisitionReasonCode"
+        },
+        {
+          "sourceField": "requisitionReasonCode.shortName",
+          "targetColumn": "RequisitionReasonShortDescription"
+        },
+        {
+          "sourceField": "requisitionReasonCode.longName",
+          "targetColumn": "RequisitionReasonDescription"
+        },
+        {
+          "sourceField": "openingsQuantity",
+          "targetColumn": "OpeningsQuantity"
+        },
+        {
+          "sourceField": "openingsFilledQuantity",
+          "targetColumn": "OpeningsFilledQuantity"
+        },
+        {
+          "sourceField": "openingsNewPositionQuantity",
+          "targetColumn": "OpeningsNewPositionQuantity"
+        },
+        {
+          "sourceField": "projectedStartDate",
+          "targetColumn": "ProjectedStartDate"
+        },
+        {
+          "sourceField": "evergreenIndicator",
+          "targetColumn": "IsEvergreen"
+        },
+        {
+          "sourceField": "externalIndicator",
+          "targetColumn": "IsExternal"
+        },
+        {
+          "sourceField": "internalIndicator",
+          "targetColumn": "IsInternal"
+        },
+        {
+          "sourceField": "compensationVisibleIndicator",
+          "targetColumn": "IsCompensationVisible"
+        },
+        {
+          "sourceField": "locationVisibleIndicator",
+          "targetColumn": "IsLocationVisible"
+        },
+        {
+          "sourceField": "visibleToJobSeekerIndicator",
+          "targetColumn": "IsVisibleToJobSeeker"
+        },
+        {
+          "sourceField": "lieDetectorAcknowledgementIndicator",
+          "targetColumn": "IsLieDetectorAckRequired"
+        },
+        {
+          "sourceField": "workedInCountry",
+          "targetColumn": "WorkedInCountry"
+        },
+        {
+          "sourceField": "payGradeRange.minimumRate.amountValue",
+          "targetColumn": "PayRangeMinRate"
+        },
+        {
+          "sourceField": "payGradeRange.minimumRate.currencyCode",
+          "targetColumn": "PayRangeCurrency"
+        },
+        {
+          "sourceField": "payGradeRange.minimumRate.unitCode.codeValue",
+          "targetColumn": "PayRangeUnitCode"
+        },
+        {
+          "sourceField": "payGradeRange.minimumRate.unitCode.shortName",
+          "targetColumn": "PayRangeUnitDescription"
+        },
+        {
+          "sourceField": "payGradeRange.maximumRate.amountValue",
+          "targetColumn": "PayRangeMaxRate"
+        },
+        {
+          "sourceField": "payGradeRange.maximumRate.currencyCode",
+          "targetColumn": "PayRangeMaxRateCurrency"
+        },
+        {
+          "sourceField": "hiringManager.associateOID",
+          "targetColumn": "HiringManagerAssociateOid"
+        },
+        {
+          "sourceField": "hiringManager.workerID.idValue",
+          "targetColumn": "HiringManagerWorkerId"
+        },
+        {
+          "sourceField": "hiringManager.personName.givenName",
+          "targetColumn": "HiringManagerFirstName"
+        },
+        {
+          "sourceField": "hiringManager.personName.familyName1",
+          "targetColumn": "HiringManagerLastName"
+        },
+        {
+          "sourceField": "hiringManager.personName.formattedName",
+          "targetColumn": "HiringManagerName"
+        },
+        {
+          "sourceField": "_run_id",
+          "targetColumn": "SourceRunId"
+        },
+        {
+          "sourceField": "_extracted_at",
+          "targetColumn": "SourceExtractedAt"
+        }
+      ],
+      "primaryKeyColumns": [
+        "RequisitionId"
+      ],
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true,
+          "sourceFilePattern": "job-requisitions_full*.json",
+          "latestDataConfig": {
+            "isEnabled": false,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/HR/ADP/job-requisitions"
+        },
+        "incrementalLoad": {
+          "isEnabled": true,
+          "sourceFilePattern": "job-requisitions_full*.json",
+          "latestDataConfig": {
+            "isEnabled": true,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/HR/ADP/job-requisitions"
+        }
+      }
+    },
+    {
+      "entityName": "job_requisition_classification",
+      "columnMappings": [
+        {
+          "sourceField": "itemID",
+          "targetColumn": "RequisitionId"
+        },
+        {
+          "sourceField": "job.occupationalClassifications.nameCode.codeValue",
+          "targetColumn": "ClassificationSystemCode"
+        },
+        {
+          "sourceField": "job.occupationalClassifications.classificationCode.codeValue",
+          "targetColumn": "ClassificationCode"
+        },
+        {
+          "sourceField": "job.occupationalClassifications.classificationCode.shortName",
+          "targetColumn": "ClassificationDescription"
+        },
+        {
+          "sourceField": "job.occupationalClassifications.classificationCode.longName",
+          "targetColumn": "ClassificationLongDescription"
+        }
+      ],
+      "primaryKeyColumns": [
+        "RequisitionId",
+        "ClassificationCode"
+      ],
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true,
+          "sourceFilePattern": "job-requisitions_full*.json",
+          "latestDataConfig": {
+            "isEnabled": false,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/HR/ADP/job-requisitions"
+        },
+        "incrementalLoad": {
+          "isEnabled": true,
+          "sourceFilePattern": "job-requisitions_full*.json",
+          "latestDataConfig": {
+            "isEnabled": true,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/HR/ADP/job-requisitions"
+        }
+      }
+    },
+    {
+      "entityName": "job_requisition_location",
+      "columnMappings": [
+        {
+          "sourceField": "itemID",
+          "targetColumn": "RequisitionId"
+        },
+        {
+          "sourceField": "requisitionLocations.itemID",
+          "targetColumn": "LocationId"
+        },
+        {
+          "sourceField": "requisitionLocations.nameCode.codeValue",
+          "targetColumn": "LocationCode"
+        },
+        {
+          "sourceField": "requisitionLocations.nameCode.shortName",
+          "targetColumn": "LocationName"
+        },
+        {
+          "sourceField": "requisitionLocations.nameCode.longName",
+          "targetColumn": "LocationLongName"
+        },
+        {
+          "sourceField": "requisitionLocations.address.lineOne",
+          "targetColumn": "AddressLine1"
+        },
+        {
+          "sourceField": "requisitionLocations.address.cityName",
+          "targetColumn": "City"
+        },
+        {
+          "sourceField": "requisitionLocations.address.countrySubdivisionLevel1.codeValue",
+          "targetColumn": "StateCode"
+        },
+        {
+          "sourceField": "requisitionLocations.address.postalCode",
+          "targetColumn": "PostalCode"
+        },
+        {
+          "sourceField": "requisitionLocations.address.countryCode",
+          "targetColumn": "CountryCode"
+        }
+      ],
+      "primaryKeyColumns": [
+        "RequisitionId",
+        "LocationId"
+      ],
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true,
+          "sourceFilePattern": "job-requisitions_full*.json",
+          "latestDataConfig": {
+            "isEnabled": false,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/HR/ADP/job-requisitions"
+        },
+        "incrementalLoad": {
+          "isEnabled": true,
+          "sourceFilePattern": "job-requisitions_full*.json",
+          "latestDataConfig": {
+            "isEnabled": true,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/HR/ADP/job-requisitions"
+        }
+      }
+    },
+    {
+      "entityName": "job_requisition_org_unit",
+      "columnMappings": [
+        {
+          "sourceField": "itemID",
+          "targetColumn": "RequisitionId"
+        },
+        {
+          "sourceField": "organizationalUnits.itemID",
+          "targetColumn": "OrgUnitId"
+        },
+        {
+          "sourceField": "organizationalUnits.typeCode.codeValue",
+          "targetColumn": "OrgUnitTypeCode"
+        },
+        {
+          "sourceField": "organizationalUnits.typeCode.shortName",
+          "targetColumn": "OrgUnitTypeDescription"
+        },
+        {
+          "sourceField": "organizationalUnits.nameCode.codeValue",
+          "targetColumn": "OrgUnitCode"
+        },
+        {
+          "sourceField": "organizationalUnits.nameCode.shortName",
+          "targetColumn": "OrgUnitName"
+        },
+        {
+          "sourceField": "organizationalUnits.nameCode.longName",
+          "targetColumn": "OrgUnitLongName"
+        }
+      ],
+      "primaryKeyColumns": [
+        "RequisitionId",
+        "OrgUnitId"
+      ],
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true,
+          "sourceFilePattern": "job-requisitions_full*.json",
+          "latestDataConfig": {
+            "isEnabled": false,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/HR/ADP/job-requisitions"
+        },
+        "incrementalLoad": {
+          "isEnabled": true,
+          "sourceFilePattern": "job-requisitions_full*.json",
+          "latestDataConfig": {
+            "isEnabled": true,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/HR/ADP/job-requisitions"
+        }
+      }
+    },
+    {
+      "entityName": "job_requisition_backfill",
+      "columnMappings": [
+        {
+          "sourceField": "itemID",
+          "targetColumn": "RequisitionId"
+        },
+        {
+          "sourceField": "backfillWorkerPositions.associateOID",
+          "targetColumn": "AssociateOid"
+        },
+        {
+          "sourceField": "backfillWorkerPositions.positionID",
+          "targetColumn": "PositionId"
+        },
+        {
+          "sourceField": "backfillWorkerPositions.positionTitle",
+          "targetColumn": "PositionTitle"
+        },
+        {
+          "sourceField": "backfillWorkerPositions.workerID.idValue",
+          "targetColumn": "WorkerId"
+        },
+        {
+          "sourceField": "backfillWorkerPositions.workerName.givenName",
+          "targetColumn": "WorkerFirstName"
+        },
+        {
+          "sourceField": "backfillWorkerPositions.workerName.familyName1",
+          "targetColumn": "WorkerLastName"
+        },
+        {
+          "sourceField": "backfillWorkerPositions.workerName.middleName",
+          "targetColumn": "WorkerMiddleName"
+        },
+        {
+          "sourceField": "backfillWorkerPositions.workerName.formattedName",
+          "targetColumn": "WorkerName"
+        }
+      ],
+      "primaryKeyColumns": [
+        "RequisitionId",
+        "AssociateOid"
+      ],
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true,
+          "sourceFilePattern": "job-requisitions_full*.json",
+          "latestDataConfig": {
+            "isEnabled": false,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/HR/ADP/job-requisitions"
+        },
+        "incrementalLoad": {
+          "isEnabled": true,
+          "sourceFilePattern": "job-requisitions_full*.json",
+          "latestDataConfig": {
+            "isEnabled": true,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/HR/ADP/job-requisitions"
+        }
+      }
+    },
+    {
+      "entityName": "job_application",
+      "columnMappings": [
+        {
+          "sourceField": "itemID",
+          "targetColumn": "ApplicationId"
+        },
+        {
+          "sourceField": "jobRequisitionReference.requisitionID",
+          "targetColumn": "RequisitionId"
+        },
+        {
+          "sourceField": "jobRequisitionReference.requisitionTitle",
+          "targetColumn": "RequisitionTitle"
+        },
+        {
+          "sourceField": "jobRequisitionReference.clientRequisitionID",
+          "targetColumn": "ClientRequisitionId"
+        },
+        {
+          "sourceField": "jobRequisitionReference.externalIndicator",
+          "targetColumn": "IsExternalRequisition"
+        },
+        {
+          "sourceField": "jobRequisitionReference.internalIndicator",
+          "targetColumn": "IsInternalRequisition"
+        },
+        {
+          "sourceField": "applicant.personOID",
+          "targetColumn": "ApplicantPersonOid"
+        },
+        {
+          "sourceField": "applicant.associateOID",
+          "targetColumn": "ApplicantAssociateOid"
+        },
+        {
+          "sourceField": "applicant.person.personName.formattedName",
+          "targetColumn": "ApplicantName"
+        },
+        {
+          "sourceField": "applicant.person.personName.givenName",
+          "targetColumn": "ApplicantFirstName"
+        },
+        {
+          "sourceField": "applicant.person.personName.middleName",
+          "targetColumn": "ApplicantMiddleName"
+        },
+        {
+          "sourceField": "applicant.person.personName.familyName1",
+          "targetColumn": "ApplicantLastName"
+        },
+        {
+          "sourceField": "applicant.person.genderCode.codeValue",
+          "targetColumn": "ApplicantGenderCode"
+        },
+        {
+          "sourceField": "applicant.person.genderCode.shortName",
+          "targetColumn": "ApplicantGenderDescription"
+        },
+        {
+          "sourceField": "applicant.person.address.lineOne",
+          "targetColumn": "ApplicantAddressLine1"
+        },
+        {
+          "sourceField": "applicant.person.address.lineTwo",
+          "targetColumn": "ApplicantAddressLine2"
+        },
+        {
+          "sourceField": "applicant.person.address.lineThree",
+          "targetColumn": "ApplicantAddressLine3"
+        },
+        {
+          "sourceField": "applicant.person.address.cityName",
+          "targetColumn": "ApplicantCity"
+        },
+        {
+          "sourceField": "applicant.person.address.countrySubdivisionLevel1.codeValue",
+          "targetColumn": "ApplicantStateCode"
+        },
+        {
+          "sourceField": "applicant.person.address.countrySubdivisionLevel1.shortName",
+          "targetColumn": "ApplicantStateName"
+        },
+        {
+          "sourceField": "applicant.person.address.postalCode",
+          "targetColumn": "ApplicantPostalCode"
+        },
+        {
+          "sourceField": "applicant.person.address.countryCode",
+          "targetColumn": "ApplicantCountryCode"
+        },
+        {
+          "sourceField": "applicant.internalApplicantIndicator",
+          "targetColumn": "IsInternalApplicant"
+        },
+        {
+          "sourceField": "applicationStatusCode.codeValue",
+          "targetColumn": "ApplicationStatusCode"
+        },
+        {
+          "sourceField": "applicationStatusCode.shortName",
+          "targetColumn": "ApplicationStatusDescription"
+        },
+        {
+          "sourceField": "applicationStatusCode.effectiveDate",
+          "targetColumn": "ApplicationStatusEffectiveDate"
+        },
+        {
+          "sourceField": "applicationSource.submittedDate",
+          "targetColumn": "SubmittedDate"
+        },
+        {
+          "sourceField": "applicationSource.submittedBy.associateOID",
+          "targetColumn": "SubmittedByAssociateOid"
+        },
+        {
+          "sourceField": "applicationSource.submittedBy.personName.givenName",
+          "targetColumn": "SubmittedByFirstName"
+        },
+        {
+          "sourceField": "applicationSource.submittedBy.personName.familyName1",
+          "targetColumn": "SubmittedByLastName"
+        },
+        {
+          "sourceField": "applicationSource.submittedBy.personName.formattedName",
+          "targetColumn": "SubmittedByName"
+        },
+        {
+          "sourceField": "applicationSource.postingChannelID",
+          "targetColumn": "PostingChannelId"
+        },
+        {
+          "sourceField": "applicationSource.postingChannelNameCode.codeValue",
+          "targetColumn": "PostingChannelCode"
+        },
+        {
+          "sourceField": "applicationSource.postingChannelNameCode.shortName",
+          "targetColumn": "PostingChannelName"
+        },
+        {
+          "sourceField": "requestedPayRate.hourlyRateAmount.amountValue",
+          "targetColumn": "DesiredHourlyRate"
+        },
+        {
+          "sourceField": "requestedPayRate.hourlyRateAmount.currencyCode",
+          "targetColumn": "DesiredHourlyRateCurrency"
+        },
+        {
+          "sourceField": "requestedPayRate.annualRateAmount.amountValue",
+          "targetColumn": "DesiredAnnualRate"
+        },
+        {
+          "sourceField": "requestedPayRate.annualRateAmount.currencyCode",
+          "targetColumn": "DesiredAnnualRateCurrency"
+        },
+        {
+          "sourceField": "jobRequisitionReference.hiringManager.associateOID",
+          "targetColumn": "HiringManagerAssociateOid"
+        },
+        {
+          "sourceField": "jobRequisitionReference.hiringManager.workerID.idValue",
+          "targetColumn": "HiringManagerWorkerId"
+        },
+        {
+          "sourceField": "jobRequisitionReference.hiringManager.personName.givenName",
+          "targetColumn": "HiringManagerFirstName"
+        },
+        {
+          "sourceField": "jobRequisitionReference.hiringManager.personName.familyName1",
+          "targetColumn": "HiringManagerLastName"
+        },
+        {
+          "sourceField": "jobRequisitionReference.hiringManager.personName.formattedName",
+          "targetColumn": "HiringManagerName"
+        },
+        {
+          "sourceField": "jobRequisitionReference.recruiter.personName.formattedName",
+          "targetColumn": "RecruiterName"
+        },
+        {
+          "sourceField": "_run_id",
+          "targetColumn": "SourceRunId"
+        },
+        {
+          "sourceField": "_extracted_at",
+          "targetColumn": "SourceExtractedAt"
+        }
+      ],
+      "eventPayloadRoot": null,
+      "primaryKeyColumns": [
+        "ApplicationId"
+      ],
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true,
+          "sourceFilePattern": "job-applications_full*.json",
+          "latestDataConfig": {
+            "isEnabled": false,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/HR/ADP/job-applications"
+        },
+        "incrementalLoad": {
+          "isEnabled": true,
+          "sourceFilePattern": "job-applications_full*.json",
+          "latestDataConfig": {
+            "isEnabled": true,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/HR/ADP/job-applications"
+        }
+      }
+    },
+    {
+      "entityName": "job_application_contact",
+      "columnMappings": [
+        {
+          "sourceField": "itemID",
+          "targetColumn": "ApplicationId"
+        },
+        {
+          "sourceField": "applicant.person.communication.emails.itemID",
+          "targetColumn": "ContactItemId"
+        },
+        {
+          "sourceField": "applicant.person.communication.emails.emailUri",
+          "targetColumn": "ContactValue"
+        },
+        {
+          "sourceField": "LITERAL(applicant.person.communication.emails)=Email",
+          "targetColumn": "ContactType"
+        },
+        {
+          "sourceField": "applicant.person.communication.mobiles.itemID",
+          "targetColumn": "ContactItemId"
+        },
+        {
+          "sourceField": "applicant.person.communication.mobiles.nameCode.codeValue",
+          "targetColumn": "ContactSubType"
+        },
+        {
+          "sourceField": "applicant.person.communication.mobiles.countryDialing",
+          "targetColumn": "CountryDialCode"
+        },
+        {
+          "sourceField": "applicant.person.communication.mobiles.areaDialing",
+          "targetColumn": "AreaDialCode"
+        },
+        {
+          "sourceField": "applicant.person.communication.mobiles.dialNumber",
+          "targetColumn": "DialNumber"
+        },
+        {
+          "sourceField": "applicant.person.communication.mobiles.formattedNumber",
+          "targetColumn": "ContactValue"
+        },
+        {
+          "sourceField": "LITERAL(applicant.person.communication.mobiles)=Mobile",
+          "targetColumn": "ContactType"
+        },
+        {
+          "sourceField": "applicant.person.communication.landlines.itemID",
+          "targetColumn": "ContactItemId"
+        },
+        {
+          "sourceField": "applicant.person.communication.landlines.nameCode.codeValue",
+          "targetColumn": "ContactSubType"
+        },
+        {
+          "sourceField": "applicant.person.communication.landlines.countryDialing",
+          "targetColumn": "CountryDialCode"
+        },
+        {
+          "sourceField": "applicant.person.communication.landlines.areaDialing",
+          "targetColumn": "AreaDialCode"
+        },
+        {
+          "sourceField": "applicant.person.communication.landlines.dialNumber",
+          "targetColumn": "DialNumber"
+        },
+        {
+          "sourceField": "applicant.person.communication.landlines.formattedNumber",
+          "targetColumn": "ContactValue"
+        },
+        {
+          "sourceField": "LITERAL(applicant.person.communication.landlines)=Landline",
+          "targetColumn": "ContactType"
+        }
+      ],
+      "eventPayloadRoot": null,
+      "primaryKeyColumns": [
+        "ApplicationId",
+        "ContactType",
+        "ContactItemId"
+      ],
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true,
+          "sourceFilePattern": "job-applications_full*.json",
+          "latestDataConfig": {
+            "isEnabled": false,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/HR/ADP/job-applications"
+        },
+        "incrementalLoad": {
+          "isEnabled": true,
+          "sourceFilePattern": "job-applications_full*.json",
+          "latestDataConfig": {
+            "isEnabled": true,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/HR/ADP/job-applications"
+        }
+      }
+    },
+    {
+      "entityName": "job_application_location",
+      "columnMappings": [
+        {
+          "sourceField": "itemID",
+          "targetColumn": "ApplicationId"
+        },
+        {
+          "sourceField": "appliedLocations.itemID",
+          "targetColumn": "LocationId"
+        },
+        {
+          "sourceField": "appliedLocations.nameCode.codeValue",
+          "targetColumn": "LocationCode"
+        },
+        {
+          "sourceField": "appliedLocations.nameCode.shortName",
+          "targetColumn": "LocationName"
+        },
+        {
+          "sourceField": "appliedLocations.nameCode.longName",
+          "targetColumn": "LocationLongName"
+        }
+      ],
+      "eventPayloadRoot": null,
+      "primaryKeyColumns": [
+        "ApplicationId",
+        "LocationId"
+      ],
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true,
+          "sourceFilePattern": "job-applications_full*.json",
+          "latestDataConfig": {
+            "isEnabled": false,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/HR/ADP/job-applications"
+        },
+        "incrementalLoad": {
+          "isEnabled": true,
+          "sourceFilePattern": "job-applications_full*.json",
+          "latestDataConfig": {
+            "isEnabled": true,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/HR/ADP/job-applications"
+        }
+      }
+    },
+    {
+      "entityName": "job_application_attachment",
+      "columnMappings": [
+        {
+          "sourceField": "itemID",
+          "targetColumn": "ApplicationId"
+        },
+        {
+          "sourceField": "attachments.itemID",
+          "targetColumn": "AttachmentId"
+        },
+        {
+          "sourceField": "attachments.resumeIndicator",
+          "targetColumn": "IsResume"
+        },
+        {
+          "sourceField": "attachments.attachmentLink.payLoadArguments.argumentPath",
+          "targetColumn": "AttachmentPath"
+        },
+        {
+          "sourceField": "attachments.attachmentLink.payLoadArguments.argumentValue",
+          "targetColumn": "AttachmentFileName"
+        },
+        {
+          "sourceField": "attachments.textValue",
+          "targetColumn": "AttachmentText"
+        }
+      ],
+      "eventPayloadRoot": null,
+      "primaryKeyColumns": [
+        "ApplicationId",
+        "AttachmentId"
+      ],
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true,
+          "sourceFilePattern": "job-applications_full*.json",
+          "latestDataConfig": {
+            "isEnabled": false,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/HR/ADP/job-applications"
+        },
+        "incrementalLoad": {
+          "isEnabled": true,
+          "sourceFilePattern": "job-applications_full*.json",
+          "latestDataConfig": {
+            "isEnabled": true,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/HR/ADP/job-applications"
+        }
+      }
+    },
+    {
+      "entityName": "job_application_comment",
+      "columnMappings": [
+        {
+          "sourceField": "itemID",
+          "targetColumn": "ApplicationId"
+        },
+        {
+          "sourceField": "comments.author.formattedName",
+          "targetColumn": "AuthorName"
+        },
+        {
+          "sourceField": "comments.entryDateTime",
+          "targetColumn": "EntryDateTime"
+        },
+        {
+          "sourceField": "comments.textValue",
+          "targetColumn": "CommentText"
+        }
+      ],
+      "eventPayloadRoot": null,
+      "primaryKeyColumns": [
+        "ApplicationId",
+        "CommentSeq"
+      ],
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true,
+          "sourceFilePattern": "job-applications_full*.json",
+          "latestDataConfig": {
+            "isEnabled": false,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/HR/ADP/job-applications"
+        },
+        "incrementalLoad": {
+          "isEnabled": true,
+          "sourceFilePattern": "job-applications_full*.json",
+          "latestDataConfig": {
+            "isEnabled": true,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/HR/ADP/job-applications"
+        }
+      }
+    },
+    {
+      "entityName": "worker_leave",
+      "columnMappings": [
+        {
+          "sourceField": "associateOID",
+          "targetColumn": "AssociateOid"
+        },
+        {
+          "sourceField": "workerID.idValue",
+          "targetColumn": "WorkerId"
+        },
+        {
+          "sourceField": "workAssignmentID",
+          "targetColumn": "AssignmentId"
+        },
+        {
+          "sourceField": "_parent_key",
+          "targetColumn": "ParentAssociateOid"
+        },
+        {
+          "sourceField": "_run_id",
+          "targetColumn": "SourceRunId"
+        },
+        {
+          "sourceField": "_extracted_at",
+          "targetColumn": "SourceExtractedAt"
+        },
+        {
+          "sourceField": "leaves.effectiveDateTime",
+          "targetColumn": "EffectiveDate"
+        },
+        {
+          "sourceField": "leaves.leaveAbsence.startDateTime",
+          "targetColumn": "LeaveStartDate"
+        },
+        {
+          "sourceField": "leaves.leaveAbsence.expectedEndDateTime",
+          "targetColumn": "LeaveExpectedEndDate"
+        },
+        {
+          "sourceField": "leaves.leaveAbsence.leaveTypeCode.codeValue",
+          "targetColumn": "LeaveTypeCode"
+        },
+        {
+          "sourceField": "leaves.leaveAbsence.paymentStatusCode.codeValue",
+          "targetColumn": "PaymentStatusCode"
+        },
+        {
+          "sourceField": "leaves.leaveReturn.returnDateTime",
+          "targetColumn": "ActualReturnDate"
+        },
+        {
+          "sourceField": "leaves.leaveReturn.returnStatus.returnStatusCode.codeValue",
+          "targetColumn": "ReturnStatusCode"
+        }
+      ],
+      "eventPayloadRoot": null,
+      "primaryKeyColumns": [
+        "AssociateOid",
+        "AssignmentId",
+        "LeaveSeq"
+      ],
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true,
+          "sourceFilePattern": "leaves_full*.json",
+          "latestDataConfig": {
+            "isEnabled": false,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/HR/ADP/leaves"
+        },
+        "incrementalLoad": {
+          "isEnabled": false,
+          "sourceFilePattern": "*.json",
+          "latestDataConfig": {
+            "isEnabled": true,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Events_Shortcut/HR/ADP/Events"
+        }
+      }
+    },
+    {
+      "entityName": "pay_distribution",
+      "columnMappings": [
+        {
+          "sourceField": "_parent_key",
+          "targetColumn": "AssociateOid"
+        },
+        {
+          "sourceField": "itemID",
+          "targetColumn": "DistributionId"
+        },
+        {
+          "sourceField": "requestedStartDate",
+          "targetColumn": "RequestedStartDate"
+        },
+        {
+          "sourceField": "distributionStatusCode.codeValue",
+          "targetColumn": "DistributionStatusCode"
+        },
+        {
+          "sourceField": "distributionStatusCode.shortName",
+          "targetColumn": "DistributionStatusDescription"
+        },
+        {
+          "sourceField": "payrollGroupCode.codeValue",
+          "targetColumn": "PayrollGroupCode"
+        },
+        {
+          "sourceField": "payrollGroupCode.shortName",
+          "targetColumn": "PayrollGroupDescription"
+        },
+        {
+          "sourceField": "payrollFileNumber",
+          "targetColumn": "PayrollFileNumber"
+        },
+        {
+          "sourceField": "_run_id",
+          "targetColumn": "SourceRunId"
+        },
+        {
+          "sourceField": "_extracted_at",
+          "targetColumn": "SourceExtractedAt"
+        }
+      ],
+      "primaryKeyColumns": [
+        "AssociateOid",
+        "DistributionId"
+      ],
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true,
+          "sourceFilePattern": "pay-distributions_full*.json",
+          "latestDataConfig": {
+            "isEnabled": false,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/HR/ADP/pay-distributions"
+        },
+        "incrementalLoad": {
+          "isEnabled": true,
+          "sourceFilePattern": "worker-pay-distribution*.json",
+          "latestDataConfig": {
+            "isEnabled": true,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Events_Shortcut/HR/ADP/Events",
+          "eventPayloadRoot": "payDistribution"
+        }
+      }
+    },
+    {
+      "entityName": "pay_distribution_instruction",
+      "columnMappings": [
+        {
+          "sourceField": "_parent_key",
+          "targetColumn": "AssociateOid"
+        },
+        {
+          "sourceField": "itemID",
+          "targetColumn": "DistributionId"
+        },
+        {
+          "sourceField": "distributionInstructions.itemID",
+          "targetColumn": "InstructionId"
+        },
+        {
+          "sourceField": "distributionInstructions.instructionStatusCode.codeValue",
+          "targetColumn": "InstructionStatusCode"
+        },
+        {
+          "sourceField": "distributionInstructions.instructionStatusCode.shortName",
+          "targetColumn": "InstructionStatusDescription"
+        },
+        {
+          "sourceField": "distributionInstructions.precedenceCode.codeValue",
+          "targetColumn": "PrecedenceCode"
+        },
+        {
+          "sourceField": "distributionInstructions.prenoteIndicator",
+          "targetColumn": "IsPrenote"
+        },
+        {
+          "sourceField": "distributionInstructions.prenote.prenoteOptionCode.codeValue",
+          "targetColumn": "PrenoteOptionCode"
+        },
+        {
+          "sourceField": "distributionInstructions.prenote.prenoteDate",
+          "targetColumn": "PrenoteDate"
+        },
+        {
+          "sourceField": "distributionInstructions.prenote.prenoteDescription",
+          "targetColumn": "PrenoteDescription"
+        },
+        {
+          "sourceField": "distributionInstructions.bonusOnlyIndicator",
+          "targetColumn": "IsBonusOnly"
+        },
+        {
+          "sourceField": "distributionInstructions.remainingBalanceIndicator",
+          "targetColumn": "IsRemainingBalance"
+        },
+        {
+          "sourceField": "distributionInstructions.distributionAmount.amountValue",
+          "targetColumn": "DistributionAmount"
+        },
+        {
+          "sourceField": "distributionInstructions.distributionPercentage",
+          "targetColumn": "DistributionPercentage"
+        },
+        {
+          "sourceField": "distributionInstructions.depositAccount.financialParty.routingTransitID.idValue",
+          "targetColumn": "RoutingNumberMasked"
+        },
+        {
+          "sourceField": "distributionInstructions.depositAccount.financialAccount.accountNumber",
+          "targetColumn": "AccountNumberMasked"
+        },
+        {
+          "sourceField": "distributionInstructions.depositAccount.financialAccount.typeCode.codeValue",
+          "targetColumn": "AccountTypeCode"
+        },
+        {
+          "sourceField": "distributionInstructions.depositAccount.financialAccount.typeCode.shortName",
+          "targetColumn": "AccountTypeDescription"
+        }
+      ],
+      "primaryKeyColumns": [
+        "AssociateOid",
+        "DistributionId",
+        "InstructionId"
+      ],
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true,
+          "sourceFilePattern": "pay-distributions_full*.json",
+          "latestDataConfig": {
+            "isEnabled": false,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/HR/ADP/pay-distributions"
+        },
+        "incrementalLoad": {
+          "isEnabled": true,
+          "sourceFilePattern": "worker-pay-distribution*.json",
+          "latestDataConfig": {
+            "isEnabled": true,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Events_Shortcut/HR/ADP/Events",
+          "eventPayloadRoot": "payDistribution"
+        }
+      }
+    },
+    {
+      "entityName": "payroll_instruction",
+      "columnMappings": [
+        {
+          "sourceField": "_parent_key",
+          "targetColumn": "AssociateOid"
+        },
+        {
+          "sourceField": "payrollGroupCode.codeValue",
+          "targetColumn": "PayrollGroupCode"
+        },
+        {
+          "sourceField": "payrollGroupCode.shortName",
+          "targetColumn": "PayrollGroupDescription"
+        },
+        {
+          "sourceField": "payrollFileNumber",
+          "targetColumn": "PayrollFileNumber"
+        },
+        {
+          "sourceField": "payrollAgreementID",
+          "targetColumn": "PayrollAgreementId"
+        },
+        {
+          "sourceField": "workAssignmentStatus.codeValue",
+          "targetColumn": "AssignmentStatusCode"
+        },
+        {
+          "sourceField": "workAssignmentStatus.longName",
+          "targetColumn": "AssignmentStatusDescription"
+        },
+        {
+          "sourceField": "workAssignmentStatus.effectiveDateDate",
+          "targetColumn": "AssignmentStatusEffectiveDate"
+        },
+        {
+          "sourceField": "_run_id",
+          "targetColumn": "SourceRunId"
+        },
+        {
+          "sourceField": "_extracted_at",
+          "targetColumn": "SourceExtractedAt"
+        }
+      ],
+      "eventPayloadRoot": null,
+      "primaryKeyColumns": [
+        "AssociateOid"
+      ],
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true,
+          "sourceFilePattern": "payroll-instructions_full*.json",
+          "latestDataConfig": {
+            "isEnabled": false,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/HR/ADP/payroll-instructions"
+        },
+        "incrementalLoad": {
+          "isEnabled": false,
+          "sourceFilePattern": "*.json",
+          "latestDataConfig": {
+            "isEnabled": true,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Events_Shortcut/HR/ADP/Events"
+        }
+      }
+    },
+    {
+      "entityName": "payroll_deduction",
+      "columnMappings": [
+        {
+          "sourceField": "_parent_key",
+          "targetColumn": "AssociateOid"
+        },
+        {
+          "sourceField": "generalDeductionInstructions.itemID",
+          "targetColumn": "DeductionId"
+        },
+        {
+          "sourceField": "generalDeductionInstructions.deductionCode.codeValue",
+          "targetColumn": "DeductionCode"
+        },
+        {
+          "sourceField": "generalDeductionInstructions.deductionCode.shortName",
+          "targetColumn": "DeductionDescription"
+        },
+        {
+          "sourceField": "generalDeductionInstructions.deductionStartDate",
+          "targetColumn": "DeductionStartDate"
+        },
+        {
+          "sourceField": "generalDeductionInstructions.deductionRate.rateValue",
+          "targetColumn": "DeductionRate"
+        },
+        {
+          "sourceField": "generalDeductionInstructions.deductionGoal.goalID",
+          "targetColumn": "GoalId"
+        },
+        {
+          "sourceField": "generalDeductionInstructions.deductionGoal.goalLimitAmount.amountValue",
+          "targetColumn": "GoalLimitAmount"
+        },
+        {
+          "sourceField": "generalDeductionInstructions.inactiveIndicator",
+          "targetColumn": "IsInactive"
+        }
+      ],
+      "eventPayloadRoot": null,
+      "primaryKeyColumns": [
+        "AssociateOid",
+        "DeductionId"
+      ],
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true,
+          "sourceFilePattern": "payroll-instructions_full*.json",
+          "latestDataConfig": {
+            "isEnabled": false,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/HR/ADP/payroll-instructions"
+        },
+        "incrementalLoad": {
+          "isEnabled": false,
+          "sourceFilePattern": "*.json",
+          "latestDataConfig": {
+            "isEnabled": true,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Events_Shortcut/HR/ADP/Events"
+        }
+      }
+    },
+    {
+      "entityName": "payroll_garnishment",
+      "columnMappings": [
+        {
+          "sourceField": "_parent_key",
+          "targetColumn": "AssociateOid"
+        },
+        {
+          "sourceField": "garnishmentInstructions.itemID",
+          "targetColumn": "GarnishmentId"
+        },
+        {
+          "sourceField": "garnishmentInstructions.deductionCode.codeValue",
+          "targetColumn": "DeductionCode"
+        },
+        {
+          "sourceField": "garnishmentInstructions.deductionCode.shortName",
+          "targetColumn": "DeductionDescription"
+        },
+        {
+          "sourceField": "garnishmentInstructions.garnishmentAmount.amountValue",
+          "targetColumn": "GarnishmentAmount"
+        },
+        {
+          "sourceField": "garnishmentInstructions.garnishmentPercentage.percentageValue",
+          "targetColumn": "GarnishmentPercentage"
+        },
+        {
+          "sourceField": "garnishmentInstructions.garnishmentGoal.goalID",
+          "targetColumn": "GoalId"
+        },
+        {
+          "sourceField": "garnishmentInstructions.garnishmentGoal.goalLimitAmount.amountValue",
+          "targetColumn": "GoalLimitAmount"
+        },
+        {
+          "sourceField": "garnishmentInstructions.garnishmentStartDate",
+          "targetColumn": "GarnishmentStartDate"
+        },
+        {
+          "sourceField": "garnishmentInstructions.workerLien.itemID",
+          "targetColumn": "LienItemId"
+        },
+        {
+          "sourceField": "garnishmentInstructions.workerLien.lienNumber",
+          "targetColumn": "LienNumber"
+        },
+        {
+          "sourceField": "garnishmentInstructions.workerLien.lienTypeCode.codeValue",
+          "targetColumn": "LienTypeCode"
+        },
+        {
+          "sourceField": "garnishmentInstructions.workerLien.lienTypeCode.shortName",
+          "targetColumn": "LienTypeDescription"
+        },
+        {
+          "sourceField": "garnishmentInstructions.workerLien.lienSubTypeCode.codeValue",
+          "targetColumn": "LienSubTypeCode"
+        },
+        {
+          "sourceField": "garnishmentInstructions.workerLien.lienSubTypeCode.shortName",
+          "targetColumn": "LienSubTypeDescription"
+        },
+        {
+          "sourceField": "garnishmentInstructions.workerLien.lienStatusCode.codeValue",
+          "targetColumn": "LienStatusCode"
+        },
+        {
+          "sourceField": "garnishmentInstructions.workerLien.lienStatusCode.shortName",
+          "targetColumn": "LienStatusDescription"
+        },
+        {
+          "sourceField": "garnishmentInstructions.workerLien.lienStatusCode.effectiveDate",
+          "targetColumn": "LienStatusEffectiveDate"
+        },
+        {
+          "sourceField": "garnishmentInstructions.workerLien.lienReturnDate",
+          "targetColumn": "LienReturnDate"
+        },
+        {
+          "sourceField": "garnishmentInstructions.workerLien.lienMaritalStatusCode.codeValue",
+          "targetColumn": "LienMaritalStatusCode"
+        },
+        {
+          "sourceField": "garnishmentInstructions.workerLien.lienMaritalStatusCode.shortName",
+          "targetColumn": "LienMaritalStatusDescription"
+        },
+        {
+          "sourceField": "garnishmentInstructions.workerLien.allowanceQuantity",
+          "targetColumn": "AllowanceQuantity"
+        },
+        {
+          "sourceField": "garnishmentInstructions.workerLien.additionalAllowanceQuantity",
+          "targetColumn": "AdditionalAllowanceQuantity"
+        },
+        {
+          "sourceField": "garnishmentInstructions.workerLien.medicalInsuranceOfferedIndicator",
+          "targetColumn": "IsMedicalInsuranceOffered"
+        },
+        {
+          "sourceField": "garnishmentInstructions.workerLien.fullServiceClientIndicator",
+          "targetColumn": "IsFullServiceClient"
+        },
+        {
+          "sourceField": "garnishmentInstructions.workerLien.courtOrder.caseNumber",
+          "targetColumn": "CourtCaseNumberMasked"
+        },
+        {
+          "sourceField": "garnishmentInstructions.workerLien.courtOrder.FIPSCode.codeValue",
+          "targetColumn": "CourtFipsCode"
+        },
+        {
+          "sourceField": "garnishmentInstructions.workerLien.courtOrder.multipleSupportOrderIndicator",
+          "targetColumn": "HasMultipleSupportOrders"
+        },
+        {
+          "sourceField": "garnishmentInstructions.workerLien.courtOrder.supportOrderInArrearsIndicator",
+          "targetColumn": "IsSupportOrderInArrears"
+        },
+        {
+          "sourceField": "garnishmentInstructions.workerLien.courtOrder.issuingJurisdiction.countrySubdivisionLevel1.codeValue",
+          "targetColumn": "JurisdictionStateCode"
+        },
+        {
+          "sourceField": "garnishmentInstructions.workerLien.courtOrder.issuingJurisdiction.countrySubdivisionLevel1.shortName",
+          "targetColumn": "JurisdictionStateDescription"
+        }
+      ],
+      "eventPayloadRoot": null,
+      "primaryKeyColumns": [
+        "AssociateOid",
+        "GarnishmentId"
+      ],
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true,
+          "sourceFilePattern": "payroll-instructions_full*.json",
+          "latestDataConfig": {
+            "isEnabled": false,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/HR/ADP/payroll-instructions"
+        },
+        "incrementalLoad": {
+          "isEnabled": false,
+          "sourceFilePattern": "*.json",
+          "latestDataConfig": {
+            "isEnabled": true,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Events_Shortcut/HR/ADP/Events"
+        }
+      }
+    },
+    {
+      "entityName": "payroll_garnishment_payee",
+      "columnMappings": [
+        {
+          "sourceField": "_parent_key",
+          "targetColumn": "AssociateOid"
+        },
+        {
+          "sourceField": "garnishmentInstructions.itemID",
+          "targetColumn": "GarnishmentId"
+        },
+        {
+          "sourceField": "garnishmentInstructions.workerLien.fundsDisbursement.payee.nameCode.codeValue",
+          "targetColumn": "PayeeCode"
+        },
+        {
+          "sourceField": "garnishmentInstructions.workerLien.fundsDisbursement.payee.nameCode.shortName",
+          "targetColumn": "PayeeShortName"
+        },
+        {
+          "sourceField": "garnishmentInstructions.workerLien.fundsDisbursement.payee.nameCode.longName",
+          "targetColumn": "PayeeName"
+        },
+        {
+          "sourceField": "garnishmentInstructions.workerLien.fundsDisbursement.payee.contactName.givenName",
+          "targetColumn": "PayeeContactName"
+        },
+        {
+          "sourceField": "garnishmentInstructions.workerLien.fundsDisbursement.payee.contactCommunication.landlines.formattedNumber",
+          "targetColumn": "PayeePhone"
+        },
+        {
+          "sourceField": "garnishmentInstructions.workerLien.fundsDisbursement.payee.contactCommunication.landlines.extension",
+          "targetColumn": "PayeePhoneExtension"
+        },
+        {
+          "sourceField": "garnishmentInstructions.workerLien.fundsDisbursement.paymentToPayeeIndicator",
+          "targetColumn": "IsPaidToPayee"
+        },
+        {
+          "sourceField": "garnishmentInstructions.workerLien.fundsDisbursement.paymentSchedule.scheduleTypeCode.codeValue",
+          "targetColumn": "PaymentScheduleCode"
+        },
+        {
+          "sourceField": "garnishmentInstructions.workerLien.fundsDisbursement.paymentSchedule.scheduleTypeCode.longName",
+          "targetColumn": "PaymentScheduleDescription"
+        },
+        {
+          "sourceField": "garnishmentInstructions.workerLien.fundsDisbursement.paymentSchedule.adjustmentValue",
+          "targetColumn": "PaymentScheduleAdjustmentDays"
+        }
+      ],
+      "eventPayloadRoot": null,
+      "primaryKeyColumns": [
+        "AssociateOid",
+        "GarnishmentId"
+      ],
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true,
+          "sourceFilePattern": "payroll-instructions_full*.json",
+          "latestDataConfig": {
+            "isEnabled": false,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/HR/ADP/payroll-instructions"
+        },
+        "incrementalLoad": {
+          "isEnabled": false,
+          "sourceFilePattern": "*.json",
+          "latestDataConfig": {
+            "isEnabled": true,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Events_Shortcut/HR/ADP/Events"
+        }
+      }
+    },
+    {
+      "entityName": "pay_statement",
+      "columnMappings": [
+        {
+          "sourceField": "_parent_key",
+          "targetColumn": "AssociateOid"
+        },
+        {
+          "sourceField": "payDate",
+          "targetColumn": "PayDate"
+        },
+        {
+          "sourceField": "grossPayAmount.amountValue",
+          "targetColumn": "GrossPayAmount"
+        },
+        {
+          "sourceField": "grossPayAmount.currencyCode",
+          "targetColumn": "Currency"
+        },
+        {
+          "sourceField": "netPayAmount.amountValue",
+          "targetColumn": "NetPayAmount"
+        },
+        {
+          "sourceField": "netPayAmount.currencyCode",
+          "targetColumn": "NetPayCurrency"
+        },
+        {
+          "sourceField": "totalHours",
+          "targetColumn": "TotalHours"
+        },
+        {
+          "sourceField": "payDetailUri.href",
+          "targetColumn": "StatementUri"
+        },
+        {
+          "sourceField": "statementImageUri.href",
+          "targetColumn": "StatementPdfUri"
+        },
+        {
+          "sourceField": "_run_id",
+          "targetColumn": "SourceRunId"
+        },
+        {
+          "sourceField": "_extracted_at",
+          "targetColumn": "SourceExtractedAt"
+        }
+      ],
+      "eventPayloadRoot": null,
+      "primaryKeyColumns": [
+        "AssociateOid",
+        "StatementUri"
+      ],
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true,
+          "sourceFilePattern": "pay_statements_full*.json",
+          "latestDataConfig": {
+            "isEnabled": false,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/HR/ADP/pay_statements"
+        },
+        "incrementalLoad": {
+          "isEnabled": false,
+          "sourceFilePattern": "*.json",
+          "latestDataConfig": {
+            "isEnabled": true,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Events_Shortcut/HR/ADP/Events"
+        }
+      }
+    },
+    {
+      "entityName": "worker_home_location",
+      "columnMappings": [
+        {
+          "sourceField": "associateOID",
+          "targetColumn": "AssociateOid"
+        },
+        {
+          "sourceField": "workAssignments.itemID",
+          "targetColumn": "AssignmentId"
+        },
+        {
+          "sourceField": "workAssignments.homeWorkLocation.nameCode.codeValue",
+          "targetColumn": "LocationId"
+        },
+        {
+          "sourceField": "workAssignments.homeWorkLocation.nameCode.shortName",
+          "targetColumn": "LocationName"
+        },
+        {
+          "sourceField": "workAssignments.homeWorkLocation.nameCode.longName",
+          "targetColumn": "LocationLongName"
+        },
+        {
+          "sourceField": "workAssignments.homeWorkLocation.address.lineOne",
+          "targetColumn": "AddressLine1"
+        },
+        {
+          "sourceField": "workAssignments.homeWorkLocation.address.cityName",
+          "targetColumn": "City"
+        },
+        {
+          "sourceField": "workAssignments.homeWorkLocation.address.countrySubdivisionLevel1.codeValue",
+          "targetColumn": "StateCode"
+        },
+        {
+          "sourceField": "workAssignments.homeWorkLocation.address.countryCode",
+          "targetColumn": "CountryCode"
+        },
+        {
+          "sourceField": "workAssignments.homeWorkLocation.address.postalCode",
+          "targetColumn": "PostalCode"
+        }
+      ],
+      "primaryKeyColumns": [
+        "AssociateOid",
+        "AssignmentId"
+      ],
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true,
+          "sourceFilePattern": "workers_full*.json",
+          "latestDataConfig": {
+            "isEnabled": false,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/HR/ADP/workers"
+        },
+        "incrementalLoad": {
+          "isEnabled": true,
+          "sourceFilePattern": "worker*.json",
+          "latestDataConfig": {
+            "isEnabled": true,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Events_Shortcut/HR/ADP/Events",
+          "eventPayloadRoot": "worker"
+        }
+      }
+    },
+    {
+      "entityName": "worker_person_detail",
+      "columnMappings": [
+        {
+          "sourceField": "associateOID",
+          "targetColumn": "AssociateOid"
+        },
+        {
+          "sourceField": "person.birthDate",
+          "targetColumn": "BirthDate"
+        },
+        {
+          "sourceField": "person.genderCode.codeValue",
+          "targetColumn": "GenderCode"
+        },
+        {
+          "sourceField": "person.genderCode.longName",
+          "targetColumn": "GenderDescription"
+        },
+        {
+          "sourceField": "person.maritalStatusCode.codeValue",
+          "targetColumn": "MaritalStatusCode"
+        },
+        {
+          "sourceField": "person.maritalStatusCode.shortName",
+          "targetColumn": "MaritalStatusDescription"
+        },
+        {
+          "sourceField": "person.tobaccoUserIndicator",
+          "targetColumn": "IsTobaccoUser"
+        },
+        {
+          "sourceField": "person.disabledIndicator",
+          "targetColumn": "IsDisabled"
+        },
+        {
+          "sourceField": "person.preferredName.givenName",
+          "targetColumn": "PreferredFirstName"
+        },
+        {
+          "sourceField": "person.preferredName.familyName1",
+          "targetColumn": "PreferredLastName"
+        },
+        {
+          "sourceField": "person.ethnicityCode.codeValue",
+          "targetColumn": "EthnicityCode"
+        },
+        {
+          "sourceField": "person.ethnicityCode.longName",
+          "targetColumn": "EthnicityDescription"
+        },
+        {
+          "sourceField": "person.raceCode.identificationMethodCode.codeValue",
+          "targetColumn": "RaceIdentificationMethodCode"
+        },
+        {
+          "sourceField": "person.raceCode.identificationMethodCode.shortName",
+          "targetColumn": "RaceIdentificationMethodDescription"
+        },
+        {
+          "sourceField": "person.raceCode.codeValue",
+          "targetColumn": "RaceCode"
+        },
+        {
+          "sourceField": "person.raceCode.longName",
+          "targetColumn": "RaceDescription"
+        },
+        {
+          "sourceField": "person.legalName.nickName",
+          "targetColumn": "NickName"
+        },
+        {
+          "sourceField": "person.legalName.givenName",
+          "targetColumn": "LegalFirstName"
+        },
+        {
+          "sourceField": "person.legalName.middleName",
+          "targetColumn": "LegalMiddleName"
+        },
+        {
+          "sourceField": "person.legalName.familyName1",
+          "targetColumn": "LegalLastName"
+        },
+        {
+          "sourceField": "person.legalName.formattedName",
+          "targetColumn": "LegalFullName"
+        },
+        {
+          "sourceField": "person.legalAddress.lineOne",
+          "targetColumn": "AddressLine1"
+        },
+        {
+          "sourceField": "person.legalAddress.cityName",
+          "targetColumn": "City"
+        },
+        {
+          "sourceField": "person.legalAddress.countrySubdivisionLevel1.subdivisionType",
+          "targetColumn": "StateSubdivisionType"
+        },
+        {
+          "sourceField": "person.legalAddress.countrySubdivisionLevel1.codeValue",
+          "targetColumn": "StateCode"
+        },
+        {
+          "sourceField": "person.legalAddress.countrySubdivisionLevel1.shortName",
+          "targetColumn": "StateName"
+        },
+        {
+          "sourceField": "person.legalAddress.countryCode",
+          "targetColumn": "CountryCode"
+        },
+        {
+          "sourceField": "person.legalAddress.postalCode",
+          "targetColumn": "PostalCode"
+        },
+        {
+          "sourceField": "person.militaryStatusCode.codeValue",
+          "targetColumn": "MilitaryStatusCode"
+        },
+        {
+          "sourceField": "person.militaryStatusCode.longName",
+          "targetColumn": "MilitaryStatusDescription"
+        }
+      ],
+      "primaryKeyColumns": [
+        "AssociateOid"
+      ],
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true,
+          "sourceFilePattern": "workers_full*.json",
+          "latestDataConfig": {
+            "isEnabled": false,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/HR/ADP/workers"
+        },
+        "incrementalLoad": {
+          "isEnabled": true,
+          "unmaskColumns": [
+            "BirthDate"
+          ],
+          "sourceFilePattern": "worker*.json",
+          "latestDataConfig": {
+            "isEnabled": true,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Events_Shortcut/HR/ADP/Events",
+          "eventPayloadRoot": "worker"
+        }
+      }
+    },
+    {
+      "entityName": "job_requisition_posting",
+      "columnMappings": [
+        {
+          "sourceField": "itemID",
+          "targetColumn": "RequisitionId"
+        },
+        {
+          "sourceField": "postingInstructions.nameCode.codeValue",
+          "targetColumn": "PostingTypeCode"
+        },
+        {
+          "sourceField": "postingInstructions.nameCode.longName",
+          "targetColumn": "PostingTypeDescription"
+        },
+        {
+          "sourceField": "postingInstructions.resumeRequiredIndicator",
+          "targetColumn": "IsResumeRequired"
+        },
+        {
+          "sourceField": "postingInstructions.validityAttestationIndicator",
+          "targetColumn": "IsValidityAttestationRequired"
+        },
+        {
+          "sourceField": "postingInstructions.internalIndicator",
+          "targetColumn": "IsInternalPosting"
+        },
+        {
+          "sourceField": "postingInstructions.postDate",
+          "targetColumn": "PostDate"
+        },
+        {
+          "sourceField": "postingInstructions.expireDate",
+          "targetColumn": "ExpireDate"
+        },
+        {
+          "sourceField": "postingInstructions.postingChannel.channelID",
+          "targetColumn": "PostingChannelId"
+        },
+        {
+          "sourceField": "postingInstructions.postingChannel.nameCode.codeValue",
+          "targetColumn": "PostingChannelCode"
+        },
+        {
+          "sourceField": "postingInstructions.postingChannel.nameCode.shortName",
+          "targetColumn": "PostingChannelName"
+        },
+        {
+          "sourceField": "postingInstructions.postingChannel.nameCode.longName",
+          "targetColumn": "PostingChannelDescription"
+        },
+        {
+          "sourceField": "postingInstructions.postingChannel.defaultIndicator",
+          "targetColumn": "IsDefaultChannel"
+        },
+        {
+          "sourceField": "postingInstructions.postingChannel.externalIndicator",
+          "targetColumn": "IsExternalChannel"
+        },
+        {
+          "sourceField": "postingInstructions.postingChannel.internetAddress.uri",
+          "targetColumn": "PostingChannelUri"
+        },
+        {
+          "sourceField": "postingInstructions.applicationMethods.contact.personName.nameCode.codeValue",
+          "targetColumn": "ContactRoleLabel"
+        },
+        {
+          "sourceField": "postingInstructions.applicationMethods.contact.personName.formattedName",
+          "targetColumn": "ContactName"
+        },
+        {
+          "sourceField": "INDEX(postingInstructions)",
+          "targetColumn": "PostingSeq"
+        }
+      ],
+      "primaryKeyColumns": [
+        "RequisitionId",
+        "PostingSeq"
+      ],
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true,
+          "sourceFilePattern": "job-requisitions_full*.json",
+          "latestDataConfig": {
+            "isEnabled": false,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/HR/ADP/job-requisitions"
+        },
+        "incrementalLoad": {
+          "isEnabled": true,
+          "sourceFilePattern": "job.requisition*.json",
+          "latestDataConfig": {
+            "isEnabled": true,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Events_Shortcut/HR/ADP/Events",
+          "eventPayloadRoot": "jobRequisition"
+        }
+      }
+    },
+    {
+      "entityName": "job_requisition_posting_contact",
+      "columnMappings": [
+        {
+          "sourceField": "itemID",
+          "targetColumn": "RequisitionId"
+        },
+        {
+          "sourceField": "INDEX(postingInstructions)",
+          "targetColumn": "PostingSeq"
+        },
+        {
+          "sourceField": "LITERAL(postingInstructions.applicationMethods.contact.communication.emails)=Email",
+          "targetColumn": "ContactType"
+        },
+        {
+          "sourceField": "postingInstructions.applicationMethods.contact.communication.emails.nameCode.codeValue",
+          "targetColumn": "ContactSubType"
+        },
+        {
+          "sourceField": "postingInstructions.applicationMethods.contact.communication.emails.emailUri",
+          "targetColumn": "ContactValue"
+        },
+        {
+          "sourceField": "INDEX(postingInstructions.applicationMethods.contact.communication.emails)",
+          "targetColumn": "ContactSeq"
+        },
+        {
+          "sourceField": "LITERAL(postingInstructions.applicationMethods.contact.communication.landlines)=Landline",
+          "targetColumn": "ContactType"
+        },
+        {
+          "sourceField": "postingInstructions.applicationMethods.contact.communication.landlines.nameCode.codeValue",
+          "targetColumn": "ContactSubType"
+        },
+        {
+          "sourceField": "postingInstructions.applicationMethods.contact.communication.landlines.formattedNumber",
+          "targetColumn": "ContactValue"
+        },
+        {
+          "sourceField": "INDEX(postingInstructions.applicationMethods.contact.communication.landlines)",
+          "targetColumn": "ContactSeq"
+        },
+        {
+          "sourceField": "LITERAL(postingInstructions.applicationMethods.contact.communication.faxes)=Fax",
+          "targetColumn": "ContactType"
+        },
+        {
+          "sourceField": "postingInstructions.applicationMethods.contact.communication.faxes.nameCode.codeValue",
+          "targetColumn": "ContactSubType"
+        },
+        {
+          "sourceField": "postingInstructions.applicationMethods.contact.communication.faxes.formattedNumber",
+          "targetColumn": "ContactValue"
+        },
+        {
+          "sourceField": "INDEX(postingInstructions.applicationMethods.contact.communication.faxes)",
+          "targetColumn": "ContactSeq"
+        }
+      ],
+      "primaryKeyColumns": [
+        "RequisitionId",
+        "PostingSeq",
+        "ContactType",
+        "ContactSeq"
+      ],
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true,
+          "sourceFilePattern": "job-requisitions_full*.json",
+          "latestDataConfig": {
+            "isEnabled": false,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/HR/ADP/job-requisitions"
+        },
+        "incrementalLoad": {
+          "isEnabled": true,
+          "sourceFilePattern": "job.requisition*.json",
+          "latestDataConfig": {
+            "isEnabled": true,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Events_Shortcut/HR/ADP/Events",
+          "eventPayloadRoot": "jobRequisition"
+        }
+      }
+    },
+    {
+      "entityName": "job",
+      "eventPayloadRoot": null,
+      "primaryKeyColumns": [
+        "JobCode"
+      ],
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true,
+          "sourceFilePattern": "jobs_full*.json",
+          "latestDataConfig": {
+            "isEnabled": false,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/HR/ADP/jobs",
+          "columnMappings": [
+            {
+              "sourceField": "code",
+              "targetColumn": "JobCode"
+            },
+            {
+              "sourceField": "name",
+              "targetColumn": "JobName"
+            },
+            {
+              "sourceField": "managementPositionIndicator",
+              "targetColumn": "IsManagementPosition"
+            },
+            {
+              "sourceField": "jobFunctionCode.code",
+              "targetColumn": "JobFunctionCode"
+            },
+            {
+              "sourceField": "jobFunctionCode.name",
+              "targetColumn": "JobFunctionName"
+            },
+            {
+              "sourceField": "payScaleCode.code",
+              "targetColumn": "PayScaleCode"
+            },
+            {
+              "sourceField": "payScaleCode.name",
+              "targetColumn": "PayScaleName"
+            },
+            {
+              "sourceField": "payGradeCode.code",
+              "targetColumn": "PayGradeCode"
+            },
+            {
+              "sourceField": "wageLawCoverage.wageLawNameCode.code",
+              "targetColumn": "WageLawNameCode"
+            },
+            {
+              "sourceField": "wageLawCoverage.wageLawNameCode.name",
+              "targetColumn": "WageLawNameDescription"
+            },
+            {
+              "sourceField": "wageLawCoverage.coverageCode.code",
+              "targetColumn": "WageLawCoverageCode"
+            },
+            {
+              "sourceField": "industryClassifications.code",
+              "targetColumn": "IndustryClassificationCode"
+            },
+            {
+              "sourceField": "jobFamilyCode.code",
+              "targetColumn": "JobFamilyCode"
+            },
+            {
+              "sourceField": "occupationalClassifications.code",
+              "targetColumn": "OccupationalClassificationCode"
+            },
+            {
+              "sourceField": "occupationalClassifications.name",
+              "targetColumn": "OccupationalClassificationName"
+            },
+            {
+              "sourceField": "inactiveIndicator",
+              "targetColumn": "IsInactive"
+            }
+          ]
+        },
+        "incrementalLoad": {
+          "isEnabled": false,
+          "sourceFilePattern": "*.json",
+          "latestDataConfig": {
+            "isEnabled": true,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Events_Shortcut/HR/ADP/Events",
+          "columnMappings": [
+            {
+              "sourceField": "wageLawCoverage.wageLawNameCode.code",
+              "targetColumn": "WageLawNameCode"
+            },
+            {
+              "sourceField": "wageLawCoverage.wageLawNameCode.name",
+              "targetColumn": "WageLawNameDescription"
+            },
+            {
+              "sourceField": "wageLawCoverage.coverageCode.code",
+              "targetColumn": "WageLawCoverageCode"
+            },
+            {
+              "sourceField": "industryClassifications.code",
+              "targetColumn": "IndustryClassificationCode"
+            },
+            {
+              "sourceField": "jobFamilyCode.code",
+              "targetColumn": "JobFamilyCode"
+            },
+            {
+              "sourceField": "occupationalClassifications.code",
+              "targetColumn": "OccupationalClassificationCode"
+            },
+            {
+              "sourceField": "occupationalClassifications.name",
+              "targetColumn": "OccupationalClassificationName"
+            },
+            {
+              "sourceField": "inactiveIndicator",
+              "targetColumn": "IsInactive"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "entityName": "job_alternate_name",
+      "columnMappings": [
+        {
+          "sourceField": "code",
+          "targetColumn": "JobCode"
+        },
+        {
+          "sourceField": "alternateNames.languageCode",
+          "targetColumn": "LanguageCode"
+        }
+      ],
+      "eventPayloadRoot": null,
+      "primaryKeyColumns": [
+        "JobCode",
+        "LanguageCode"
+      ],
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true,
+          "sourceFilePattern": "jobs_full*.json",
+          "latestDataConfig": {
+            "isEnabled": false,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/HR/ADP/jobs"
+        },
+        "incrementalLoad": {
+          "isEnabled": false,
+          "sourceFilePattern": "*.json",
+          "latestDataConfig": {
+            "isEnabled": true,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Events_Shortcut/HR/ADP/Events"
+        }
+      }
+    },
+    {
+      "entityName": "department",
+      "columnMappings": [
+        {
+          "sourceField": "nameCode.code",
+          "targetColumn": "DepartmentCode"
+        },
+        {
+          "sourceField": "payrollGroupCode",
+          "targetColumn": "PayrollGroupCode"
+        },
+        {
+          "sourceField": "nameCode.name",
+          "targetColumn": "DepartmentName"
+        },
+        {
+          "sourceField": "inactiveIndicator",
+          "targetColumn": "IsInactive"
+        },
+        {
+          "sourceField": "contacts.personName.formattedName",
+          "targetColumn": "ContactName"
+        },
+        {
+          "sourceField": "contacts.communication.emails.emailUri",
+          "targetColumn": "ContactEmail"
+        },
+        {
+          "sourceField": "contacts.address.lineOne",
+          "targetColumn": "AddressLine1"
+        },
+        {
+          "sourceField": "contacts.address.lineThree",
+          "targetColumn": "AddressLine3"
+        },
+        {
+          "sourceField": "contacts.address.cityName",
+          "targetColumn": "City"
+        },
+        {
+          "sourceField": "contacts.address.subdivisionCode.code",
+          "targetColumn": "StateCode"
+        },
+        {
+          "sourceField": "contacts.address.countryCode",
+          "targetColumn": "CountryCode"
+        },
+        {
+          "sourceField": "contacts.address.postalCode",
+          "targetColumn": "PostalCode"
+        }
+      ],
+      "eventPayloadRoot": null,
+      "primaryKeyColumns": [
+        "DepartmentCode",
+        "PayrollGroupCode"
+      ],
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true,
+          "sourceFilePattern": "departments_full*.json",
+          "latestDataConfig": {
+            "isEnabled": false,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/HR/ADP/departments"
+        },
+        "incrementalLoad": {
+          "isEnabled": false,
+          "sourceFilePattern": "*.json",
+          "latestDataConfig": {
+            "isEnabled": true,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Events_Shortcut/HR/ADP/Events"
+        }
+      }
+    },
+    {
+      "entityName": "department_phone",
+      "columnMappings": [
+        {
+          "sourceField": "nameCode.code",
+          "targetColumn": "DepartmentCode"
+        },
+        {
+          "sourceField": "payrollGroupCode",
+          "targetColumn": "PayrollGroupCode"
+        },
+        {
+          "sourceField": "contacts.communication.landlines.nameCode.code",
+          "targetColumn": "PhoneTypeCode"
+        },
+        {
+          "sourceField": "contacts.communication.landlines.countryDialing",
+          "targetColumn": "CountryDialCode"
+        },
+        {
+          "sourceField": "contacts.communication.landlines.areaDialing",
+          "targetColumn": "AreaDialCode"
+        },
+        {
+          "sourceField": "contacts.communication.landlines.dialNumber",
+          "targetColumn": "DialNumber"
+        },
+        {
+          "sourceField": "contacts.communication.landlines.access",
+          "targetColumn": "AccessCode"
+        }
+      ],
+      "eventPayloadRoot": null,
+      "primaryKeyColumns": [
+        "DepartmentCode",
+        "PayrollGroupCode",
+        "PhoneTypeCode"
+      ],
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true,
+          "sourceFilePattern": "departments_full*.json",
+          "latestDataConfig": {
+            "isEnabled": false,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/HR/ADP/departments"
+        },
+        "incrementalLoad": {
+          "isEnabled": false,
+          "sourceFilePattern": "*.json",
+          "latestDataConfig": {
+            "isEnabled": true,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Events_Shortcut/HR/ADP/Events"
+        }
+      }
+    },
+    {
+      "entityName": "department_tag",
+      "columnMappings": [
+        {
+          "sourceField": "nameCode.code",
+          "targetColumn": "DepartmentCode"
+        },
+        {
+          "sourceField": "payrollGroupCode",
+          "targetColumn": "PayrollGroupCode"
+        },
+        {
+          "sourceField": "customTags.tagCode",
+          "targetColumn": "TagCode"
+        },
+        {
+          "sourceField": "customTags.tagValue",
+          "targetColumn": "TagValue"
+        }
+      ],
+      "eventPayloadRoot": null,
+      "primaryKeyColumns": [
+        "DepartmentCode",
+        "PayrollGroupCode",
+        "TagCode"
+      ],
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true,
+          "sourceFilePattern": "departments_full*.json",
+          "latestDataConfig": {
+            "isEnabled": false,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/HR/ADP/departments"
+        },
+        "incrementalLoad": {
+          "isEnabled": false,
+          "sourceFilePattern": "*.json",
+          "latestDataConfig": {
+            "isEnabled": true,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Events_Shortcut/HR/ADP/Events"
+        }
+      }
+    },
+    {
+      "entityName": "associate_work_location",
+      "columnMappings": [
+        {
+          "sourceField": "nameCode.code",
+          "targetColumn": "LocationCode"
+        },
+        {
+          "sourceField": "nameCode.name",
+          "targetColumn": "LocationName"
+        },
+        {
+          "sourceField": "inactiveIndicator",
+          "targetColumn": "IsInactive"
+        },
+        {
+          "sourceField": "contacts.personName.formattedName",
+          "targetColumn": "ContactName"
+        },
+        {
+          "sourceField": "contacts.communication.emails.emailUri",
+          "targetColumn": "ContactEmail"
+        },
+        {
+          "sourceField": "contacts.address.lineOne",
+          "targetColumn": "AddressLine1"
+        },
+        {
+          "sourceField": "contacts.address.cityName",
+          "targetColumn": "City"
+        },
+        {
+          "sourceField": "contacts.address.subdivisionCode.code",
+          "targetColumn": "StateCode"
+        },
+        {
+          "sourceField": "contacts.address.countryCode",
+          "targetColumn": "CountryCode"
+        },
+        {
+          "sourceField": "contacts.address.postalCode",
+          "targetColumn": "PostalCode"
+        }
+      ],
+      "eventPayloadRoot": null,
+      "primaryKeyColumns": [
+        "LocationCode"
+      ],
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true,
+          "sourceFilePattern": "associateworklocations_full*.json",
+          "latestDataConfig": {
+            "isEnabled": false,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/HR/ADP/associateworklocations"
+        },
+        "incrementalLoad": {
+          "isEnabled": false,
+          "sourceFilePattern": "*.json",
+          "latestDataConfig": {
+            "isEnabled": true,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Events_Shortcut/HR/ADP/Events"
+        }
+      }
+    },
+    {
+      "entityName": "associate_work_location_phone",
+      "columnMappings": [
+        {
+          "sourceField": "nameCode.code",
+          "targetColumn": "LocationCode"
+        },
+        {
+          "sourceField": "contacts.communication.landlines.nameCode.code",
+          "targetColumn": "PhoneTypeCode"
+        },
+        {
+          "sourceField": "contacts.communication.landlines.countryDialing",
+          "targetColumn": "CountryDialCode"
+        },
+        {
+          "sourceField": "contacts.communication.landlines.areaDialing",
+          "targetColumn": "AreaDialCode"
+        },
+        {
+          "sourceField": "contacts.communication.landlines.dialNumber",
+          "targetColumn": "DialNumber"
+        },
+        {
+          "sourceField": "contacts.communication.landlines.access",
+          "targetColumn": "AccessCode"
+        }
+      ],
+      "eventPayloadRoot": null,
+      "primaryKeyColumns": [
+        "LocationCode",
+        "PhoneTypeCode"
+      ],
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true,
+          "sourceFilePattern": "associateworklocations_full*.json",
+          "latestDataConfig": {
+            "isEnabled": false,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/HR/ADP/associateworklocations"
+        },
+        "incrementalLoad": {
+          "isEnabled": false,
+          "sourceFilePattern": "*.json",
+          "latestDataConfig": {
+            "isEnabled": true,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Events_Shortcut/HR/ADP/Events"
+        }
+      }
+    },
+    {
+      "entityName": "associate_work_location_tag",
+      "columnMappings": [
+        {
+          "sourceField": "nameCode.code",
+          "targetColumn": "LocationCode"
+        },
+        {
+          "sourceField": "customTags.tagCode",
+          "targetColumn": "TagCode"
+        },
+        {
+          "sourceField": "customTags.tagValue",
+          "targetColumn": "TagValue"
+        }
+      ],
+      "eventPayloadRoot": null,
+      "primaryKeyColumns": [
+        "LocationCode",
+        "TagCode"
+      ],
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true,
+          "sourceFilePattern": "associateworklocations_full*.json",
+          "latestDataConfig": {
+            "isEnabled": false,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/HR/ADP/associateworklocations"
+        },
+        "incrementalLoad": {
+          "isEnabled": false,
+          "sourceFilePattern": "*.json",
+          "latestDataConfig": {
+            "isEnabled": true,
+            "path": "Files/Latest/ADP"
+          },
+          "sourcePath": "Files/ADLS_Events_Shortcut/HR/ADP/Events"
+        }
+      }
+    }
+  ]
+}

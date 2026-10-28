@@ -1,0 +1,152 @@
+{
+  "configVersion": "3.0",
+  "configName": "SourceToLandingConfig",
+  "description": "Controls source-level Source-to-Landing ingestion. Each source defines enablement, supported load modes, connection metadata, and the source-specific entity configuration reference.",
+  "isActive": true,
+  "sources": [
+    {
+      "sourceId": "EHR_NETSMART",
+      "subjectArea": "EHR",
+      "sourceSystem": "NetSmart",
+      "sourceType": "OnPrem",
+      "isEnabled": true,
+      "loadControl": {
+        "initialLoadEnabled": true,
+        "incrementalLoadEnabled": true
+      },
+      "connection": {
+        "connectionType": "SQL",
+        "serverName": "tcp:23.235.123.10,1433",
+        "databaseName": "MUE_15397001_PROD_OLTP",
+        "userName": "15397001ReportUser",
+        "secretName": "netsmart-sql-pwd"
+      },
+      "incrementalStrategy": "FULL_SNAPSHOT",
+      "entityConfigPath": "dataplatform-config/source-to-landing/ehr/netsmart/NetSmartSourceToLandingConfig.json"
+    },
+    {
+      "sourceId": "EHR_INOVALON",
+      "subjectArea": "EHR",
+      "sourceSystem": "Inovalon",
+      "sourceType": "ADLS",
+      "isEnabled": true,
+      "loadControl": {
+        "initialLoadEnabled": true,
+        "incrementalLoadEnabled": true
+      },
+      "connection": {
+        "connectionType": "ADLS",
+        "containerName": "inovalon-inbound",
+        "dataLakeUrl": "https://stowlsureinovalon.dfs.core.windows.net/"
+      },
+      "sourcePaths": {
+        "initialLoadPath": "Full/",
+        "incrementalLoadPath": "Latest/"
+      },
+      "incrementalStrategy": "CHANGED_FILES",
+      "entityConfigPath": "dataplatform-config/source-to-landing/ehr/inovalon/InovalonSourceToLandingConfig.json"
+    },
+    {
+      "sourceId": "HR_ADP",
+      "subjectArea": "HR",
+      "sourceSystem": "ADP",
+      "sourceType": "API",
+      "isEnabled": true,
+      "loadControl": {
+        "initialLoadEnabled": true,
+        "incrementalLoadEnabled": true
+      },
+      "connection": {
+        "connectionType": "REST_API"
+      },
+      "incrementalStrategy": "EVENTS",
+      "entityConfigPath": "dataplatform-config/source-to-landing/hr/adp/AdpSourceToLandingConfig.json"
+    },
+    {
+      "sourceId": "PACEHERO",
+      "subjectArea": "OPERATIONS",
+      "sourceSystem": "Pacehero",
+      "sourceType": "Cloud",
+      "isEnabled": true,
+      "loadControl": {
+        "initialLoadEnabled": true,
+        "incrementalLoadEnabled": true
+      },
+      "connection": {
+        "connectionType": "Snowflake",
+        "serverName": "collabrios-datashare",
+        "databaseName": "DATASHARE_EVERYAGE",
+        "userName": "EVERYAGE",
+        "secretName": "snowflake-private-key"
+      },
+      "incrementalStrategy": "FULL_SNAPSHOT",
+      "entityConfigPath": "dataplatform-config/source-to-landing/operations/pacehero/PaceheroSourceToLandingConfig.json"
+    },
+    {
+      "sourceId": "REF_EHR",
+      "subjectArea": "EHR",
+      "sourceSystem": "ReferenceData",
+      "subDomain": "EHR",
+      "sourceType": "ADLS",
+      "isEnabled": true,
+      "loadControl": {
+        "initialLoadEnabled": true,
+        "incrementalLoadEnabled": true
+      },
+      "connection": {
+        "connectionType": "ADLS",
+        "containerName": "referencedata",
+        "dataLakeUrl": "https://stowlsurereferencedata.dfs.core.windows.net/"
+      },
+      "sourcePaths": {
+        "initialLoadPath": "EHR/"
+      },
+      "incrementalStrategy": "CHANGED_FILES",
+      "entityConfigPath": "dataplatform-config/source-to-landing/ehr/reference-data/EhrReferenceDataSourceToLandingConfig.json"
+    },
+    {
+      "sourceId": "REF_OPERATIONS",
+      "subjectArea": "OPERATIONS",
+      "sourceSystem": "ReferenceData",
+      "subDomain": "Operations",
+      "sourceType": "ADLS",
+      "isEnabled": true,
+      "loadControl": {
+        "initialLoadEnabled": true,
+        "incrementalLoadEnabled": true
+      },
+      "connection": {
+        "connectionType": "ADLS",
+        "containerName": "referencedata",
+        "dataLakeUrl": "https://stowlsurereferencedata.dfs.core.windows.net/"
+      },
+      "sourcePaths": {
+        "initialLoadPath": "Operations/"
+      },
+      "incrementalStrategy": "CHANGED_FILES",
+      "entityConfigPath": "dataplatform-config/source-to-landing/operations/reference-data/OperationsReferenceDataSourceToLandingConfig.json"
+    },
+    {
+      "sourceId": "REF_HR",
+      "subjectArea": "HR",
+      "sourceSystem": "ReferenceData",
+      "subDomain": "HR",
+      "sourceType": "ADLS",
+      "isEnabled": true,
+      "loadControl": {
+        "initialLoadEnabled": true,
+        "incrementalLoadEnabled": true
+      },
+      "connection": {
+        "connectionType": "ADLS",
+        "containerName": "referencedata",
+        "dataLakeUrl": "https://stowlsurereferencedata.dfs.core.windows.net/"
+      },
+      "sourcePaths": {
+        "initialLoadPath": "HR/"
+      },
+      "incrementalStrategy": "CHANGED_FILES",
+      "entityConfigPath": "dataplatform-config/source-to-landing/hr/reference-data/HrReferenceDataSourceToLandingConfig.json"
+    }
+  ]
+}

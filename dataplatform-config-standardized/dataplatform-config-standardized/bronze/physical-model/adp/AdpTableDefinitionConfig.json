@@ -1,0 +1,259 @@
+{
+  "configVersion": "3.0",
+  "configName": "ADPBronzeTableDefinitionConfig",
+  "description": "Defines Bronze Delta tables for ADP.",
+  "sourceSystem": "ADP",
+  "isActive": true,
+  "tables": [
+    {
+      "tableName": "worker",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/ADP/worker`(AssociateOid string,WorkerId string,LegalFullName string,LegalFirstName string,LegalMiddleName string,LegalLastName string,NickName string,NamePrefixCode string,NamePrefixDescription string,NameSuffixCode string,NameSuffixDescription string,ProfessionalQualificationCode string,ProfessionalQualificationDescription string,FormalTitle string,BirthLastName string,PreferredFirstName string,PreferredMiddleName string,PreferredLastName string,BirthDate string,DeathDate string,AddressLine1 string,AddressLine2 string,AddressLine3 string,City string,StateCode string,StateName string,StateSubdivisionType string,CountyCode string,County string,PostalCode string,CountryCode string,IsFullTimeStudent string,HighestEducationLevelCode string,HighestEducationLevelDescription string,OriginalHireDate string,RehireDate string,AdjustedServiceDate string,AcquisitionDate string,RetirementDate string,TerminationDate string,WorkerStatusCode string,WorkerStatusDescription string,PhotoUri string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)"
+    },
+    {
+      "tableName": "worker_former_name",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/ADP/worker_former_name`(AssociateOid string,FormerNameSeq string,FormerName string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)"
+    },
+    {
+      "tableName": "worker_address",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/ADP/worker_address`(AssociateOid string,AddressSeq string,AddressLine1 string,AddressLine2 string,AddressLine3 string,City string,StateCode string,StateDescription string,CountryCode string,PostalCode string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)"
+    },
+    {
+      "tableName": "worker_citizenship",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/ADP/worker_citizenship`(AssociateOid string,CitizenshipSeq string,CitizenshipCountryCode string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)"
+    },
+    {
+      "tableName": "worker_immigration_document",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/ADP/worker_immigration_document`(AssociateOid string,DocumentId string,VisaTypeCode string,VisaTypeDescription string,ExpirationDate string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)"
+    },
+    {
+      "tableName": "worker_passport",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/ADP/worker_passport`(AssociateOid string,DocumentId string,IssuingCountryCode string,ExpirationDate string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)"
+    },
+    {
+      "tableName": "worker_military_classification",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/ADP/worker_military_classification`(AssociateOid string,ClassificationCode string,ClassificationDescription string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)"
+    },
+    {
+      "tableName": "worker_disability_type",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/ADP/worker_disability_type`(AssociateOid string,DisabilityTypeCode string,DisabilityTypeDescription string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)"
+    },
+    {
+      "tableName": "worker_demographics",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/ADP/worker_demographics`(AssociateOid string,GenderCode string,GenderDescription string,GenderSelfIdentityCode string,GenderSelfIdentityDescription string,PreferredPronounCode string,PreferredPronounDescription string,TransgenderIdentificationCode string,LgbqIdentificationCode string,MaritalStatusCode string,MaritalStatusDescription string,MaritalStatusEffectiveDate string,EthnicityCode string,EthnicityDescription string,RaceCode string,RaceDescription string,RaceIdentificationMethodCode string,RaceIdentificationMethodDescription string,MilitaryStatusCode string,MilitaryStatusDescription string,MilitaryDischargeDate string,IsDisabled string,IsDisabilityIdentificationDeclined string,IsTobaccoUser string,ParentAssociateOid string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)"
+    },
+    {
+      "tableName": "worker_email",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/ADP/worker_email`(AssociateOid string,EmailScope string,EmailItemId string,EmailType string,EmailTypeDescription string,EmailAddress string,IsNotificationEmail string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)"
+    },
+    {
+      "tableName": "worker_phone",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/ADP/worker_phone`(AssociateOid string,PhoneScope string,PhoneCategory string,PhoneItemId string,PhoneTypeCode string,PhoneTypeDescription string,CountryDialCode string,AreaDialCode string,Extension string,AccessCode string,DialNumber string,FormattedNumber string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)"
+    },
+    {
+      "tableName": "worker_government_id",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/ADP/worker_government_id`(AssociateOid string,GovIdItemId string,GovIdType string,GovIdTypeDescription string,GovIdValue string,CountryCode string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)"
+    },
+    {
+      "tableName": "worker_social_insurance",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/ADP/worker_social_insurance`(AssociateOid string,ProgramCode string,IsCovered string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)"
+    },
+    {
+      "tableName": "worker_custom_field",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/ADP/worker_custom_field`(AssociateOid string,FieldLevel string,AssignmentId string,FieldCategory string,ItemId string,FieldNameCode string,FieldNameShortDescription string,FieldNameLongDescription string,FieldValue string,FieldValueShortLabel string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)"
+    },
+    {
+      "tableName": "worker_assignment",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/ADP/worker_assignment`(AssociateOid string,AssignmentId string,PositionId string,JobTitle string,JobCode string,JobCodeShortDescription string,JobCodeDescription string,JobFunctionCode string,JobFunctionDescription string,PositionTitle string,WorkerTypeCode string,WorkerTypeDescription string,AssignmentTermCode string,AssignmentTermDescription string,WorkLevelCode string,WorkLevelDescription string,OfficerTypeCode string,LegalEntityId string,IsStockOwner5PctOrMore string,IsPrimaryAssignment string,HireDate string,ActualStartDate string,SeniorityDate string,AssignmentRehireDate string,AssignmentServiceDate string,TerminationDate string,IsRehireEligible string,IsVoluntaryTermination string,AssignmentStatusCode string,AssignmentStatusDescription string,AssignmentStatusReasonCode string,AssignmentStatusReasonDescription string,AssignmentStatusReasonLongDescription string,AssignmentStatusEffectiveDate string,IsManagementPosition string,IsOvertimeEligible string,IsTimeAndAttendanceTracked string,LastActionDate string,LastActionCode string,LastActionDescription string,LastActionReasonCode string,LastActionReasonDescription string,RemunerationBasisCode string,RemunerationBasisDescription string,PayCycleCode string,PayCycleName string,StandardPayPeriodHours string,PayScaleCode string,PayGradeCode string,PayGradeStepCode string,NextPayGradeStepDate string,PayGradeMinRate string,PayGradeMedianRate string,PayGradeMaxRate string,CompaRatio string,GeographicPayDifferentialCode string,GeographicPayDifferentialPct string,PayrollGroupCode string,PayrollFileNumber string,PayrollRegionCode string,PayrollScheduleGroupId string,PayrollProcessingStatusCode string,PayrollProcessingStatusDescription string,AnnualBenefitBaseRate string,StandardHours string,StandardHoursUnit string,FullTimeEquivalenceRatio string,WorkShiftCode string,LaborUnionCode string,LaborUnionSeniorityDate string,BargainingUnitCode string,BargainingUnitDescription string,BargainingUnitSeniorityDate string,WageLawCoverageCode string,WageLawNameCode string,PayFrequencyCode string,HourlyRateAmount string,DailyRateAmount string,WeeklyRateAmount string,BiweeklyRateAmount string,SemiMonthlyRateAmount string,MonthlyRateAmount string,AnnualRateAmount string,PayPeriodRateTypeCode string,PayPeriodRateAmount string,RateCurrency string,RemunerationEffectiveDate string,WorkLocationCode string,WorkLocationName string,WorkLocationLongName string,WorkLocationAddressLine1 string,WorkLocationCity string,WorkLocationStateCode string,WorkLocationCountryCode string,WorkLocationPostalCode string,ReportingAssociateOid string,ReportingPositionId string,ReportingWorkerId string,ReportingName string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)"
+    },
+    {
+      "tableName": "worker_assignment_org_unit",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/ADP/worker_assignment_org_unit`(AssociateOid string,AssignmentId string,OrgUnitScope string,OrgUnitTypeCode string,OrgUnitTypeDescription string,OrgUnitCode string,OrgUnitName string,OrgUnitLongName string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)"
+    },
+    {
+      "tableName": "worker_assignment_classification",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/ADP/worker_assignment_classification`(AssociateOid string,AssignmentId string,ClassificationScope string,ClassificationCode string,ClassificationDescription string,ClassificationLongDescription string,ClassificationSystemCode string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)"
+    },
+    {
+      "tableName": "worker_assignment_group",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/ADP/worker_assignment_group`(AssociateOid string,AssignmentId string,GroupCode string,GroupNameCode string,GroupNameDescription string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)"
+    },
+    {
+      "tableName": "worker_assignment_location",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/ADP/worker_assignment_location`(AssociateOid string,AssignmentId string,LocationId string,LocationName string,AddressLine1 string,AddressLine2 string,City string,StateCode string,CountryCode string,PostalCode string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)"
+    },
+    {
+      "tableName": "worker_assignment_additional_pay",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/ADP/worker_assignment_additional_pay`(AssociateOid string,AssignmentId string,RemunerationItemId string,RemunerationTypeCode string,RemunerationTypeDescription string,RateAmount string,RateCurrency string,RateUnitCode string,RateBaseUnitCode string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)"
+    },
+    {
+      "tableName": "job_requisition",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/ADP/job_requisition`(RequisitionId string,ClientRequisitionId string,CompanyName string,JobTitle string,JobCode string,JobCodeShortDescription string,JobCodeDescription string,WorkerTypeCode string,WorkerTypeDescription string,RequisitionStatusCode string,RequisitionStatusDescription string,RequisitionStatusEffectiveDate string,RequisitionReasonCode string,RequisitionReasonShortDescription string,RequisitionReasonDescription string,OpeningsQuantity string,OpeningsFilledQuantity string,OpeningsNewPositionQuantity string,ProjectedStartDate string,IsEvergreen string,IsExternal string,IsInternal string,IsCompensationVisible string,IsLocationVisible string,IsVisibleToJobSeeker string,IsLieDetectorAckRequired string,WorkedInCountry string,PayRangeMinRate string,PayRangeCurrency string,PayRangeUnitCode string,PayRangeUnitDescription string,PayRangeMaxRate string,PayRangeMaxRateCurrency string,HiringManagerAssociateOid string,HiringManagerWorkerId string,HiringManagerFirstName string,HiringManagerLastName string,HiringManagerName string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)"
+    },
+    {
+      "tableName": "job_requisition_classification",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/ADP/job_requisition_classification`(RequisitionId string,ClassificationSystemCode string,ClassificationCode string,ClassificationDescription string,ClassificationLongDescription string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)"
+    },
+    {
+      "tableName": "job_requisition_location",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/ADP/job_requisition_location`(RequisitionId string,LocationId string,LocationCode string,LocationName string,LocationLongName string,AddressLine1 string,City string,StateCode string,PostalCode string,CountryCode string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)"
+    },
+    {
+      "tableName": "job_requisition_org_unit",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/ADP/job_requisition_org_unit`(RequisitionId string,OrgUnitId string,OrgUnitTypeCode string,OrgUnitTypeDescription string,OrgUnitCode string,OrgUnitName string,OrgUnitLongName string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)"
+    },
+    {
+      "tableName": "job_requisition_backfill",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/ADP/job_requisition_backfill`(RequisitionId string,AssociateOid string,PositionId string,PositionTitle string,WorkerId string,WorkerFirstName string,WorkerLastName string,WorkerMiddleName string,WorkerName string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)"
+    },
+    {
+      "tableName": "job_requisition_posting",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/ADP/job_requisition_posting`(RequisitionId string,PostingSeq string,PostingTypeCode string,PostingTypeDescription string,IsResumeRequired string,IsValidityAttestationRequired string,IsInternalPosting string,PostDate string,ExpireDate string,PostingChannelId string,PostingChannelCode string,PostingChannelName string,PostingChannelDescription string,IsDefaultChannel string,IsExternalChannel string,PostingChannelUri string,ContactRoleLabel string,ContactName string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)"
+    },
+    {
+      "tableName": "job_requisition_posting_contact",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/ADP/job_requisition_posting_contact`(RequisitionId string,PostingSeq string,ContactType string,ContactSubType string,ContactValue string,ContactSeq string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)"
+    },
+    {
+      "tableName": "job_application",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/ADP/job_application`(ApplicationId string,RequisitionId string,RequisitionTitle string,ClientRequisitionId string,IsExternalRequisition string,IsInternalRequisition string,ApplicantPersonOid string,ApplicantAssociateOid string,ApplicantName string,ApplicantFirstName string,ApplicantMiddleName string,ApplicantLastName string,ApplicantGenderCode string,ApplicantGenderDescription string,ApplicantAddressLine1 string,ApplicantAddressLine2 string,ApplicantAddressLine3 string,ApplicantCity string,ApplicantStateCode string,ApplicantStateName string,ApplicantPostalCode string,ApplicantCountryCode string,IsInternalApplicant string,ApplicationStatusCode string,ApplicationStatusDescription string,ApplicationStatusEffectiveDate string,SubmittedDate string,SubmittedByAssociateOid string,SubmittedByFirstName string,SubmittedByLastName string,SubmittedByName string,PostingChannelId string,PostingChannelCode string,PostingChannelName string,DesiredHourlyRate string,DesiredHourlyRateCurrency string,DesiredAnnualRate string,DesiredAnnualRateCurrency string,HiringManagerAssociateOid string,HiringManagerWorkerId string,HiringManagerFirstName string,HiringManagerLastName string,HiringManagerName string,RecruiterName string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)"
+    },
+    {
+      "tableName": "job_application_contact",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/ADP/job_application_contact`(ApplicationId string,ContactType string,ContactItemId string,ContactValue string,ContactSubType string,CountryDialCode string,AreaDialCode string,DialNumber string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)"
+    },
+    {
+      "tableName": "job_application_location",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/ADP/job_application_location`(ApplicationId string,LocationId string,LocationCode string,LocationName string,LocationLongName string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)"
+    },
+    {
+      "tableName": "job_application_attachment",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/ADP/job_application_attachment`(ApplicationId string,AttachmentId string,IsResume string,AttachmentPath string,AttachmentFileName string,AttachmentText string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)"
+    },
+    {
+      "tableName": "job_application_comment",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/ADP/job_application_comment`(ApplicationId string,CommentSeq string,AuthorName string,EntryDateTime string,CommentText string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)"
+    },
+    {
+      "tableName": "worker_leave",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/ADP/worker_leave`(AssociateOid string,WorkerId string,AssignmentId string,LeaveSeq string,EffectiveDate string,LeaveStartDate string,LeaveExpectedEndDate string,LeaveTypeCode string,PaymentStatusCode string,ActualReturnDate string,ReturnStatusCode string,ParentAssociateOid string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)"
+    },
+    {
+      "tableName": "pay_distribution",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/ADP/pay_distribution`(AssociateOid string,DistributionId string,RequestedStartDate string,DistributionStatusCode string,DistributionStatusDescription string,PayrollGroupCode string,PayrollGroupDescription string,PayrollFileNumber string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)"
+    },
+    {
+      "tableName": "pay_distribution_instruction",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/ADP/pay_distribution_instruction`(AssociateOid string,DistributionId string,InstructionId string,InstructionStatusCode string,InstructionStatusDescription string,PrecedenceCode string,IsPrenote string,PrenoteOptionCode string,PrenoteDate string,PrenoteDescription string,IsBonusOnly string,IsRemainingBalance string,DistributionAmount string,DistributionPercentage string,RoutingNumberMasked string,AccountNumberMasked string,AccountTypeCode string,AccountTypeDescription string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)"
+    },
+    {
+      "tableName": "payroll_instruction",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/ADP/payroll_instruction`(AssociateOid string,PayrollGroupCode string,PayrollGroupDescription string,PayrollFileNumber string,PayrollAgreementId string,AssignmentStatusCode string,AssignmentStatusDescription string,AssignmentStatusEffectiveDate string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)"
+    },
+    {
+      "tableName": "payroll_deduction",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/ADP/payroll_deduction`(AssociateOid string,DeductionId string,DeductionCode string,DeductionDescription string,DeductionStartDate string,DeductionRate string,GoalId string,GoalLimitAmount string,IsInactive string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)"
+    },
+    {
+      "tableName": "payroll_garnishment",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/ADP/payroll_garnishment`(AssociateOid string,GarnishmentId string,DeductionCode string,DeductionDescription string,GarnishmentAmount string,GarnishmentPercentage string,GoalId string,GoalLimitAmount string,GarnishmentStartDate string,LienItemId string,LienNumber string,LienTypeCode string,LienTypeDescription string,LienSubTypeCode string,LienSubTypeDescription string,LienStatusCode string,LienStatusDescription string,LienStatusEffectiveDate string,LienReturnDate string,LienMaritalStatusCode string,LienMaritalStatusDescription string,AllowanceQuantity string,AdditionalAllowanceQuantity string,IsMedicalInsuranceOffered string,IsFullServiceClient string,CourtCaseNumberMasked string,CourtFipsCode string,HasMultipleSupportOrders string,IsSupportOrderInArrears string,JurisdictionStateCode string,JurisdictionStateDescription string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)"
+    },
+    {
+      "tableName": "payroll_garnishment_payee",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/ADP/payroll_garnishment_payee`(AssociateOid string,GarnishmentId string,PayeeCode string,PayeeShortName string,PayeeName string,PayeeContactName string,PayeePhone string,PayeePhoneExtension string,IsPaidToPayee string,PaymentScheduleCode string,PaymentScheduleDescription string,PaymentScheduleAdjustmentDays string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)"
+    },
+    {
+      "tableName": "pay_statement",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/ADP/pay_statement`(AssociateOid string,PayDate string,GrossPayAmount string,Currency string,NetPayAmount string,NetPayCurrency string,TotalHours string,StatementUri string,StatementPdfUri string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)"
+    },
+    {
+      "tableName": "worker_home_location",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/ADP/worker_home_location`(AssociateOid string,AssignmentId string,LocationId string,LocationName string,LocationLongName string,AddressLine1 string,City string,StateCode string,CountryCode string,PostalCode string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)"
+    },
+    {
+      "tableName": "worker_person_detail",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/ADP/worker_person_detail`(AssociateOid string,BirthDate string,GenderCode string,GenderDescription string,MaritalStatusCode string,MaritalStatusDescription string,IsTobaccoUser string,IsDisabled string,PreferredFirstName string,PreferredLastName string,EthnicityCode string,EthnicityDescription string,RaceIdentificationMethodCode string,RaceIdentificationMethodDescription string,RaceCode string,RaceDescription string,NickName string,LegalFirstName string,LegalMiddleName string,LegalLastName string,LegalFullName string,AddressLine1 string,City string,StateSubdivisionType string,StateCode string,StateName string,CountryCode string,PostalCode string,MilitaryStatusCode string,MilitaryStatusDescription string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)"
+    },
+    {
+      "tableName": "job",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/ADP/job`(JobCode string,JobName string,IsManagementPosition string,JobFunctionCode string,JobFunctionName string,PayScaleCode string,PayScaleName string,PayGradeCode string,WageLawNameCode string,WageLawNameDescription string,WageLawCoverageCode string,IndustryClassificationCode string,JobFamilyCode string,OccupationalClassificationCode string,OccupationalClassificationName string,IsInactive string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)"
+    },
+    {
+      "tableName": "job_alternate_name",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/ADP/job_alternate_name`(JobCode string,LanguageCode string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)"
+    },
+    {
+      "tableName": "department",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/ADP/department`(DepartmentCode string,PayrollGroupCode string,DepartmentName string,IsInactive string,ContactName string,ContactEmail string,AddressLine1 string,AddressLine3 string,City string,StateCode string,CountryCode string,PostalCode string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)"
+    },
+    {
+      "tableName": "department_phone",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/ADP/department_phone`(DepartmentCode string,PayrollGroupCode string,PhoneTypeCode string,CountryDialCode string,AreaDialCode string,DialNumber string,AccessCode string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)"
+    },
+    {
+      "tableName": "department_tag",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/ADP/department_tag`(DepartmentCode string,PayrollGroupCode string,TagCode string,TagValue string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)"
+    },
+    {
+      "tableName": "associate_work_location",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/ADP/associate_work_location`(LocationCode string,LocationName string,IsInactive string,ContactName string,ContactEmail string,AddressLine1 string,City string,StateCode string,CountryCode string,PostalCode string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)"
+    },
+    {
+      "tableName": "associate_work_location_phone",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/ADP/associate_work_location_phone`(LocationCode string,PhoneTypeCode string,CountryDialCode string,AreaDialCode string,DialNumber string,AccessCode string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)"
+    },
+    {
+      "tableName": "associate_work_location_tag",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/ADP/associate_work_location_tag`(LocationCode string,TagCode string,TagValue string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)"
+    }
+  ]
+}

@@ -1,0 +1,408 @@
+{
+  "configVersion": "3.0",
+  "configName": "ReferenceDataBronzeProcessingConfig",
+  "description": "Controls shared ReferenceData Landing-to-Bronze processing for both initial and incremental executions.",
+  "sourceSystem": "ReferenceData",
+  "targetSchema": "ReferenceData",
+  "processingStrategy": "FULL_SNAPSHOT",
+  "isActive": true,
+  "subjectAreas": [
+    "EHR",
+    "HR",
+    "OPERATIONS"
+  ],
+  "sourceType": "ADLS",
+  "fileType": "csv",
+  "entities": [
+    {
+      "entityName": "PayerMix",
+      "columnMappings": [
+        {
+          "sourceField": "No",
+          "targetColumn": "No"
+        },
+        {
+          "sourceField": "Payer Type Code",
+          "targetColumn": "PayerTypeCode"
+        },
+        {
+          "sourceField": "Payer Type Description",
+          "targetColumn": "PayerTypeDescription"
+        },
+        {
+          "sourceField": "BI Dashboard Payer Type Mix",
+          "targetColumn": "BIDashboardPayerTypeMix"
+        },
+        {
+          "sourceField": "Level Of Care",
+          "targetColumn": "LevelOfCare"
+        },
+        {
+          "sourceField": "Level of Care Description",
+          "targetColumn": "LevelofCareDescription"
+        }
+      ],
+      "eventPayloadRoot": null,
+      "latestDataConfig": {
+        "isEnabled": false,
+        "path": "Files/Latest/Netsmart"
+      },
+      "primaryKeyColumns": [
+        "PayerTypeCode",
+        "LevelOfCare"
+      ],
+      "sourceFilePattern": "PayerMix",
+      "sourceId": "EHR_INOVALON",
+      "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/ReferenceData/Operations",
+      "sourceSystem": "Inovalon",
+      "subjectArea": "OPERATIONS",
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true
+        },
+        "incrementalLoad": {
+          "isEnabled": true
+        }
+      }
+    },
+    {
+      "entityName": "ShiftReferenceData",
+      "columnMappings": [
+        {
+          "sourceField": "ShiftId",
+          "targetColumn": "ShiftId"
+        },
+        {
+          "sourceField": "ShiftName",
+          "targetColumn": "ShiftName"
+        },
+        {
+          "sourceField": "ShiftStartTime",
+          "targetColumn": "ShiftStartTime"
+        },
+        {
+          "sourceField": "ShiftEndTime",
+          "targetColumn": "ShiftEndTime"
+        }
+      ],
+      "eventPayloadRoot": null,
+      "latestDataConfig": {
+        "isEnabled": false,
+        "path": "Files/Latest/Netsmart"
+      },
+      "primaryKeyColumns": [
+        "ShiftId"
+      ],
+      "sourceFilePattern": "ShiftDetail",
+      "sourceId": "EHR_INOVALON",
+      "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/ReferenceData/EHR",
+      "sourceSystem": "Inovalon",
+      "subjectArea": "EHR",
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true
+        },
+        "incrementalLoad": {
+          "isEnabled": true
+        }
+      }
+    },
+    {
+      "entityName": "ICD10InfectionCodes",
+      "columnMappings": [
+        {
+          "sourceField": "Diag ID",
+          "targetColumn": "DiagID"
+        },
+        {
+          "sourceField": "DiagCode",
+          "targetColumn": "DiagCode"
+        },
+        {
+          "sourceField": "DiagDesc",
+          "targetColumn": "DiagDesc"
+        },
+        {
+          "sourceField": "DiagAbbrev",
+          "targetColumn": "DiagAbbrev"
+        },
+        {
+          "sourceField": "Infection_Category",
+          "targetColumn": "InfectionCategory"
+        }
+      ],
+      "eventPayloadRoot": null,
+      "latestDataConfig": {
+        "isEnabled": false,
+        "path": "Files/Latest/Netsmart"
+      },
+      "primaryKeyColumns": [
+        "DiagID"
+      ],
+      "sourceFilePattern": "ICD10InfectionCodes",
+      "sourceId": "EHR_INOVALON",
+      "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/ReferenceData/EHR",
+      "sourceSystem": "Inovalon",
+      "subjectArea": "EHR",
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true
+        },
+        "incrementalLoad": {
+          "isEnabled": true
+        }
+      }
+    },
+    {
+      "entityName": "AntibioticsUTINonUTI",
+      "columnMappings": [
+        {
+          "sourceField": "No",
+          "targetColumn": "No"
+        },
+        {
+          "sourceField": "Antibiotic Name",
+          "targetColumn": "AntibioticName"
+        },
+        {
+          "sourceField": "Antiobiotic Code",
+          "targetColumn": "AntibioticCode"
+        },
+        {
+          "sourceField": "Antibiotic Full Name",
+          "targetColumn": "AntibioticFullName"
+        }
+      ],
+      "eventPayloadRoot": null,
+      "latestDataConfig": {
+        "isEnabled": false,
+        "path": "Files/Latest/Netsmart"
+      },
+      "primaryKeyColumns": [
+        "No"
+      ],
+      "sourceFilePattern": "AntibioticsUTINonUTI",
+      "sourceId": "EHR_INOVALON",
+      "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/ReferenceData/EHR",
+      "sourceSystem": "Inovalon",
+      "subjectArea": "EHR",
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true
+        },
+        "incrementalLoad": {
+          "isEnabled": true
+        }
+      }
+    },
+    {
+      "entityName": "AnnualBudgetPayerMix",
+      "columnMappings": [
+        {
+          "sourceField": "Id",
+          "targetColumn": "Id"
+        },
+        {
+          "sourceField": "Fiscal Year",
+          "targetColumn": "FiscalYear"
+        },
+        {
+          "sourceField": "Year",
+          "targetColumn": "Year"
+        },
+        {
+          "sourceField": "Month",
+          "targetColumn": "Month"
+        },
+        {
+          "sourceField": "Location ID",
+          "targetColumn": "LocationID"
+        },
+        {
+          "sourceField": "Facility",
+          "targetColumn": "Facility"
+        },
+        {
+          "sourceField": "Level Of Care",
+          "targetColumn": "LevelOfCare"
+        },
+        {
+          "sourceField": "Payer Type Code",
+          "targetColumn": "PayerTypeCode"
+        },
+        {
+          "sourceField": "Payer Type Description",
+          "targetColumn": "PayerTypeDescription"
+        },
+        {
+          "sourceField": "Payer Type Mix",
+          "targetColumn": "PayerTypeMix"
+        },
+        {
+          "sourceField": "BI Dashboard Payer Type Mix",
+          "targetColumn": "BIDashboardPayerTypeMix"
+        },
+        {
+          "sourceField": "Expected Budget",
+          "targetColumn": "ExpectedBudget"
+        }
+      ],
+      "eventPayloadRoot": null,
+      "latestDataConfig": {
+        "isEnabled": false,
+        "path": "Files/Latest/Netsmart"
+      },
+      "primaryKeyColumns": [
+        "No"
+      ],
+      "sourceFilePattern": "AnnualBudgetPayerMix",
+      "sourceId": "EHR_INOVALON",
+      "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/ReferenceData/Operations",
+      "sourceSystem": "Inovalon",
+      "subjectArea": "OPERATIONS",
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true
+        },
+        "incrementalLoad": {
+          "isEnabled": true
+        }
+      }
+    },
+    {
+      "entityName": "ApplicationStatusCode",
+      "columnMappings": [
+        {
+          "sourceField": "NO",
+          "targetColumn": "No"
+        },
+        {
+          "sourceField": "ApplicationStatusCodeValue",
+          "targetColumn": "ApplicationStatusCodeValue"
+        },
+        {
+          "sourceField": "EveryAge Application Phase",
+          "targetColumn": "EveryAgeApplicationPhase"
+        }
+      ],
+      "eventPayloadRoot": null,
+      "latestDataConfig": {
+        "isEnabled": false,
+        "path": "Files/Latest/ADP"
+      },
+      "primaryKeyColumns": [
+        "ApplicationStatusCodeValue"
+      ],
+      "sourceFilePattern": "ApplicationStatusCode",
+      "sourceId": "HR_ADP",
+      "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/ReferenceData/HR/ADP",
+      "sourceSystem": "ADP",
+      "subjectArea": "HR",
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true
+        },
+        "incrementalLoad": {
+          "isEnabled": false
+        }
+      }
+    },
+    {
+      "entityName": "NewFacilityServices",
+      "eventPayloadRoot": null,
+      "latestDataConfig": {
+        "isEnabled": false,
+        "path": "Files/Latest/Netsmart"
+      },
+      "primaryKeyColumns": [
+        "No"
+      ],
+      "sourceFilePattern": "FacilityServices",
+      "sourceId": "EHR_INOVALON",
+      "sourceSystem": "Inovalon",
+      "subjectArea": "OPERATIONS",
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true,
+          "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/ReferenceData/Operations",
+          "columnMappings": [
+            {
+              "sourceField": "No",
+              "targetColumn": "No"
+            },
+            {
+              "sourceField": "Location ID",
+              "targetColumn": "LocationID"
+            },
+            {
+              "sourceField": "Facility",
+              "targetColumn": "Facility"
+            },
+            {
+              "sourceField": "Level Of Care",
+              "targetColumn": "LevelOfCare"
+            },
+            {
+              "sourceField": "Service ID",
+              "targetColumn": "ServiceID"
+            },
+            {
+              "sourceField": "Service ID Description",
+              "targetColumn": "ServiceIDDescription"
+            },
+            {
+              "sourceField": "Dual Occupancy",
+              "targetColumn": "DualOccupancy"
+            },
+            {
+              "sourceField": "Category Classification",
+              "targetColumn": "CategoryClassification"
+            },
+            {
+              "sourceField": "Status",
+              "targetColumn": "Status"
+            }
+          ]
+        },
+        "incrementalLoad": {
+          "isEnabled": true,
+          "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/ReferenceData/EHR",
+          "columnMappings": [
+            {
+              "sourceField": "No",
+              "targetColumn": "No"
+            },
+            {
+              "sourceField": "Location ID",
+              "targetColumn": "LocationID"
+            },
+            {
+              "sourceField": "Facility",
+              "targetColumn": "Facility"
+            },
+            {
+              "sourceField": "Level Of Care",
+              "targetColumn": "LevelOfCare"
+            },
+            {
+              "sourceField": "Service ID",
+              "targetColumn": "ServiceID"
+            },
+            {
+              "sourceField": "Service ID Description",
+              "targetColumn": "ServiceIDDescription"
+            },
+            {
+              "sourceField": "Dual Occupancy",
+              "targetColumn": "DualOccupancy"
+            },
+            {
+              "sourceField": "Category Classification",
+              "targetColumn": "CategoryClassification"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

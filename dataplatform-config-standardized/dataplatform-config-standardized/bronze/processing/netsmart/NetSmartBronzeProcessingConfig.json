@@ -1,0 +1,881 @@
+{
+  "configVersion": "3.0",
+  "configName": "NetsmartBronzeProcessingConfig",
+  "description": "Controls NetSmart Landing-to-Bronze processing for both initial and incremental executions.",
+  "sourceSystem": "Netsmart",
+  "targetSchema": "Netsmart",
+  "processingStrategy": "FULL_SNAPSHOT",
+  "isActive": true,
+  "subjectAreas": [
+    "EHR"
+  ],
+  "sourceType": "ADLS",
+  "fileType": "Parquet",
+  "entities": [
+    {
+      "entityName": "OrgInactive",
+      "columnMappings": [],
+      "eventPayloadRoot": null,
+      "latestDataConfig": {
+        "isEnabled": true,
+        "path": "Files/Latest/Netsmart"
+      },
+      "primaryKeyColumns": [
+        "OrgEntSys",
+        "OrgSeq"
+      ],
+      "sourceFilePattern": "OrgInactive",
+      "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/EHR/Netsmart",
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true
+        },
+        "incrementalLoad": {
+          "isEnabled": true
+        }
+      }
+    },
+    {
+      "entityName": "vwPayersPlans",
+      "columnMappings": [],
+      "eventPayloadRoot": null,
+      "latestDataConfig": {
+        "isEnabled": true,
+        "path": "Files/Latest/Netsmart"
+      },
+      "primaryKeyColumns": [
+        "PlanSys"
+      ],
+      "sourceFilePattern": "hmxvw_PayersPlans",
+      "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/EHR/Netsmart",
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true
+        },
+        "incrementalLoad": {
+          "isEnabled": true
+        }
+      }
+    },
+    {
+      "entityName": "MdsImportDetail",
+      "columnMappings": [],
+      "eventPayloadRoot": null,
+      "latestDataConfig": {
+        "isEnabled": true,
+        "path": "Files/Latest/Netsmart"
+      },
+      "primaryKeyColumns": [
+        "ImportHeaderSys",
+        "ImportDetailSys"
+      ],
+      "sourceFilePattern": "MdsImportDetail",
+      "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/EHR/Netsmart",
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true
+        },
+        "incrementalLoad": {
+          "isEnabled": true
+        }
+      }
+    },
+    {
+      "entityName": "EpsBillSequence",
+      "columnMappings": [],
+      "eventPayloadRoot": null,
+      "latestDataConfig": {
+        "isEnabled": true,
+        "path": "Files/Latest/Netsmart"
+      },
+      "primaryKeyColumns": [
+        "EpsBillSequenceSys"
+      ],
+      "sourceFilePattern": "EpsBillSequence",
+      "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/EHR/Netsmart",
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true
+        },
+        "incrementalLoad": {
+          "isEnabled": true
+        }
+      }
+    },
+    {
+      "entityName": "EpsCPProblems",
+      "columnMappings": [],
+      "eventPayloadRoot": null,
+      "latestDataConfig": {
+        "isEnabled": true,
+        "path": "Files/Latest/Netsmart"
+      },
+      "primaryKeyColumns": [
+        "CPProblemSys"
+      ],
+      "sourceFilePattern": "EpsCPProblems",
+      "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/EHR/Netsmart",
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true
+        },
+        "incrementalLoad": {
+          "isEnabled": true
+        }
+      }
+    },
+    {
+      "entityName": "EpsCPGoals",
+      "columnMappings": [],
+      "eventPayloadRoot": null,
+      "latestDataConfig": {
+        "isEnabled": true,
+        "path": "Files/Latest/Netsmart"
+      },
+      "primaryKeyColumns": [
+        "CPGoalSys"
+      ],
+      "sourceFilePattern": "EpsCPGoals",
+      "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/EHR/Netsmart",
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true
+        },
+        "incrementalLoad": {
+          "isEnabled": true
+        }
+      }
+    },
+    {
+      "entityName": "EpsCPInterventions",
+      "columnMappings": [],
+      "eventPayloadRoot": null,
+      "latestDataConfig": {
+        "isEnabled": true,
+        "path": "Files/Latest/Netsmart"
+      },
+      "primaryKeyColumns": [
+        "CPInterSys"
+      ],
+      "sourceFilePattern": "EpsCPInterventions",
+      "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/EHR/Netsmart",
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true
+        },
+        "incrementalLoad": {
+          "isEnabled": true
+        }
+      }
+    },
+    {
+      "entityName": "EpsCPHeader",
+      "columnMappings": [],
+      "eventPayloadRoot": null,
+      "latestDataConfig": {
+        "isEnabled": true,
+        "path": "Files/Latest/Netsmart"
+      },
+      "primaryKeyColumns": [
+        "CPSys"
+      ],
+      "sourceFilePattern": "EpsCPHeader",
+      "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/EHR/Netsmart",
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true
+        },
+        "incrementalLoad": {
+          "isEnabled": true
+        }
+      }
+    },
+    {
+      "entityName": "EpsCPGoalInterventions",
+      "columnMappings": [],
+      "eventPayloadRoot": null,
+      "latestDataConfig": {
+        "isEnabled": true,
+        "path": "Files/Latest/Netsmart"
+      },
+      "primaryKeyColumns": [
+        "CPGoalInterventionSys"
+      ],
+      "sourceFilePattern": "EpsCPGoalInterventions",
+      "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/EHR/Netsmart",
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true
+        },
+        "incrementalLoad": {
+          "isEnabled": true
+        }
+      }
+    },
+    {
+      "entityName": "vwResidents",
+      "columnMappings": [],
+      "eventPayloadRoot": null,
+      "latestDataConfig": {
+        "isEnabled": true,
+        "path": "Files/Latest/Netsmart"
+      },
+      "primaryKeyColumns": [
+        "EntitySys"
+      ],
+      "sourceFilePattern": "vwResidents",
+      "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/EHR/Netsmart",
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true
+        },
+        "incrementalLoad": {
+          "isEnabled": true
+        }
+      }
+    },
+    {
+      "entityName": "EntAddresses",
+      "columnMappings": [],
+      "eventPayloadRoot": null,
+      "latestDataConfig": {
+        "isEnabled": true,
+        "path": "Files/Latest/Netsmart"
+      },
+      "primaryKeyColumns": [
+        "EntAddresseSys"
+      ],
+      "sourceFilePattern": "EntAddresses",
+      "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/EHR/Netsmart",
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true
+        },
+        "incrementalLoad": {
+          "isEnabled": true
+        }
+      }
+    },
+    {
+      "entityName": "EntPhones",
+      "columnMappings": [],
+      "eventPayloadRoot": null,
+      "latestDataConfig": {
+        "isEnabled": true,
+        "path": "Files/Latest/Netsmart"
+      },
+      "primaryKeyColumns": [
+        "EntPhoneSys"
+      ],
+      "sourceFilePattern": "EntPhones",
+      "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/EHR/Netsmart",
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true
+        },
+        "incrementalLoad": {
+          "isEnabled": true
+        }
+      }
+    },
+    {
+      "entityName": "Episodes",
+      "columnMappings": [],
+      "eventPayloadRoot": null,
+      "latestDataConfig": {
+        "isEnabled": true,
+        "path": "Files/Latest/Netsmart"
+      },
+      "primaryKeyColumns": [
+        "EpisodeSys"
+      ],
+      "sourceFilePattern": "Episodes",
+      "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/EHR/Netsmart",
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true
+        },
+        "incrementalLoad": {
+          "isEnabled": true
+        }
+      }
+    },
+    {
+      "entityName": "Organizations",
+      "columnMappings": [],
+      "eventPayloadRoot": null,
+      "latestDataConfig": {
+        "isEnabled": true,
+        "path": "Files/Latest/Netsmart"
+      },
+      "primaryKeyColumns": [
+        "OrgEntSys"
+      ],
+      "sourceFilePattern": "Organizations",
+      "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/EHR/Netsmart",
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true
+        },
+        "incrementalLoad": {
+          "isEnabled": true
+        }
+      }
+    },
+    {
+      "entityName": "ICDConditionsXRef",
+      "columnMappings": [],
+      "eventPayloadRoot": null,
+      "latestDataConfig": {
+        "isEnabled": true,
+        "path": "Files/Latest/Netsmart"
+      },
+      "primaryKeyColumns": [
+        "ICDConditionsXRefSys"
+      ],
+      "sourceFilePattern": "ICDConditionsXRef",
+      "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/EHR/Netsmart",
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true
+        },
+        "incrementalLoad": {
+          "isEnabled": true
+        }
+      }
+    },
+    {
+      "entityName": "Facilities",
+      "columnMappings": [],
+      "eventPayloadRoot": null,
+      "latestDataConfig": {
+        "isEnabled": true,
+        "path": "Files/Latest/Netsmart"
+      },
+      "primaryKeyColumns": [
+        "FacilitySys"
+      ],
+      "sourceFilePattern": "Facilities",
+      "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/EHR/Netsmart",
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true
+        },
+        "incrementalLoad": {
+          "isEnabled": true
+        }
+      }
+    },
+    {
+      "entityName": "ResAdvDirectives",
+      "columnMappings": [],
+      "eventPayloadRoot": null,
+      "latestDataConfig": {
+        "isEnabled": true,
+        "path": "Files/Latest/Netsmart"
+      },
+      "primaryKeyColumns": [
+        "ResAdvDirectiveSys"
+      ],
+      "sourceFilePattern": "ResAdvDirectives",
+      "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/EHR/Netsmart",
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true
+        },
+        "incrementalLoad": {
+          "isEnabled": true
+        }
+      }
+    },
+    {
+      "entityName": "Entities",
+      "columnMappings": [],
+      "eventPayloadRoot": null,
+      "latestDataConfig": {
+        "isEnabled": true,
+        "path": "Files/Latest/Netsmart"
+      },
+      "primaryKeyColumns": [
+        "EntitySys"
+      ],
+      "sourceFilePattern": "Entities",
+      "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/EHR/Netsmart",
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true
+        },
+        "incrementalLoad": {
+          "isEnabled": true
+        }
+      }
+    },
+    {
+      "entityName": "MiscCodes",
+      "columnMappings": [],
+      "eventPayloadRoot": null,
+      "latestDataConfig": {
+        "isEnabled": true,
+        "path": "Files/Latest/Netsmart"
+      },
+      "primaryKeyColumns": [
+        "MiscCodeType",
+        "MiscCode",
+        "CodeDesc"
+      ],
+      "sourceFilePattern": "MiscCodes",
+      "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/EHR/Netsmart",
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true
+        },
+        "incrementalLoad": {
+          "isEnabled": true
+        }
+      }
+    },
+    {
+      "entityName": "RETCMED0",
+      "columnMappings": [],
+      "eventPayloadRoot": null,
+      "latestDataConfig": {
+        "isEnabled": true,
+        "path": "Files/Latest/Netsmart"
+      },
+      "primaryKeyColumns": [
+        "MEDID",
+        "ETC_ID"
+      ],
+      "sourceFilePattern": "RETCMED0",
+      "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/EHR/Netsmart",
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true
+        },
+        "incrementalLoad": {
+          "isEnabled": true
+        }
+      }
+    },
+    {
+      "entityName": "ResMeds",
+      "columnMappings": [],
+      "eventPayloadRoot": null,
+      "latestDataConfig": {
+        "isEnabled": true,
+        "path": "Files/Latest/Netsmart"
+      },
+      "primaryKeyColumns": [
+        "ResMedSys"
+      ],
+      "sourceFilePattern": "ResMeds",
+      "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/EHR/Netsmart",
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true
+        },
+        "incrementalLoad": {
+          "isEnabled": true
+        }
+      }
+    },
+    {
+      "entityName": "RETCTBL0",
+      "columnMappings": [],
+      "eventPayloadRoot": null,
+      "latestDataConfig": {
+        "isEnabled": true,
+        "path": "Files/Latest/Netsmart"
+      },
+      "primaryKeyColumns": [
+        "ETC_ID"
+      ],
+      "sourceFilePattern": "RETCTBL0",
+      "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/EHR/Netsmart",
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true
+        },
+        "incrementalLoad": {
+          "isEnabled": true
+        }
+      }
+    },
+    {
+      "entityName": "RETCSCH0",
+      "columnMappings": [],
+      "eventPayloadRoot": null,
+      "latestDataConfig": {
+        "isEnabled": true,
+        "path": "Files/Latest/Netsmart"
+      },
+      "primaryKeyColumns": [
+        "ETC_SEARCH_ETC_ID",
+        "ETC_PRODUCT_RELATED_ETC_ID"
+      ],
+      "sourceFilePattern": "RETCSCH0",
+      "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/EHR/Netsmart",
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true
+        },
+        "incrementalLoad": {
+          "isEnabled": true
+        }
+      }
+    },
+    {
+      "entityName": "EpsCensusTrans",
+      "columnMappings": [],
+      "eventPayloadRoot": null,
+      "latestDataConfig": {
+        "isEnabled": true,
+        "path": "Files/Latest/Netsmart"
+      },
+      "primaryKeyColumns": [
+        "EpsCensusTranSys"
+      ],
+      "sourceFilePattern": "EpsCensusTrans",
+      "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/EHR/Netsmart",
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true
+        },
+        "incrementalLoad": {
+          "isEnabled": true
+        }
+      }
+    },
+    {
+      "entityName": "vwCoreCensus",
+      "columnMappings": [],
+      "eventPayloadRoot": null,
+      "latestDataConfig": {
+        "isEnabled": false,
+        "path": "Files/Latest/Netsmart"
+      },
+      "primaryKeyColumns": [],
+      "sourceFilePattern": "vwCoreCensus",
+      "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/EHR/Netsmart",
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true
+        },
+        "incrementalLoad": {
+          "isEnabled": true
+        }
+      }
+    },
+    {
+      "entityName": "LeaveTypes",
+      "columnMappings": [],
+      "eventPayloadRoot": null,
+      "latestDataConfig": {
+        "isEnabled": false,
+        "path": "Files/Latest/Netsmart"
+      },
+      "primaryKeyColumns": [],
+      "sourceFilePattern": "LeaveTypes",
+      "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/EHR/Netsmart",
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true
+        },
+        "incrementalLoad": {
+          "isEnabled": true
+        }
+      }
+    },
+    {
+      "entityName": "EpsOrganizations",
+      "columnMappings": [],
+      "eventPayloadRoot": null,
+      "latestDataConfig": {
+        "isEnabled": true,
+        "path": "Files/Latest/Netsmart"
+      },
+      "primaryKeyColumns": [
+        "EpsOrganizationSys"
+      ],
+      "sourceFilePattern": "EpsOrganizations",
+      "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/EHR/Netsmart",
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true
+        },
+        "incrementalLoad": {
+          "isEnabled": true
+        }
+      }
+    },
+    {
+      "entityName": "BedService",
+      "columnMappings": [],
+      "eventPayloadRoot": null,
+      "latestDataConfig": {
+        "isEnabled": true,
+        "path": "Files/Latest/Netsmart"
+      },
+      "primaryKeyColumns": [
+        "BedOrgEntSys",
+        "EffectiveDate",
+        "ServSeq"
+      ],
+      "sourceFilePattern": "BedService",
+      "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/EHR/Netsmart",
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true
+        },
+        "incrementalLoad": {
+          "isEnabled": true
+        }
+      }
+    },
+    {
+      "entityName": "Services",
+      "columnMappings": [],
+      "eventPayloadRoot": null,
+      "latestDataConfig": {
+        "isEnabled": true,
+        "path": "Files/Latest/Netsmart"
+      },
+      "primaryKeyColumns": [
+        "ServiceSys"
+      ],
+      "sourceFilePattern": "Services",
+      "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/EHR/Netsmart",
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true
+        },
+        "incrementalLoad": {
+          "isEnabled": true
+        }
+      }
+    },
+    {
+      "entityName": "ResRugs",
+      "columnMappings": [],
+      "eventPayloadRoot": null,
+      "latestDataConfig": {
+        "isEnabled": true,
+        "path": "Files/Latest/Netsmart"
+      },
+      "primaryKeyColumns": [
+        "ResRugsSys"
+      ],
+      "sourceFilePattern": "ResRugs",
+      "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/EHR/Netsmart",
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true
+        },
+        "incrementalLoad": {
+          "isEnabled": true
+        }
+      }
+    },
+    {
+      "entityName": "vwResDiagnoses",
+      "columnMappings": [
+        "ResDiagnoseSys"
+      ],
+      "eventPayloadRoot": null,
+      "latestDataConfig": {
+        "isEnabled": true,
+        "path": "Files/Latest/Netsmart"
+      },
+      "primaryKeyColumns": [
+        "ResDiagnoseSys"
+      ],
+      "sourceFilePattern": "vwResDiagnoses",
+      "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/EHR/Netsmart",
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true
+        },
+        "incrementalLoad": {
+          "isEnabled": true
+        }
+      }
+    },
+    {
+      "entityName": "ResPhysOrderDiagnoses",
+      "columnMappings": [],
+      "eventPayloadRoot": null,
+      "latestDataConfig": {
+        "isEnabled": true,
+        "path": "Files/Latest/Netsmart"
+      },
+      "primaryKeyColumns": [
+        "RPODiagSys"
+      ],
+      "sourceFilePattern": "ResPhysOrderDiagnoses",
+      "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/EHR/Netsmart",
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true
+        },
+        "incrementalLoad": {
+          "isEnabled": true
+        }
+      }
+    },
+    {
+      "entityName": "ResMedsFrequency",
+      "columnMappings": [],
+      "eventPayloadRoot": null,
+      "latestDataConfig": {
+        "isEnabled": true,
+        "path": "Files/Latest/Netsmart"
+      },
+      "primaryKeyColumns": [
+        "FreqSys"
+      ],
+      "sourceFilePattern": "ResMedsFrequency",
+      "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/EHR/Netsmart",
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true
+        },
+        "incrementalLoad": {
+          "isEnabled": true
+        }
+      }
+    },
+    {
+      "entityName": "AssessQuestion",
+      "columnMappings": [],
+      "eventPayloadRoot": null,
+      "latestDataConfig": {
+        "isEnabled": false,
+        "path": "Files/Latest/Netsmart"
+      },
+      "primaryKeyColumns": [
+        "QuestionSys"
+      ],
+      "sourceFilePattern": "AssessQuestion",
+      "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/EHR/Netsmart",
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true
+        },
+        "incrementalLoad": {
+          "isEnabled": true
+        }
+      }
+    },
+    {
+      "entityName": "AssessTempDtl",
+      "columnMappings": [],
+      "eventPayloadRoot": null,
+      "latestDataConfig": {
+        "isEnabled": false,
+        "path": "Files/Latest/Netsmart"
+      },
+      "primaryKeyColumns": [
+        "AssessmentSys",
+        "TempDtlSeq"
+      ],
+      "sourceFilePattern": "AssessTempDtl",
+      "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/EHR/Netsmart",
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true
+        },
+        "incrementalLoad": {
+          "isEnabled": true
+        }
+      }
+    },
+    {
+      "entityName": "AssessTemplate",
+      "columnMappings": [],
+      "eventPayloadRoot": null,
+      "latestDataConfig": {
+        "isEnabled": false,
+        "path": "Files/Latest/Netsmart"
+      },
+      "primaryKeyColumns": [
+        "AssessmentSys"
+      ],
+      "sourceFilePattern": "AssessTemplate",
+      "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/EHR/Netsmart",
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true
+        },
+        "incrementalLoad": {
+          "isEnabled": true
+        }
+      }
+    },
+    {
+      "entityName": "EpsAssessments",
+      "columnMappings": [],
+      "eventPayloadRoot": null,
+      "latestDataConfig": {
+        "isEnabled": false,
+        "path": "Files/Latest/Netsmart"
+      },
+      "primaryKeyColumns": [
+        "EpsAssessSys"
+      ],
+      "sourceFilePattern": "EpsAssessments",
+      "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/EHR/Netsmart",
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true
+        },
+        "incrementalLoad": {
+          "isEnabled": true
+        }
+      }
+    },
+    {
+      "entityName": "vwEpsAssessDtl",
+      "columnMappings": [],
+      "eventPayloadRoot": null,
+      "latestDataConfig": {
+        "isEnabled": false,
+        "path": "Files/Latest/Netsmart"
+      },
+      "primaryKeyColumns": [
+        "EpsAssessDtlSys"
+      ],
+      "sourceFilePattern": "vwEpsAssessDtl",
+      "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/EHR/Netsmart",
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true
+        },
+        "incrementalLoad": {
+          "isEnabled": true
+        }
+      }
+    },
+    {
+      "entityName": "vwEpsCPGoalInterventions",
+      "columnMappings": [],
+      "eventPayloadRoot": null,
+      "latestDataConfig": {
+        "isEnabled": false,
+        "path": "Files/Latest/Netsmart"
+      },
+      "primaryKeyColumns": [
+        "CPGoalInterventionSys"
+      ],
+      "sourceFilePattern": "vwEpsCPGoalInterventions",
+      "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/EHR/Netsmart",
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true
+        },
+        "incrementalLoad": {
+          "isEnabled": true
+        }
+      }
+    }
+  ]
+}

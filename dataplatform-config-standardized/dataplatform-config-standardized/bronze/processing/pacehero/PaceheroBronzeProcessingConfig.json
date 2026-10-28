@@ -1,0 +1,182 @@
+{
+  "configVersion": "3.0",
+  "configName": "PaceheroBronzeProcessingConfig",
+  "description": "Controls Pacehero Landing-to-Bronze FULL_SNAPSHOT processing for initial and incremental executions.",
+  "sourceSystem": "Pacehero",
+  "targetSchema": "Pacehero",
+  "processingStrategy": "FULL_SNAPSHOT",
+  "isActive": true,
+  "subjectAreas": [
+    "EHR"
+  ],
+  "sourceType": "ADLS",
+  "fileType": "Parquet",
+  "entities": [
+    {
+      "entityName": "Appeals",
+      "columnMappings": [],
+      "eventPayloadRoot": null,
+      "latestDataConfig": {
+        "isEnabled": false,
+        "path": "Files/Latest/Pacehero"
+      },
+      "primaryKeyColumns": [
+        "MEDICAL_RECORD_NUMBER",
+        "DATE_RECEIVED"
+      ],
+      "sourceFilePattern": "APPEALS",
+      "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/EHR/Pacehero",
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true
+        },
+        "incrementalLoad": {
+          "isEnabled": true
+        }
+      }
+    },
+    {
+      "entityName": "Capitated_Billing",
+      "columnMappings": [],
+      "eventPayloadRoot": null,
+      "latestDataConfig": {
+        "isEnabled": false,
+        "path": "Files/Latest/Pacehero"
+      },
+      "primaryKeyColumns": [
+        "MEDICAL_RECORD_NUMBER",
+        "PAYER_SOURCE",
+        "START_DATE"
+      ],
+      "sourceFilePattern": "CAPITATED_BILLING",
+      "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/EHR/Pacehero",
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true
+        },
+        "incrementalLoad": {
+          "isEnabled": true
+        }
+      }
+    },
+    {
+      "entityName": "Census",
+      "columnMappings": [],
+      "eventPayloadRoot": null,
+      "latestDataConfig": {
+        "isEnabled": false,
+        "path": "Files/Latest/Pacehero"
+      },
+      "primaryKeyColumns": [
+        "PARTICIPANT_PMR"
+      ],
+      "sourceFilePattern": "CENSUS",
+      "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/EHR/Pacehero",
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true
+        },
+        "incrementalLoad": {
+          "isEnabled": true
+        }
+      }
+    },
+    {
+      "entityName": "Claims",
+      "columnMappings": [],
+      "eventPayloadRoot": null,
+      "latestDataConfig": {
+        "isEnabled": false,
+        "path": "Files/Latest/Pacehero"
+      },
+      "primaryKeyColumns": [
+        "DOCUMENT_CONTROL_NUMBER",
+        "SERVICE_CODE",
+        "MODIFIER_CODE_1"
+      ],
+      "sourceFilePattern": "CLAIMS",
+      "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/EHR/Pacehero",
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true
+        },
+        "incrementalLoad": {
+          "isEnabled": true
+        }
+      }
+    },
+    {
+      "entityName": "Compliance",
+      "columnMappings": [],
+      "eventPayloadRoot": null,
+      "latestDataConfig": {
+        "isEnabled": false,
+        "path": "Files/Latest/Pacehero"
+      },
+      "primaryKeyColumns": [
+        "MEDICAL_RECORD_NUMBER",
+        "EVENT_TYPE",
+        "EVENT_LOCATION",
+        "START_DATE"
+      ],
+      "sourceFilePattern": "COMPLIANCE",
+      "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/EHR/Pacehero",
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true
+        },
+        "incrementalLoad": {
+          "isEnabled": true
+        }
+      }
+    },
+    {
+      "entityName": "Grievances",
+      "columnMappings": [],
+      "eventPayloadRoot": null,
+      "latestDataConfig": {
+        "isEnabled": false,
+        "path": "Files/Latest/Pacehero"
+      },
+      "primaryKeyColumns": [
+        "MEDICAL_RECORD_NUMBER",
+        "RECEIVED_DATE",
+        "GRIEVANCE_CATEGORY"
+      ],
+      "sourceFilePattern": "GRIEVANCES",
+      "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/EHR/Pacehero",
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true
+        },
+        "incrementalLoad": {
+          "isEnabled": true
+        }
+      }
+    },
+    {
+      "entityName": "Utilization",
+      "columnMappings": [],
+      "eventPayloadRoot": null,
+      "latestDataConfig": {
+        "isEnabled": false,
+        "path": "Files/Latest/Pacehero"
+      },
+      "primaryKeyColumns": [
+        "MEDICAL_RECORD_NUMBER",
+        "ADMIT_DATE",
+        "INSTITUTION_TYPE"
+      ],
+      "sourceFilePattern": "UTILIZATION",
+      "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/EHR/Pacehero",
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true
+        },
+        "incrementalLoad": {
+          "isEnabled": true
+        }
+      }
+    }
+  ]
+}

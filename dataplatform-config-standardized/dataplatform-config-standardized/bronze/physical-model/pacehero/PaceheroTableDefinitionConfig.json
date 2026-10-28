@@ -1,0 +1,44 @@
+{
+    "configVersion": "3.0",
+    "configName": "PaceheroBronzeTableDefinitionConfig",
+    "description": "Defines Bronze Delta tables for Pacehero.",
+    "sourceSystem": "Pacehero",
+    "isActive": true,
+    "tables": [
+        {
+            "tableName": "APPEALS",
+            "isEnabled": true,
+            "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/Pacehero/APPEALS`(`MEDICAL_RECORD_NUMBER` string,`DATE_RECEIVED` string,`REQUESTED_DISPOSITION` string,`ORAL_NOTIFICATION_DATE` string,`ORAL_NOTIFICATION_TIME` string,`WRITTEN_NOTIFICATION_DATE` string,`WRITTEN_NOTIFICATION_TIME` string,`DATE_SERVICE_PROVIDED` string,`APPEAL_CATEGORY` string,`SITE` string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)"
+        },
+        {
+            "tableName": "CAPITATED_BILLING",
+            "isEnabled": true,
+            "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/Pacehero/CAPITATED_BILLING`(`MEDICAL_RECORD_NUMBER` string,`PAYER_SOURCE` string,`START_DATE` string,`END_DATE` string,`SITE` string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)"
+        },
+        {
+            "tableName": "CENSUS",
+            "isEnabled": true,
+            "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/Pacehero/CENSUS`(`PARTICIPANT_PMR` string,`MEDICAID_ID` string,`MEDICARE_ID` string,`FIRST_NAME` string,`LAST_NAME` string,`DATE_OF_BIRTH` string,`GENDER` string,`LANGUAGE` string,`SSN` string,`ADDRESS_LINE_1` string,`ADDRESS_LINE_2` string,`CITY` string,`STATE` string,`ZIP_CODE` string,`ENROLLMENT_DATE` string,`DISENROLLMENT_DATE` string,`DATE_OF_DEATH` string,`DISENROLLMENT_REASON` string,`SITE` string,`REFERRAL_DATE` string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)"
+        },
+        {
+            "tableName": "CLAIMS",
+            "isEnabled": true,
+            "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/Pacehero/CLAIMS`(`CLAIMS_QUEUE_ID` string,`PARTICIPANT_PMR` string,`CLAIM_TYPE` string,`CLAIM_FORM_TYPE` string,`SERVICE_FROM_DATE` string,`SERVICE_TO_DATE` string,`ADMISSION_DATE` string,`DISCHARGE_DATE` string,`VENDOR_NPI` string,`VENDOR_NAME` string,`PROVIDER_NPI` string,`PROVIDER_NAME` string,`PLACE_OF_SERVICE` string,`PRIMARY_DIAGNOSIS_CODE` string,`DRG` string,`REVENUE_CODE` string,`SERVICE_CODE` string,`MODIFIER_CODE_1` string,`QUANTITY` string,`TOTAL_APPROVED_AMOUNT` string,`DETAIL_AMOUNT` string,`ADJUDICATION_AMOUNT` string,`PRIOR_AUTHORIZATION_NUMBER` string,`DATE_RECEIVED` string,`DOCUMENT_CONTROL_NUMBER` string,`SITE` string,`PAID_DATE` string,`CHECK_NUMBER` string,`CHECK_DATE` string,`CLAIM_STATUS` string,`CLAIM_TYPE_DESCRIPTION` string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)"
+        },
+        {
+            "tableName": "COMPLIANCE",
+            "isEnabled": true,
+            "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/Pacehero/COMPLIANCE`(`MEDICAL_RECORD_NUMBER` string,`EVENT_TYPE` string,`EVENT_LOCATION` string,`START_DATE` string,`END_RESOLUTION_DATE` string,`SITE` string,`FALL_LOCATION` string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)"
+        },
+        {
+            "tableName": "GRIEVANCES",
+            "isEnabled": true,
+            "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/Pacehero/GRIEVANCES`(`MEDICAL_RECORD_NUMBER` string,`RECEIVED_DATE` string,`GRIEVANCE_CATEGORY` string,`GRIEVANCE_DESCRIPTION` string,`RESOLUTION_OUTCOME` string,`DATE_OF_RESOLUTION` string,`SITE` string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)"
+        },
+        {
+            "tableName": "UTILIZATION",
+            "isEnabled": true,
+            "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/Pacehero/UTILIZATION`(`MEDICAL_RECORD_NUMBER` string,`ADMIT_DATE` string,`DISCHARGE_DATE` string,`INSTITUTION_TYPE` string,`ADMIT_TIME` string,`SITE` string,`VENDOR_NUMBER` string,`VENDOR_NAME` string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)"
+        }
+    ]
+}

@@ -1,0 +1,298 @@
+{
+  "configVersion": "3.0",
+  "configName": "AdpSourceToLandingConfig",
+  "description": "Controls ADP REST API Source-to-Landing ingestion, including parent-child API dependencies, pagination, Landing output behavior, parent-key extraction, and data-classification requirements. Per-API loadSettings selects initial and incremental API extraction using pipeline LoadType.",
+  "subjectArea": "HR",
+  "sourceId": "HR_ADP",
+  "sourceSystem": "ADP",
+  "fileType": "JSON",
+  "isActive": true,
+  "landingSettings": {
+    "targetRelativePath": "HR/ADP/",
+    "enableDatePartitioning": true
+  },
+  "parentApis": [
+    {
+      "entityName": "workers",
+      "isEnabled": true,
+      "endpointUrl": "/hr/v2/workers",
+      "apiResponseHeader": "workers",
+      "pageSizeLimit": 100,
+      "parentKeyConfig": {
+        "isEnabled": true,
+        "keyColumnName": "AssociateOid",
+        "sourceFieldPath": "associateOID",
+        "distinctValuesOnly": true,
+        "stagingRelativePath": "Files/Staging/HR/ADP/workers/",
+        "stagingFields": [
+          {
+            "columnName": "AssociateOid",
+            "sourceFieldPath": "associateOID"
+          },
+          {
+            "columnName": "WorkerId",
+            "sourceFieldPath": "workerID.idValue"
+          }
+        ]
+      },
+      "dataClassificationConfig": {
+        "isEnabled": true,
+        "requiresUnmaskedHeader": true,
+        "fields": [
+          {
+            "columnName": "BirthDate",
+            "sourceFieldPath": "person.birthDate",
+            "classification": "PII"
+          },
+          {
+            "columnName": "GovernmentId",
+            "sourceFieldPath": "person.governmentIDs",
+            "classification": "PII"
+          }
+        ]
+      },
+      "childApis": [
+        {
+          "entityName": "leaves",
+          "isEnabled": true,
+          "endpointUrl": "/hr/v2/workers/{aoid}/leaves",
+          "apiResponseHeader": "workerLeaves",
+          "pageSizeLimit": 100,
+          "parentKeyParameter": "aoid",
+          "dataClassificationConfig": {
+            "isEnabled": false,
+            "requiresUnmaskedHeader": false,
+            "fields": []
+          },
+          "loadSettings": {
+            "initialLoad": {
+              "isEnabled": true
+            },
+            "incrementalLoad": {
+              "isEnabled": false
+            }
+          }
+        },
+        {
+          "entityName": "pay_statements",
+          "isEnabled": true,
+          "endpointUrl": "/payroll/v1/workers/{aoid}/organizational-pay-statements",
+          "apiResponseHeader": "payStatements",
+          "pageSizeLimit": 100,
+          "parentKeyParameter": "aoid",
+          "dataClassificationConfig": {
+            "isEnabled": false,
+            "requiresUnmaskedHeader": false,
+            "fields": []
+          },
+          "loadSettings": {
+            "initialLoad": {
+              "isEnabled": true
+            },
+            "incrementalLoad": {
+              "isEnabled": false
+            }
+          }
+        },
+        {
+          "entityName": "worker-demographics",
+          "isEnabled": true,
+          "endpointUrl": "/hr/v2/worker-demographics/{aoid}",
+          "apiResponseHeader": "workers",
+          "pageSizeLimit": 100,
+          "parentKeyParameter": "aoid",
+          "dataClassificationConfig": {
+            "isEnabled": true,
+            "requiresUnmaskedHeader": true,
+            "fields": [
+              {
+                "columnName": "BirthDate",
+                "sourceFieldPath": "person.birthDate",
+                "classification": "PII"
+              },
+              {
+                "columnName": "GovernmentId",
+                "sourceFieldPath": "person.governmentIDs",
+                "classification": "PII"
+              }
+            ]
+          },
+          "loadSettings": {
+            "initialLoad": {
+              "isEnabled": true
+            },
+            "incrementalLoad": {
+              "isEnabled": false
+            }
+          }
+        },
+        {
+          "entityName": "pay-distributions",
+          "isEnabled": true,
+          "endpointUrl": "/payroll/v2/workers/{aoid}/pay-distributions",
+          "apiResponseHeader": "payDistributions",
+          "pageSizeLimit": 100,
+          "parentKeyParameter": "aoid",
+          "dataClassificationConfig": {
+            "isEnabled": false,
+            "requiresUnmaskedHeader": false,
+            "fields": []
+          },
+          "loadSettings": {
+            "initialLoad": {
+              "isEnabled": true
+            },
+            "incrementalLoad": {
+              "isEnabled": false
+            }
+          }
+        },
+        {
+          "entityName": "payroll-instructions",
+          "isEnabled": true,
+          "endpointUrl": "/payroll/v1/workers/{aoid}/payroll-instructions",
+          "apiResponseHeader": "payrollinstructions",
+          "pageSizeLimit": 100,
+          "parentKeyParameter": "aoid",
+          "dataClassificationConfig": {
+            "isEnabled": true,
+            "requiresUnmaskedHeader": true,
+            "fields": [
+              {
+                "columnName": "BaseRemuneration",
+                "sourceFieldPath": "baseRemuneration",
+                "classification": "SPI"
+              },
+              {
+                "columnName": "AdditionalRemuneration",
+                "sourceFieldPath": "additionalRemunerations",
+                "classification": "SPI"
+              }
+            ]
+          },
+          "loadSettings": {
+            "initialLoad": {
+              "isEnabled": true
+            },
+            "incrementalLoad": {
+              "isEnabled": false
+            }
+          }
+        }
+      ],
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true
+        },
+        "incrementalLoad": {
+          "isEnabled": false
+        }
+      }
+    }
+  ],
+  "independentApis": [
+    {
+      "entityName": "job-requisitions",
+      "isEnabled": true,
+      "endpointUrl": "/staffing/v1/job-requisitions",
+      "apiResponseHeader": "jobRequisitions",
+      "pageSizeLimit": 20,
+      "dataClassificationConfig": {
+        "isEnabled": false,
+        "requiresUnmaskedHeader": false,
+        "fields": []
+      },
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true
+        },
+        "incrementalLoad": {
+          "isEnabled": true
+        }
+      }
+    },
+    {
+      "entityName": "job-applications",
+      "isEnabled": true,
+      "endpointUrl": "/staffing/v2/job-applications",
+      "apiResponseHeader": "jobApplications",
+      "pageSizeLimit": 20,
+      "dataClassificationConfig": {
+        "isEnabled": false,
+        "requiresUnmaskedHeader": false,
+        "fields": []
+      },
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true
+        },
+        "incrementalLoad": {
+          "isEnabled": true
+        }
+      }
+    },
+    {
+      "entityName": "departments",
+      "isEnabled": true,
+      "endpointUrl": "/hcm/v1/validation-tables/departments",
+      "apiResponseHeader": "listItems",
+      "pageSizeLimit": 100,
+      "dataClassificationConfig": {
+        "isEnabled": false,
+        "requiresUnmaskedHeader": false,
+        "fields": []
+      },
+      "primaryKey": "itemID",
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true
+        },
+        "incrementalLoad": {
+          "isEnabled": false
+        }
+      }
+    },
+    {
+      "entityName": "jobs",
+      "isEnabled": true,
+      "endpointUrl": "/hcm/v1/validation-tables/jobs",
+      "apiResponseHeader": "listItems",
+      "pageSizeLimit": 100,
+      "dataClassificationConfig": {
+        "isEnabled": false,
+        "requiresUnmaskedHeader": false,
+        "fields": []
+      },
+      "primaryKey": "itemID",
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true
+        },
+        "incrementalLoad": {
+          "isEnabled": false
+        }
+      }
+    },
+    {
+      "entityName": "associate_work_locations",
+      "isEnabled": true,
+      "endpointUrl": "/hcm/v1/validation-tables/associate-work-locations",
+      "apiResponseHeader": "listItems",
+      "pageSizeLimit": 100,
+      "dataClassificationConfig": {
+        "isEnabled": false,
+        "requiresUnmaskedHeader": false,
+        "fields": []
+      },
+      "primaryKey": "itemID",
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true
+        },
+        "incrementalLoad": {
+          "isEnabled": false
+        }
+      }
+    }
+  ]
+}

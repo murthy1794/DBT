@@ -1,0 +1,106 @@
+{
+  "configVersion": "3.0",
+  "configName": "EveryAgeOrchestrationConfig",
+  "description": "Controls EveryAge Fabric orchestration profiles, activity-level execution, shared configuration references, and post-refresh notification behavior. Environment-specific values are supplied at deployment or pipeline runtime.",
+  "isActive": true,
+  "configReferences": {
+    "sourceToLandingConfigPath": "dataplatform-config/source-to-landing/SourceToLandingConfig.json",
+    "sourceToLandingAPIConfigPath": "dataplatform-config/source-to-landing/hr/adp/AdpSourceToLandingConfig.json",
+    "bronzeTableOwnershipConfigPath": "Files/BLOB_Configs_Shortcut/dataplatform-config/bronze/ownership/BronzeTableOwnershipConfig.json",
+    "bronzeTableCreateConfigPath": "Files/BLOB_Configs_Shortcut/dataplatform-config/bronze/physical-model/BronzeTableCreateConfig.json",
+    "bronzeDataProcessingConfigPath": "Files/BLOB_Configs_Shortcut/dataplatform-config/bronze/processing/BronzeDataProcessingConfig.json",
+    "silverStagingConfigPath": "Files/BLOB_Configs_Shortcut/dataplatform-config/silver/SilverStagingConfig.json"
+  },
+  "executionProfiles": [
+    {
+      "executionFrequency": "INITIAL_LOAD",
+      "description": "One-time platform initialization across enabled workloads.",
+      "isEnabled": true,
+      "executionMode": "InitialLoad",
+      "activityControl": {
+        "sourceToLanding": true,
+        "sourceToLandingAPI": true,
+        "bronzeTableReset": true,
+        "bronzeTableCreate": true,
+        "landingToBronze": true,
+        "silverStaging": true,
+        "silverDbt": true,
+        "goldDbt": true,
+        "powerBiRefresh": true
+      }
+    },
+    {
+      "executionFrequency": "MONTHLY_INCREMENTAL",
+      "description": "Generic incremental orchestration profile. Runtime workloadIds determine which sources and shared ReferenceData tables participate.",
+      "isEnabled": true,
+      "executionMode": "IncrementalLoad",
+      "activityControl": {
+        "sourceToLanding": true,
+        "sourceToLandingAPI": false,
+        "bronzeTableReset": false,
+        "bronzeTableCreate": true,
+        "landingToBronze": true,
+        "silverStaging": true,
+        "silverDbt": true,
+        "goldDbt": true,
+        "powerBiRefresh": true
+      }
+    },
+    {
+      "executionFrequency": "DAILY_INCREMENTAL",
+      "description": "Generic incremental orchestration profile. Runtime workloadIds determine which sources and shared ReferenceData tables participate.",
+      "isEnabled": true,
+      "executionMode": "IncrementalLoad",
+      "activityControl": {
+        "sourceToLanding": false,
+        "sourceToLandingAPI": true,
+        "bronzeTableReset": false,
+        "bronzeTableCreate": true,
+        "landingToBronze": true,
+        "silverStaging": true,
+        "silverDbt": true,
+        "goldDbt": true,
+        "powerBiRefresh": true
+      }
+    },
+    {
+      "executionFrequency": "INCREMENTAL_ALL",
+      "description": "Combined incremental profile for EHR and HR. EHR/file-based sources run through ADF Source-to-Landing and the ALL SOURCES Landing-to-Bronze child pipeline; HR/ADP event data runs through the ADP Landing-to-Bronze child pipeline.",
+      "isEnabled": true,
+      "executionMode": "IncrementalLoad",
+      "activityControl": {
+        "sourceToLanding": true,
+        "sourceToLandingAPI": true,
+        "bronzeTableReset": false,
+        "bronzeTableCreate": true,
+        "landingToBronze": true,
+        "silverStaging": true,
+        "silverDbt": true,
+        "goldDbt": true,
+        "powerBiRefresh": true
+      }
+    }
+  ],
+  "notification": {
+     "isEnabled": true,
+     "description": "Sends platform notifications after Power BI refresh. This is the single notification enablement control for orchestration.",
+     "recipients": {
+       "EHR": {
+         "emails": [
+           "prasad.parika@valuemomentum.com",
+           "Naveen.Gogikar@valuemomentum.com",
+           "Saikrishna.Thambireddy1@valuemomentum.com",
+           "Srujan.Velidandi@valuemomentum.com"
+         ]
+       },
+       "HR": {
+         "emails": [
+          "prasad.parika@valuemomentum.com",
+          "Naveen.Gogikar@valuemomentum.com",
+          "Saikrishna.Thambireddy1@valuemomentum.com",
+          "Srujan.Velidandi@valuemomentum.com"
+         ]
+       }
+     }
+   }
+}

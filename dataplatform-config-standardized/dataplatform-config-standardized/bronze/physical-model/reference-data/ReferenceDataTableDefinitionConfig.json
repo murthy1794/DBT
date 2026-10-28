@@ -1,0 +1,65 @@
+{
+  "configVersion": "3.0",
+  "configName": "ReferenceDataBronzeTableDefinitionConfig",
+  "description": "Defines Bronze Delta tables for shared ReferenceData.",
+  "sourceSystem": "ReferenceData",
+  "isActive": true,
+  "tables": [
+    {
+      "tableName": "ShiftReferenceData",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/ReferenceData/ShiftReferenceData`(ShiftId string,ShiftName string,ShiftStartTime string,ShiftEndTime string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)",
+      "subjectAreas": [
+        "EHR"
+      ]
+    },
+    {
+      "tableName": "AntibioticsUTINonUTI",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/ReferenceData/AntibioticsUTINonUTI`(No string,AntibioticName string,AntibioticCode string,AntibioticFullName string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)",
+      "subjectAreas": [
+        "EHR"
+      ]
+    },
+    {
+      "tableName": "ICD10InfectionCodes",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/ReferenceData/ICD10InfectionCodes`(DiagID string,DiagCode string,DiagDesc string,DiagAbbrev string,InfectionCategory string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)",
+      "subjectAreas": [
+        "EHR"
+      ]
+    },
+    {
+      "tableName": "PayerMix",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/ReferenceData/PayerMix`(No string,PayerTypeCode string,PayerTypeDescription string,BIDashboardPayerTypeMix string,LevelOfCare string,LevelofCareDescription string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)",
+      "subjectAreas": [
+        "OPERATIONS"
+      ]
+    },
+    {
+      "tableName": "AnnualBudgetPayerMix",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/ReferenceData/AnnualBudgetPayerMix`(Id string, FiscalYear string,Year string,Month string,LocationID String,Facility string,LevelOfCare string,PayerTypeCode string,PayerTypeDescription string,PayerTypeMix string,BIDashboardPayerTypeMix string,ExpectedBudget string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)",
+      "subjectAreas": [
+        "OPERATIONS"
+      ]
+    },
+    {
+      "tableName": "ApplicationStatusCode",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/ReferenceData/ApplicationStatusCode`(No string,ApplicationStatusCodeValue string,EveryAgeApplicationPhase string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)",
+      "subjectAreas": [
+        "HR"
+      ]
+    },
+    {
+      "tableName": "NewFacilityServices",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/ReferenceData/NewFacilityServices`(`No` string,`LocationID` string,Facility string,`LevelOfCare` string,`ServiceID` string,`ServiceIDDescription` string,`DualOccupancy` string,`CategoryClassification` string, Status string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)",
+      "subjectAreas": [
+        "OPERATIONS"
+      ]
+    }
+  ]
+}

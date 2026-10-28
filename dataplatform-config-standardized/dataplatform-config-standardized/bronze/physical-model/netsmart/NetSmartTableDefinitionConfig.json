@@ -1,0 +1,174 @@
+{
+  "configVersion": "3.0",
+  "configName": "NetSmartBronzeTableDefinitionConfig",
+  "description": "Defines Bronze Delta tables for NetSmart.",
+  "sourceSystem": "NetSmart",
+  "isActive": true,
+  "tables": [
+    {
+      "tableName": "vwResidents",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/Netsmart/vwResidents`(EntitySys string,InternalID string,ExternalID string,LastName string,FirstName string,MiddleName string,Salutation string,Title string,DisplayName string,EMailAddress string,DateActive string,DateInactive string,Occupation string,DeathDate string,MentalHistoryFlg string,ResHistoryFlgs string,MRDDStatusFlgs string,GuardianFlgs string,SocSecNumber string,BirthDate string,Sex string,MaritalStatusType string,EthnicityType string,RaceType string,PrimaryLanguageType string,SecondaryLanguageType string,EducationType string,CitizenshipType string,ReligionType string,MediaLabel string,MediaType string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)"
+    },
+    {
+      "tableName": "EntAddresses",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/Netsmart/EntAddresses`(EntitySys string,AddressSeq string,DateActive string,DateInactive string,AddressType string,Address1 string,Address2 string,City string,State string,Zip string,CountyGeoSys string,LocationGeoSys string,Directions string,UserCreated string,DateCreated string,FrameSysCreated string,CountryGeoSys string,County string,MSACode string,InpatientFacilityEntitySys string,EntAddresseSys string,LocationOfServiceCodeMCSys string,IsDeleted string,FrameSysUpdated string,MapsValidated string,CBSACounty string,UserSysUpdated string,UTCDateUpdated string,Latitude string,Longitude string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)"
+    },
+    {
+      "tableName": "EntPhones",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/Netsmart/EntPhones`(EntitySys string,PhoneSeq string,DateActive string,DateInactive string,PhoneType string,PhoneNumber string,AddressSeq string,UserCreated string,DateCreated string,FrameSysCreated string,EntPhoneSys string,IsDeleted string,FrameSysUpdated string,UserSysUpdated string,UTCDateUpdated string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)"
+    },
+    {
+      "tableName": "Episodes",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/Netsmart/Episodes`(EpisodeSys string,ResidentSys string,AdmissionID string,EpisodeType string,EmpAccidentFlg string,LevelOfCareType string,AdmissionDate string,AdmittedFromType string,AdmittedFromEntSys string,AdmissionConditionType string,AdmissionReasonType string,DischargeDate string,DischargeToType string,DischargeToEntSys string,DischargeCondition string,DischargeReason string,EpisodeStatus string,PlannedDischargeDate string,PriorLivingConditionType string,UserCreated string,DateCreated string,FrameSysCreated string,ReferredBySys string,ReferralDate string,ReferralType string,ApplicantStatus string,AdmitCancelType string,AppCancelType string,DenyAppType string,EvacType string,AdmitType string,AdmitTime string,DischargeTime string,CareSetting string,LastOrgSys string,NonAdmitType string,TPIAdmType string,UkwnPNOverride string,CapitationVisits string,ReferredByAssociate string,ReferralAssociateTitle string,VerbalSOCDate string,VerbalCertificationStatement string,ReferralReceivedDate string,RestartNYLOAPeriod string,RHCDayReset string,RHCDaysUsed string,EncounterDate string,UTCDateCreated string,LiaisonSys string,DesignatedHospiceTransfer string,IsHHTransfer string,NOAAdmissionDate string,ReferredByProvider string,HospiceSOCDate string,HospiceSOCReasonMCSys string,HospiceBenefitPeriodSeq string,ClinicalChartId string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)"
+    },
+    {
+      "tableName": "Organizations",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/Netsmart/Organizations`(OrgEntSys string,OrgSet string,OrgLevel string,OrgParent string,OrgNumericID string,UserCreated string,DateCreated string,FrameSysCreated string,EntSys1 string,EntSys2 string,EntSys3 string,EntSys4 string,EntSys5 string,EntSys6 string,EntSys7 string,EntSys8 string,EntSys9 string,EntSys10 string,EntSys11 string,EntSys12 string,EntSys13 string,EntSys14 string,EntSys15 string,NameID1 string,NameID2 string,NameID3 string,NameID4 string,NameID5 string,NameID6 string,NameID7 string,NameID8 string,NameID9 string,NameID10 string,NameID11 string,NameID12 string,NameID13 string,NameID14 string,NameID15 string,UpperOrgDesc string,LowerOrgDesc string,FullOrgDesc string,FacilitySys string,FacilityName string,DateUpdated string,TimeZoneOffset string,DaylightSavingsTimeFlg string,TimeZoneMCSys string,OrgTPIAdmType string,UkwnPNOverride string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)"
+    },
+    {
+      "tableName": "Entities",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/Netsmart/Entities`(EntitySys string,InternalID string,ExternalID string,LastName string,FirstName string,MiddleName string,Salutation string,Title string,DisplayName string,EMailAddress string,DateActive string,DateInactive string,SubClassList string,EntityType string,UserCreated string,DateCreated string,FrameSysCreated string,InactiveReasonType string,NPID string,EntityUserSys string,NotifyOnNewDocuments string,FrameSysUpdated string,IsHidden string,UserSysUpdated string,UTCDateUpdated string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)"
+    },
+    {
+      "tableName": "MiscCodes",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/Netsmart/MiscCodes`(MiscCodeType string,MiscCode string,CodeDesc string,ReservedFlg string,MDSTranslation string,UserCreated string,DateCreated string,FrameSysCreated string,ReservedDesc string,UB92Translation string,MedSurplusType string,RAPRequiredFlg string,PluralCodeDesc string,AutoPopPrvPayFlg string,MCSys string,DateInactive string,HL7Translation string,AssessCatPrintFormatFlg string,CodeRule string,AssessTempSecurityFlg string,SortOrder string,ModifierText string,MessageSys string,AffiliationType string,MinPMPValueThreshold string,IsTSEnabled string,HasOtherText string,IsAdmissionSpecific string,UserSysUpdated string,UTCDateUpdated string,RTAAllowSpendPeriods string,IncAssessSel string,TPIServiceChange string,PatPersSkillReqmntFlg string,FinancialOnly string,TreatAsMedAForClaims string,TherapyPlanInterval string,TherapyCertWarnDailyDoc string,ProgressNoteFreq string,ProgressNoteWarnDailyDoc string,ReqLicenseNumber string,ReqCompliance string,OneTimeRequirement string,ReqStaff string,IncludeInMedADaysCalc string,UseMedicarePending string,DisplayToUser string,IsExchangeEnabled string,AutoApplyCredits string,EffectiveDate string,DueDateDaysFromAddingReq string,SyncTimeFrameDays string,TreatAsSkilledLOC string,SplitChargeOnOverlappingServiceType string,ReqComplianceAutoPopulate string,TreatmentNoteControlType string,IsSkilledCaregiver string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)"
+    },
+    {
+      "tableName": "vwCoreCensus",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/Netsmart/vwCoreCensus`(EntitySys string,EpisodeSys string,DisplayName string,InternalID string,AD string,AdmissionDate string,DI string,DischargeDate string,TR string,TransDateTime string,BeginBed string,EndBed string,AdmDateCreated string,DisDateCreated string,TrfDateCreated string,OrgEntSys string,EpsPlanSys string,PayerType string,OrgAttachment string,OrgSet string,Ent1 string,Ent2 string,Ent3 string,Ent4 string,Ent5 string,Ent6 string,Ent7 string,Ent8 string,Ent9 string,Ent10 string,Ent11 string,Ent12 string,Ent13 string,Ent14 string,Ent15 string,Lev1 string,Lev2 string,Lev3 string,Lev4 string,Lev5 string,Lev6 string,Lev7 string,Lev8 string,Lev9 string,Lev10 string,Lev11 string,Lev12 string,Lev13 string,Lev14 string,Lev15 string,Name1 string,Name2 string,Name3 string,Name4 string,Name5 string,Name6 string,Name7 string,Name8 string,Name9 string,Name10 string,Name11 string,Name12 string,Name13 string,Name14 string,Name15 string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)"
+    },
+    {
+      "tableName": "EpsOrganizations",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/Netsmart/EpsOrganizations`(EpisodeSys string,OrgSet string,OrgSeq string,OrgLevel string,OrgEntSys string,DateActive string,DateInactive string,UserCreated string,DateCreated string,FrameSysCreated string,EpsOrganizationSys string,UTCDateCreated string,IsCanceled string,IsTransfer string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)"
+    },
+    {
+      "tableName": "EpsCensusTrans",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/Netsmart/EpsCensusTrans`(EpisodeSys string,CensSeq string,TransType string,TransDateTime string,LeaveType string,PlanSys string,BedSys string,EstCompletionDate string,TransEndDate string,ApprovalEntSys string,ApprovalDate string,Note string,ReturningType string,UserCreated string,DateCreated string,FrameSysCreated string,LeaveToType string,LeaveToEntSys string,ReasonTypeCode string,ExtendMdcrDaysFlg string,StartTime string,ReturnTime string,EpsCensusTranSys string,UTCDateCreated string,FrameSysUpdated string,IsBedSwap string,TransferReasonMCSys string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)"
+    },
+    {
+      "tableName": "RETCMED0",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/Netsmart/RETCMED0`(MEDID string,ETC_ID string,ETC_COMMON_USE_IND string,ETC_DEFAULT_USE_IND string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn string,RecordModifiedBy string,RecordModifiedOn string,RecordStatus int)"
+    },
+    {
+      "tableName": "RETCSCH0",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/Netsmart/RETCSCH0`(ETC_SEARCH_ETC_ID string,ETC_PRODUCT_RELATED_ETC_ID string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn string,RecordModifiedBy string,RecordModifiedOn string,RecordStatus int)"
+    },
+    {
+      "tableName": "RETCTBL0",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/Netsmart/RETCTBL0`(ETC_ID string,ETC_NAME string,ETC_ULTIMATE_CHILD_IND string,ETC_DRUG_CONCEPT_LINK_IND string,ETC_PARENT_ETC_ID string,ETC_FORMULARY_LEVEL_IND string,ETC_PRESENTATION_SEQNO string,ETC_ULTIMATE_PARENT_ETC_ID string,ETC_HIERARCHY_LEVEL string,ETC_SORT_NUMBER string,ETC_RETIRED_IND string,ETC_RETIRED_DATE string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn string,RecordModifiedBy string,RecordModifiedOn string,RecordStatus int)"
+    },
+    {
+      "tableName": "ResMeds",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/Netsmart/ResMeds`(MedAdminSys string,ResidentSys string,EpisodeSys string,RxPhysSys string,ProtocolSys string,MedSys string,UserSys string,SignatureFlg string,ElectSigFlg string,SignatureSource string,DisciplineType string,TaskStatus string,DateEntered string,BeginDate string,EndDate string,DoseUnit string,DoseAmount string,FrequencyType string,FrequencyLimitType string,AdminRouteType string,AllowSubstituteFlg string,RefillType string,PharmacySys string,RxNumber string,Notes string,UserCreated string,DateCreated string,DateOrdered string,PhysicalMonitor string,MinFreqRange string,DiscontinueDate string,ReceivedBySys string,OrderText string,OrderTextDelimited string,FDBMedFlg string,LastAdminGenDate string,EstimatedCost string,AuthLevelMCSys string,AdminLevelMCSys string,HHPOCMedStatusMCSys string,NbrOfDays string,FrequencyDisplay string,ProblemSys string,GoalSys string,CPGoalSys string,CarriedToCarePlan string,OrderSetOrderSys string,RxPrecaution string,DiagExempt string,DiagExemptUserSys string,ImportComplete string,IsAdminTreatment string,PrintDate string,ResMedSys string,UTCReadBack string,HomeMed string,DirectionTypeCode string,Instructions string,TreatmentRange string,InformedConsentCode string,UTCInformedConsent string,ReqValidationSys string,ValidatedBySys string,UTCDateValidated string,CoSignerSys string,ReqCoSign string,StatusAcknowledgedBySys string,UTCStatusAcknowledged string,DosageForm string,DisplayStatusAcknowledgement string,FDBMedConceptId string,PositiveIDHash string,IsGenericSubBypass string,QtyToDispense string,NbrOfRefills string,OCOrderId string,OCPrescriptionId string,IsPendingOrder string,OCPreviousPrescriptionId string,MedexProductNameID string,MedexCompositeGenericID string,OCPharmacy string,ToPharmacyNote string,DispenseTypeMCSys string,UTCDateFilled string,FromPharmacyNote string,OCTitrationID string,OCReportedMedicationId string,DateReceived string,RXFillStatus string,PharmacyOrderID string,UseIndication string,ExternalControlledSubSchedule string,ImportSource string,DispenseUnitMCSys string,DoseUnitMCSys string,DoseAmountValue string,FrameSysCreated string,FrameSysUpdated string,EarliestFillDate string,OCPharmacyID string,WrittenDate string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn string,RecordModifiedBy string,RecordModifiedOn string,RecordStatus int)"
+    },
+    {
+      "tableName": "ResAdvDirectives",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/Netsmart/ResAdvDirectives`(ResidentSys string,AdvDirSeq string,DirectiveType string,OrderingPhySys string,DateActive string,DateInactive string,DirectiveText string,UserCreated string,DateCreated string,FrameSysCreated string,ResOrderSys string,EpisodeSys string,OrderText string,OrderSetOrderSys string,ImportComplete string,ResAdvDirectiveSys string,DisplayOrder string,DateCompleted string,DateUpdated string,FrameSysUpdated string,UserUpdated string,UTCDateActive string,UTCDateCreated string,UTCDateUpdated string,ResAdvDirGuid string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn string,RecordModifiedBy string,RecordModifiedOn string,RecordStatus int)"
+    },
+    {
+      "tableName": "Facilities",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/Netsmart/Facilities`(FacilitySys string,FacilityType string,FedTaxID string,StateID string,IntExtFlg string,UserCreated string,DateCreated string,FrameSysCreated string,GLExportID string,HL7ADmitToOrgLevel string,BranchID string,OperatingCertNbr string,AllPrivateBeds string,MedicareCertState string,VisionApproved string,HL7OID string,OrderConnectAgencyID string,RevenueRecognitionModel string,EVVVendorMCSys string,HospitalBased string,SuppressSensitiveDiagsOnFaceSheet string,ProviderTypeMCSys string,GovernmentStatusFlag string,EmergencyPersonnelSys string,ClearinghouseSubmissionID string,EVVIsClockInDayMustMatchScheduledStartDayEnforced string,EVVIsClockOutDayMustMatchScheduledEndDayEnforced string,EVVClockOutPastMidnightGracePeriodInMinutes string,MedicaidID string,EVVProviderID string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)"
+    },
+    {
+      "tableName": "ResPhysOrders",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/Netsmart/ResPhysOrders`(ResidentSys string,OrderType string,DisplayOrder string,EpisodeSys string,ResOrderSys string,RxPhysSys string,DateOrdered string,ProtocolSys string,OrderSys string,UserSys string,SignatureFlg string,SignatureSource string,TaskStatus string,DateEntered string,BeginDate string,EndDate string,DoseAmount string,MinFreqRange string,FrequencyType string,AdminRouteType string,AllowSubstituteFlg string,Notes string,RelDiagnoses string,PhysicalMonitor string,DisciplineType string,ReceivedBySys string,OrderText string,OrderTextDelimited string,FDBMedFlg string,AuthLevelMCSys string,AdminLevelMCSys string,RefillType string,SchedDuration string,SchedDurationUnit string,SchedOrderSvcType string,SchedGenDate string,PRNQty string,HHPOCMedStatusMCSys string,NbrOfDays string,RxPrecaution string,OrderSetOrderSys string,GenSched string,CPGoalSys string,GoalSys string,ProblemSys string,CarriedToCarePlan string,ImportComplete string,FrequencyDisplay string,DiscontinueDate string,IsAdminTreatment string,LastAdminGenDate string,PrintDate string,UTCReadBack string,InformedConsentCode string,UTCInformedConsent string,DiagExempt string,HomeMed string,DirectionTypeCode string,DateInactive string,CategoryType string,Instructions string,TreatmentRange string,ReqValidationSys string,ValidatedBySys string,UTCDateValidated string,CoSignerSys string,ReqCoSign string,KeySys string,StatusAcknowledgedBySys string,UTCStatusAcknowledged string,DosageForm string,DirectiveType string,DisplayStatusAcknowledgement string,QtyToDispense string,NbrOfRefills string,IsGenericSubBypass string,FDBMedConceptID string,OCOrderId string,OCPrescriptionId string,IsPendingOrder string,OCReportedMedicationId string,DateReceived string,UseIndication string,ImportSource string,DoseAmountValue string,FrameSysCreated string,FrameSysUpdated string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)"
+    },
+    {
+      "tableName": "BedService",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/Netsmart/BedService`(BedOrgEntSys string,EffectiveDate string,ServSeq string,InactiveDate string,ServiceSys string,UserCreated string,DateCreated string,FrameSyscreated string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)"
+    },
+    {
+      "tableName": "ResRugs",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/Netsmart/ResRugs`(ResidentSys string,EpisodeSys string,ResRugsSeq string,RugCatg string,RugsModifier string,EffectiveDate string,EndEffDate string,NbrDaysCovered string,EpsAssessSys string,UserCreated string,DateCreated string,FrameSysCreated string,ReqAssessCode string,ManualA3ADate string,Cancelled string,PlanSys string,AcceptedFlg string,BillRug string,PrevEndEffDate string,ResRugsSys string,OrigEffectiveDate string,OrigEndEffDate string,DateUpdated string,UserSysUpdated string,FrameSysUpdated string,IsRoBoOverride string,PreventOverwrite string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)"
+    },
+    {
+      "tableName": "Services",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/Netsmart/Services`(ServiceSys string,ServiceID string,ServiceDesc string,ServiceTypeCode string,UnitofMeasureType string,ProductSvcFlg string,SalesTaxExemptFlg string,UserCreated string,DateCreated string,FrameSysCreated string,TypeOfTherapy string,OTBased string,CalcMonthQtyUsingDays string,PRPayableFlg string,PartBillableFlg string,BegEffDate string,EndEffDate string,SumTransFlg string,UseMarkupPctFlg string,ServiceCareType string,BIDFlg string,TPIEnabled string,Threshold string,InclnProdCalc string,PMPValue string,CountHoursTowardOvertime string,IsPayrollVisit string,RequireClient string,ImagePath string,MVEnabled string,VisitNoteMileageSVC string,DurationNumber string,DurationUnitCode string,SchedAuthExempt string,SplitOverlapTimeNonBillable string,IncludeAutoMileage string,GrouperSys string,EVVEnabled string,IsOTAPTA string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)"
+    },
+    {
+      "tableName": "LeaveTypes",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/Netsmart/LeaveTypes`(LeaveType string,Description string,ServiceSys string,BillableFlg string,TimeSpanInDays string,DaysAllowedPerTimeSpan string,UserCreated string,DateCreated string,FrameSysCreated string,ReservedFlg string,ReservedDesc string,HoldBedFlg string,LeaveCatgTypeCode string,DaysAllowedPerResidentFlg string,IsTherapeuticLeave string,SendCCD string,RequestClinicalDocOnReturn string,VAPerDiemEligible string,LeaveTypeSys string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)"
+    },
+    {
+      "tableName": "vwResDiagnoses",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/Netsmart/vwResDiagnoses`(ResidentSys string,DiagSeq string,DiagOrder string,DiagCode string,OnsetDate string,ExacerbDate string,DateActive string,DateInactive string,UserCreated string,DateCreated string,FrameSysCreated string,ResDiagnoseSys string,FrameSysUpdated string,UserSysUpdated string,InactComments string,GenComments string,CRAware string,CRAwareComments string,CGAware string,CGAwareComments string,DateUpdated string,DiagStatus string,UTCDateCreated string,UTCDateUpdated string,UTCHistoryDate string,ICDVersionMCSys string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)"
+    },
+    {
+      "tableName": "ResPhysOrderDiagnoses",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/Netsmart/ResPhysOrderDiagnoses`(RPODiagSys string,ResOrderSys string,DiagCode string,UserSysCreated string,UTCDateCreated string,DiagOrder string,ICDVersionMCSys string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)"
+    },
+    {
+      "tableName": "ResMedsFrequency",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/Netsmart/ResMedsFrequency`(FreqSys string,MedAdminSys string,FreqType string,MinFreq string,MaxFreq string,FreqPeriod string,Duration string,DurationPeriod string,DateActive string,DateInactive string,DateCreated string,UserCreated string,ActiveFlg string,ActualRgFreq string,FreqSubType string,OCDosageId string,IsStat string,PrevFreqSys string,OriginalFreqSys string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)"
+    },
+    {
+      "tableName": "ICDConditionsXRef",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/Netsmart/ICDConditionsXRef`(ICDConditionsXRefSys string,ICDCode string,ICDVersionMCSys string,Condition string,UTCDateCreated string,FrameSysCreated string,XRefType string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)"
+    },
+    {
+      "tableName": "MdsImportDetail",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/Netsmart/MdsImportDetail`(ImportHeaderSys string,ImportDetailSys string,FileName string,Status string,StatusDateUTC string,Message string,FName string,LName string,MiddleName string,BirthDate string,Gender string,SSN string,ISC string,ProviderType string,OBRA string,PPS string,OMRA string,SwingBed string,ReportType string,ARDDate string,State string,ResSys string,EpsSys string,EpsAssessSys string,AssessmentSys string,Z0100A string,Z0150A string,Z0200A string,Z0250A string,Z0300A string,MCGrouperSys string,MCDGrouperSysZ0200 string,MCDGrouperSysZ0250 string,MCDGrouperSysZ0300 string,CmiZ0100 string,CmiZ0150 string,CmiZ0200 string,CmiZ0250 string,CmiZ0300 string,A0050 string,X1100E string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)"
+    },
+    {
+      "tableName": "EpsBillSequence",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/Netsmart/EpsBillSequence`(EpisodeSys string,BillSeq string,CovgSeq string,PlanSys string,BillOrder string,BillProportion string,EffBegDate string,EffEndDate string,NumberOfDays string,UserCreated string,DateCreated string,FrameSysCreated string,PrimaryReasonCode string,EpsBillSequenceSys string,FrameSysUpdated string,UTCDateCreated string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)"
+    },
+    {
+      "tableName": "EpsCPProblems",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/Netsmart/EpsCPProblems`(CPSys string,Text string,DateActive string,DateInactive string,StatusType string,DateCreated string,UserCreated string,FrameSysCreated string,ProblemSys string,EtiologySys string,Questionsys string,SortOrder string,VisitNoteSys string,EtiologyDesc string,CPProblemSys string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)"
+    },
+    {
+      "tableName": "EpsCPGoals",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/Netsmart/EpsCPGoals`(CPSys string,Text string,DateInactive string,StatusType string,UserCreated string,DateCreated string,FrameSysCreated string,DateActive string,GoalSys string,GoalDate string,CompletedDate string,Questionsys string,SortOrder string,VisitNoteSys string,CPProblemSys string,CPGoalSys string,UTCLastReviewedDate string,ClinicalModuleCategorySys string,ProgressTowardGoal string,GoalStatusNotes string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)"
+    },
+    {
+      "tableName": "EpsCPGoalInterventions",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/Netsmart/EpsCPGoalInterventions`(CPGoalInterventionSys string,CPSys string,CPGoalSys string,CPInterSys string,DateActive string,DateInactive string,StatusType string,InterCompletedDate string,SortOrder string,VisitNoteSys string,DateCreated string,UserCreated string,FrameSysCreated string,MinTimesPerWeek string,MaxTimesPerWeek string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)"
+    },
+    {
+      "tableName": "EpsCPHeader",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/Netsmart/EpsCPHeader`(CPSys string,EpisodeSys string,ResidentSys string,Description string,DateHistory string,UserSysHistory string,UserCreated string,DateCreated string,FrameSysCreated string,EffectiveDate string,Comments string,DeletedFlg string,VisitNoteSys string,MergedSys string,MergedToCPSys string,EpsAssessSys string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)"
+    },
+    {
+      "tableName": "EpsCPInterventions",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/Netsmart/EpsCPInterventions`(CPSys string,Text string,UserCreated string,DateCreated string,FrameSysCreated string,InterventionSys string,VisitNoteSys string,DocumentAgainst string,InterventionType string,FlowTo485 string,FrequencyDisplay string,OrderSys string,OrderType string,CPInterSys string,LastAdminGenDate string,AutoGeneratedFromOrder string,ClinicalModuleCategorySys string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)"
+    },
+    {
+      "tableName": "OrgInactive",
+      "isEnabled": true,
+      "createStatement": "CREATE TABLE delta.`#{ABFSPath}#/Tables/Netsmart/OrgInactive`(OrgEntSys string,OrgSeq string,StartDate string,EndDate string,UserCreated string,DateCreated string,ReasonTypeCode string,SYS_CHANGE_OPERATION string,RecordIngestedBy string,RecordIngestedOn timestamp,RecordModifiedBy string,RecordModifiedOn timestamp,RecordStatus int)"
+    }
+  ]
+}

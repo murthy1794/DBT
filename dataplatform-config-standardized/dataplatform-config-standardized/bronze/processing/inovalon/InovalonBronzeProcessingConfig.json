@@ -1,0 +1,2239 @@
+{
+  "configVersion": "3.0",
+  "configName": "InovalonBronzeProcessingConfig",
+  "description": "Controls Inovalon Landing-to-Bronze processing for both initial and incremental executions.",
+  "sourceSystem": "Inovalon",
+  "targetSchema": "Inovalon",
+  "processingStrategy": "FULL_SNAPSHOT",
+  "isActive": true,
+  "subjectAreas": [
+    "EHR"
+  ],
+  "sourceType": "ADLS",
+  "fileType": "csv",
+  "entities": [
+    {
+      "entityName": "InovalonClinicalOccurrence",
+      "columnMappings": [
+        {
+          "sourceField": "Occurrence ID",
+          "targetColumn": "OccurrenceID"
+        },
+        {
+          "sourceField": "Resident ID",
+          "targetColumn": "ResidentID"
+        },
+        {
+          "sourceField": "User ID",
+          "targetColumn": "UserID"
+        },
+        {
+          "sourceField": "Facility",
+          "targetColumn": "Facility"
+        },
+        {
+          "sourceField": "Unit",
+          "targetColumn": "Unit"
+        },
+        {
+          "sourceField": "Room Number",
+          "targetColumn": "RoomNumber"
+        },
+        {
+          "sourceField": "Resident Name",
+          "targetColumn": "ResidentName"
+        },
+        {
+          "sourceField": "Non-Resident Name",
+          "targetColumn": "NonResidentName"
+        },
+        {
+          "sourceField": "Status",
+          "targetColumn": "Status"
+        },
+        {
+          "sourceField": "Severity",
+          "targetColumn": "Severity"
+        },
+        {
+          "sourceField": "Type",
+          "targetColumn": "Type"
+        },
+        {
+          "sourceField": "Subtype",
+          "targetColumn": "Subtype"
+        },
+        {
+          "sourceField": "Location",
+          "targetColumn": "Location"
+        },
+        {
+          "sourceField": "Activity",
+          "targetColumn": "Activity"
+        },
+        {
+          "sourceField": "Any Witnesses",
+          "targetColumn": "AnyWitnesses"
+        },
+        {
+          "sourceField": "Witness(es)",
+          "targetColumn": "Witnesses"
+        },
+        {
+          "sourceField": "Reported By",
+          "targetColumn": "ReportedBy"
+        },
+        {
+          "sourceField": "Assigned Care Giver",
+          "targetColumn": "AssignedCareGiver"
+        },
+        {
+          "sourceField": "Date/Time of Occurrence",
+          "targetColumn": "DateTimeOfOccurrence"
+        },
+        {
+          "sourceField": "Date/Time Reported",
+          "targetColumn": "DateTimeReported"
+        },
+        {
+          "sourceField": "Date/Time Entered",
+          "targetColumn": "DateTimeEntered"
+        },
+        {
+          "sourceField": "Sent to Hospital",
+          "targetColumn": "SentToHospital"
+        },
+        {
+          "sourceField": "Date Closed",
+          "targetColumn": "DateClosed"
+        },
+        {
+          "sourceField": "Hospital",
+          "targetColumn": "Hospital"
+        },
+        {
+          "sourceField": "Date/Time Sent to Hospital",
+          "targetColumn": "DateTimeSentToHospital"
+        },
+        {
+          "sourceField": "Physician Notified",
+          "targetColumn": "PhysicianNotified"
+        },
+        {
+          "sourceField": "Physician",
+          "targetColumn": "Physician"
+        },
+        {
+          "sourceField": "Date/Time Physician Notified",
+          "targetColumn": "DateTimePhysicianNotified"
+        },
+        {
+          "sourceField": "Why Physician Not Notified",
+          "targetColumn": "WhyPhysicianNotNotified"
+        },
+        {
+          "sourceField": "Family/POA Notified",
+          "targetColumn": "FamilyPOANotified"
+        },
+        {
+          "sourceField": "Family/POA",
+          "targetColumn": "FamilyPOA"
+        },
+        {
+          "sourceField": "Date/Time Family/POA Notified",
+          "targetColumn": "DateTimeFamilyPOANotified"
+        },
+        {
+          "sourceField": "Why Family/POA Not Notified",
+          "targetColumn": "WhyFamilyPOANotNotified"
+        },
+        {
+          "sourceField": "Ambulance Called",
+          "targetColumn": "AmbulanceCalled"
+        },
+        {
+          "sourceField": "Date/Time Ambulance Called",
+          "targetColumn": "DateTimeAmbulanceCalled"
+        },
+        {
+          "sourceField": "Ambulance Used",
+          "targetColumn": "AmbulanceUsed"
+        },
+        {
+          "sourceField": "Date/Time Ambulance Used",
+          "targetColumn": "DateTimeAmbulanceUsed"
+        },
+        {
+          "sourceField": "Law Enforcement Called",
+          "targetColumn": "LawEnforcementCalled"
+        },
+        {
+          "sourceField": "Why Law Enforcement Not Called",
+          "targetColumn": "WhyLawEnforcementNotCalled"
+        },
+        {
+          "sourceField": "ADL Package",
+          "targetColumn": "ADLPackage"
+        },
+        {
+          "sourceField": "Med Package",
+          "targetColumn": "MedPackage"
+        },
+        {
+          "sourceField": "Dementia-Related Behavior",
+          "targetColumn": "DementiaRelatedBehavior"
+        },
+        {
+          "sourceField": "Details",
+          "targetColumn": "Details"
+        },
+        {
+          "sourceField": "Finger Stick",
+          "targetColumn": "FingerStick"
+        },
+        {
+          "sourceField": "Temp.",
+          "targetColumn": "Temp"
+        },
+        {
+          "sourceField": "Blood Pressure Type",
+          "targetColumn": "BloodPressureType"
+        },
+        {
+          "sourceField": "Blood Pressure",
+          "targetColumn": "BloodPressure"
+        },
+        {
+          "sourceField": "Orthostatic BP Down",
+          "targetColumn": "OrthostaticBPDown"
+        },
+        {
+          "sourceField": "Orthostatic BP Up",
+          "targetColumn": "OrthostaticBPUp"
+        },
+        {
+          "sourceField": "Respiration",
+          "targetColumn": "Respiration"
+        },
+        {
+          "sourceField": "Pulse Type",
+          "targetColumn": "PulseType"
+        },
+        {
+          "sourceField": "Pulse",
+          "targetColumn": "Pulse"
+        },
+        {
+          "sourceField": "O2 Sat",
+          "targetColumn": "O2Sat"
+        },
+        {
+          "sourceField": "Cognition Prior",
+          "targetColumn": "CognitionPrior"
+        },
+        {
+          "sourceField": "Cognition After",
+          "targetColumn": "CognitionAfter"
+        },
+        {
+          "sourceField": "State Report",
+          "targetColumn": "StateReport"
+        },
+        {
+          "sourceField": "CCSS Facility",
+          "targetColumn": "CCSSFacility"
+        },
+        {
+          "sourceField": "Case IDs",
+          "targetColumn": "CaseIDs"
+        },
+        {
+          "sourceField": "Injury Type",
+          "targetColumn": "InjuryType"
+        },
+        {
+          "sourceField": "Injury Location",
+          "targetColumn": "InjuryLocation"
+        },
+        {
+          "sourceField": "Injury Date/Time",
+          "targetColumn": "InjuryDateTime"
+        },
+        {
+          "sourceField": "Injury Description",
+          "targetColumn": "InjuryDescription"
+        },
+        {
+          "sourceField": "Injury Type 2",
+          "targetColumn": "InjuryType2"
+        },
+        {
+          "sourceField": "Injury Location 2",
+          "targetColumn": "InjuryLocation2"
+        },
+        {
+          "sourceField": "Injury Date/Time 2",
+          "targetColumn": "InjuryDateTime2"
+        },
+        {
+          "sourceField": "Injury Description 2",
+          "targetColumn": "InjuryDescription2"
+        },
+        {
+          "sourceField": "Injury Type 3",
+          "targetColumn": "InjuryType3"
+        },
+        {
+          "sourceField": "Injury Location 3",
+          "targetColumn": "InjuryLocation3"
+        },
+        {
+          "sourceField": "Injury Date/Time 3",
+          "targetColumn": "InjuryDateTime3"
+        },
+        {
+          "sourceField": "Injury Description 3",
+          "targetColumn": "InjuryDescription3"
+        },
+        {
+          "sourceField": "Injury Type 4",
+          "targetColumn": "InjuryType4"
+        },
+        {
+          "sourceField": "Injury Location 4",
+          "targetColumn": "InjuryLocation4"
+        },
+        {
+          "sourceField": "Injury Date/Time 4",
+          "targetColumn": "InjuryDateTime4"
+        },
+        {
+          "sourceField": "Injury Description 4",
+          "targetColumn": "InjuryDescription4"
+        },
+        {
+          "sourceField": "Injury Type 5",
+          "targetColumn": "InjuryType5"
+        },
+        {
+          "sourceField": "Injury Location 5",
+          "targetColumn": "InjuryLocation5"
+        },
+        {
+          "sourceField": "Injury Date/Time 5",
+          "targetColumn": "InjuryDateTime5"
+        },
+        {
+          "sourceField": "Injury Description 5",
+          "targetColumn": "InjuryDescription5"
+        },
+        {
+          "sourceField": "Injury Type 6",
+          "targetColumn": "InjuryType6"
+        },
+        {
+          "sourceField": "Injury Location 6",
+          "targetColumn": "InjuryLocation6"
+        },
+        {
+          "sourceField": "Injury Date/Time 6",
+          "targetColumn": "InjuryDateTime6"
+        },
+        {
+          "sourceField": "Injury Description 6",
+          "targetColumn": "InjuryDescription6"
+        },
+        {
+          "sourceField": "Immediate Action Taken",
+          "targetColumn": "ImmediateActionTaken"
+        },
+        {
+          "sourceField": "Immediate Action Taken 2",
+          "targetColumn": "ImmediateActionTaken2"
+        },
+        {
+          "sourceField": "Immediate Action Taken 3",
+          "targetColumn": "ImmediateActionTaken3"
+        },
+        {
+          "sourceField": "Immediate Action Taken 4",
+          "targetColumn": "ImmediateActionTaken4"
+        },
+        {
+          "sourceField": "Immediate Action Taken 5",
+          "targetColumn": "ImmediateActionTaken5"
+        },
+        {
+          "sourceField": "Immediate Action Taken 6",
+          "targetColumn": "ImmediateActionTaken6"
+        },
+        {
+          "sourceField": "Immediate Action Taken 7",
+          "targetColumn": "ImmediateActionTaken7"
+        },
+        {
+          "sourceField": "Immediate Action Taken 8",
+          "targetColumn": "ImmediateActionTaken8"
+        },
+        {
+          "sourceField": "Immediate Action Taken 9",
+          "targetColumn": "ImmediateActionTaken9"
+        },
+        {
+          "sourceField": "Immediate Action Taken 10",
+          "targetColumn": "ImmediateActionTaken10"
+        },
+        {
+          "sourceField": "Immediate Action Taken 11",
+          "targetColumn": "ImmediateActionTaken11"
+        },
+        {
+          "sourceField": "Immediate Action Taken 12",
+          "targetColumn": "ImmediateActionTaken12"
+        },
+        {
+          "sourceField": "Immediate Action Taken 13",
+          "targetColumn": "ImmediateActionTaken13"
+        },
+        {
+          "sourceField": "Immediate Action Taken 14",
+          "targetColumn": "ImmediateActionTaken14"
+        },
+        {
+          "sourceField": "Immediate Action Taken 15",
+          "targetColumn": "ImmediateActionTaken15"
+        },
+        {
+          "sourceField": "Immediate Action Taken 16",
+          "targetColumn": "ImmediateActionTaken16"
+        },
+        {
+          "sourceField": "Immediate Action Taken 17",
+          "targetColumn": "ImmediateActionTaken17"
+        },
+        {
+          "sourceField": "Immediate Action Taken 18",
+          "targetColumn": "ImmediateActionTaken18"
+        },
+        {
+          "sourceField": "Immediate Action Taken 19",
+          "targetColumn": "ImmediateActionTaken19"
+        },
+        {
+          "sourceField": "Immediate Action Taken 20",
+          "targetColumn": "ImmediateActionTaken20"
+        },
+        {
+          "sourceField": "Immediate Action Taken 21",
+          "targetColumn": "ImmediateActionTaken21"
+        },
+        {
+          "sourceField": "Immediate Action Taken 22",
+          "targetColumn": "ImmediateActionTaken22"
+        },
+        {
+          "sourceField": "Note Type",
+          "targetColumn": "NoteType"
+        },
+        {
+          "sourceField": "Note Written By",
+          "targetColumn": "NoteWrittenBy"
+        },
+        {
+          "sourceField": "Note Entered By",
+          "targetColumn": "NoteEnteredBy"
+        },
+        {
+          "sourceField": "Note Date/Time",
+          "targetColumn": "NoteDateTime"
+        },
+        {
+          "sourceField": "Note",
+          "targetColumn": "Note"
+        },
+        {
+          "sourceField": "Note Type 2",
+          "targetColumn": "NoteType2"
+        },
+        {
+          "sourceField": "Note Written By 2",
+          "targetColumn": "NoteWrittenBy2"
+        },
+        {
+          "sourceField": "Note Entered By 2",
+          "targetColumn": "NoteEnteredBy2"
+        },
+        {
+          "sourceField": "Note Date/Time 2",
+          "targetColumn": "NoteDateTime2"
+        },
+        {
+          "sourceField": "Note 2",
+          "targetColumn": "Note2"
+        },
+        {
+          "sourceField": "Note Type 3",
+          "targetColumn": "NoteType3"
+        },
+        {
+          "sourceField": "Note Written By 3",
+          "targetColumn": "NoteWrittenBy3"
+        },
+        {
+          "sourceField": "Note Entered By 3",
+          "targetColumn": "NoteEnteredBy3"
+        },
+        {
+          "sourceField": "Note Date/Time 3",
+          "targetColumn": "NoteDateTime3"
+        },
+        {
+          "sourceField": "Note 3",
+          "targetColumn": "Note3"
+        },
+        {
+          "sourceField": "Note Type 4",
+          "targetColumn": "NoteType4"
+        },
+        {
+          "sourceField": "Note Written By 4",
+          "targetColumn": "NoteWrittenBy4"
+        },
+        {
+          "sourceField": "Note Entered By 4",
+          "targetColumn": "NoteEnteredBy4"
+        },
+        {
+          "sourceField": "Note Date/Time 4",
+          "targetColumn": "NoteDateTime4"
+        },
+        {
+          "sourceField": "Note 4",
+          "targetColumn": "Note4"
+        },
+        {
+          "sourceField": "Note Type 5",
+          "targetColumn": "NoteType5"
+        },
+        {
+          "sourceField": "Note Written By 5",
+          "targetColumn": "NoteWrittenBy5"
+        },
+        {
+          "sourceField": "Note Entered By 5",
+          "targetColumn": "NoteEnteredBy5"
+        },
+        {
+          "sourceField": "Note Date/Time 5",
+          "targetColumn": "NoteDateTime5"
+        },
+        {
+          "sourceField": "Note 5",
+          "targetColumn": "Note5"
+        },
+        {
+          "sourceField": "Note Type 6",
+          "targetColumn": "NoteType6"
+        },
+        {
+          "sourceField": "Note Written By 6",
+          "targetColumn": "NoteWrittenBy6"
+        },
+        {
+          "sourceField": "Note Entered By 6",
+          "targetColumn": "NoteEnteredBy6"
+        },
+        {
+          "sourceField": "Note Date/Time 6",
+          "targetColumn": "NoteDateTime6"
+        },
+        {
+          "sourceField": "Note 6",
+          "targetColumn": "Note6"
+        },
+        {
+          "sourceField": "Note Type 7",
+          "targetColumn": "NoteType7"
+        },
+        {
+          "sourceField": "Note Written By 7",
+          "targetColumn": "NoteWrittenBy7"
+        },
+        {
+          "sourceField": "Note Entered By 7",
+          "targetColumn": "NoteEnteredBy7"
+        },
+        {
+          "sourceField": "Note Date/Time 7",
+          "targetColumn": "NoteDateTime7"
+        },
+        {
+          "sourceField": "Note 7",
+          "targetColumn": "Note7"
+        },
+        {
+          "sourceField": "Note Type 8",
+          "targetColumn": "NoteType8"
+        },
+        {
+          "sourceField": "Note Written By 8",
+          "targetColumn": "NoteWrittenBy8"
+        },
+        {
+          "sourceField": "Note Entered By 8",
+          "targetColumn": "NoteEnteredBy8"
+        },
+        {
+          "sourceField": "Note Date/Time 8",
+          "targetColumn": "NoteDateTime8"
+        },
+        {
+          "sourceField": "Note 8",
+          "targetColumn": "Note8"
+        },
+        {
+          "sourceField": "Note Type 9",
+          "targetColumn": "NoteType9"
+        },
+        {
+          "sourceField": "Note Written By 9",
+          "targetColumn": "NoteWrittenBy9"
+        },
+        {
+          "sourceField": "Note Entered By 9",
+          "targetColumn": "NoteEnteredBy9"
+        },
+        {
+          "sourceField": "Note Date/Time 9",
+          "targetColumn": "NoteDateTime9"
+        },
+        {
+          "sourceField": "Note 9",
+          "targetColumn": "Note9"
+        },
+        {
+          "sourceField": "Note Type 10",
+          "targetColumn": "NoteType10"
+        },
+        {
+          "sourceField": "Note Written By 10",
+          "targetColumn": "NoteWrittenBy10"
+        },
+        {
+          "sourceField": "Note Entered By 10",
+          "targetColumn": "NoteEnteredBy10"
+        },
+        {
+          "sourceField": "Note Date/Time 10",
+          "targetColumn": "NoteDateTime10"
+        },
+        {
+          "sourceField": "Note 10",
+          "targetColumn": "Note10"
+        },
+        {
+          "sourceField": "Note Type 11",
+          "targetColumn": "NoteType11"
+        },
+        {
+          "sourceField": "Note Written By 11",
+          "targetColumn": "NoteWrittenBy11"
+        },
+        {
+          "sourceField": "Note Entered By 11",
+          "targetColumn": "NoteEnteredBy11"
+        },
+        {
+          "sourceField": "Note Date/Time 11",
+          "targetColumn": "NoteDateTime11"
+        },
+        {
+          "sourceField": "Note 11",
+          "targetColumn": "Note11"
+        },
+        {
+          "sourceField": "Agency Called",
+          "targetColumn": "AgencyCalled"
+        },
+        {
+          "sourceField": "Date/Time Agency Called",
+          "targetColumn": "DateTimeAgencyCalled"
+        },
+        {
+          "sourceField": "Agency Called By First",
+          "targetColumn": "AgencyCalledByFirst"
+        },
+        {
+          "sourceField": "Agency Called By Last",
+          "targetColumn": "AgencyCalledByLast"
+        },
+        {
+          "sourceField": "Agency Called By Position",
+          "targetColumn": "AgencyCalledByPosition"
+        },
+        {
+          "sourceField": "Agency Responded",
+          "targetColumn": "AgencyResponded"
+        },
+        {
+          "sourceField": "Agency Response Date/Time",
+          "targetColumn": "AgencyResponseDateTime"
+        },
+        {
+          "sourceField": "Responding Officer",
+          "targetColumn": "RespondingOfficer"
+        },
+        {
+          "sourceField": "Why Agency Did Not Respond",
+          "targetColumn": "WhyAgencyDidNotRespond"
+        },
+        {
+          "sourceField": "Police Report Filed",
+          "targetColumn": "PoliceReportFiled"
+        },
+        {
+          "sourceField": "Why Police Report Not Filed",
+          "targetColumn": "WhyPoliceReportNotFiled"
+        },
+        {
+          "sourceField": "Police Report Text",
+          "targetColumn": "PoliceReportText"
+        },
+        {
+          "sourceField": "Recommendation",
+          "targetColumn": "Recommendation"
+        },
+        {
+          "sourceField": "Recommendation Entered By",
+          "targetColumn": "RecommendationEnteredBy"
+        },
+        {
+          "sourceField": "Recommendation Assigned To",
+          "targetColumn": "RecommendationAssignedTo"
+        },
+        {
+          "sourceField": "Recommendation Due Date",
+          "targetColumn": "RecommendationDueDate"
+        },
+        {
+          "sourceField": "Recommendation Implemented Date",
+          "targetColumn": "RecommendationImplementedDate"
+        },
+        {
+          "sourceField": "Recommendation Status",
+          "targetColumn": "RecommendationStatus"
+        },
+        {
+          "sourceField": "Recommendation 2",
+          "targetColumn": "Recommendation2"
+        },
+        {
+          "sourceField": "Recommendation Entered By 2",
+          "targetColumn": "RecommendationEnteredBy2"
+        },
+        {
+          "sourceField": "Recommendation Assigned To 2",
+          "targetColumn": "RecommendationAssignedTo2"
+        },
+        {
+          "sourceField": "Recommendation Due Date 2",
+          "targetColumn": "RecommendationDueDate2"
+        },
+        {
+          "sourceField": "Recommendation Implemented Date 2",
+          "targetColumn": "RecommendationImplementedDate2"
+        },
+        {
+          "sourceField": "Recommendation Status 2",
+          "targetColumn": "RecommendationStatus2"
+        },
+        {
+          "sourceField": "Recommendation 3",
+          "targetColumn": "Recommendation3"
+        },
+        {
+          "sourceField": "Recommendation Entered By 3",
+          "targetColumn": "RecommendationEnteredBy3"
+        },
+        {
+          "sourceField": "Recommendation Assigned To 3",
+          "targetColumn": "RecommendationAssignedTo3"
+        },
+        {
+          "sourceField": "Recommendation Due Date 3",
+          "targetColumn": "RecommendationDueDate3"
+        },
+        {
+          "sourceField": "Recommendation Implemented Date 3",
+          "targetColumn": "RecommendationImplementedDate3"
+        },
+        {
+          "sourceField": "Recommendation Status 3",
+          "targetColumn": "RecommendationStatus3"
+        },
+        {
+          "sourceField": "Recommendation 4",
+          "targetColumn": "Recommendation4"
+        },
+        {
+          "sourceField": "Recommendation Entered By 4",
+          "targetColumn": "RecommendationEnteredBy4"
+        },
+        {
+          "sourceField": "Recommendation Assigned To 4",
+          "targetColumn": "RecommendationAssignedTo4"
+        },
+        {
+          "sourceField": "Recommendation Due Date 4",
+          "targetColumn": "RecommendationDueDate4"
+        },
+        {
+          "sourceField": "Recommendation Implemented Date 4",
+          "targetColumn": "RecommendationImplementedDate4"
+        },
+        {
+          "sourceField": "Recommendation Status 4",
+          "targetColumn": "RecommendationStatus4"
+        },
+        {
+          "sourceField": "Recommendation 5",
+          "targetColumn": "Recommendation5"
+        },
+        {
+          "sourceField": "Recommendation Entered By 5",
+          "targetColumn": "RecommendationEnteredBy5"
+        },
+        {
+          "sourceField": "Recommendation Assigned To 5",
+          "targetColumn": "RecommendationAssignedTo5"
+        },
+        {
+          "sourceField": "Recommendation Due Date 5",
+          "targetColumn": "RecommendationDueDate5"
+        },
+        {
+          "sourceField": "Recommendation Implemented Date 5",
+          "targetColumn": "RecommendationImplementedDate5"
+        },
+        {
+          "sourceField": "Recommendation Status 5",
+          "targetColumn": "RecommendationStatus5"
+        },
+        {
+          "sourceField": "Attachment File Name",
+          "targetColumn": "AttachmentFileName"
+        },
+        {
+          "sourceField": "Attachment Description",
+          "targetColumn": "AttachmentDescription"
+        },
+        {
+          "sourceField": "Attachment File Name 2",
+          "targetColumn": "AttachmentFileName2"
+        },
+        {
+          "sourceField": "Attachment Description 2",
+          "targetColumn": "AttachmentDescription2"
+        },
+        {
+          "sourceField": "Attachment File Name 3",
+          "targetColumn": "AttachmentFileName3"
+        },
+        {
+          "sourceField": "Attachment Description 3",
+          "targetColumn": "AttachmentDescription3"
+        },
+        {
+          "sourceField": "Attachment File Name 4",
+          "targetColumn": "AttachmentFileName4"
+        },
+        {
+          "sourceField": "Attachment Description 4",
+          "targetColumn": "AttachmentDescription4"
+        },
+        {
+          "sourceField": "Type of Abuse Allegation",
+          "targetColumn": "TypeOfAbuseAllegation"
+        },
+        {
+          "sourceField": "Source of Abuse Allegation",
+          "targetColumn": "SourceOfAbuseAllegation"
+        },
+        {
+          "sourceField": "Other Source of Abuse Allegation",
+          "targetColumn": "OtherSourceOfAbuseAllegation"
+        },
+        {
+          "sourceField": "Perpetrator Name",
+          "targetColumn": "PerpetratorName"
+        },
+        {
+          "sourceField": "Perpetrator Type",
+          "targetColumn": "PerpetratorType"
+        },
+        {
+          "sourceField": "Perpetrator Role",
+          "targetColumn": "PerpetratorRole"
+        },
+        {
+          "sourceField": "Perpetrator History",
+          "targetColumn": "PerpetratorHistory"
+        },
+        {
+          "sourceField": "Property Description",
+          "targetColumn": "PropertyDescription"
+        },
+        {
+          "sourceField": "Property Value",
+          "targetColumn": "PropertyValue"
+        },
+        {
+          "sourceField": "Behavior Symptom Exhibited",
+          "targetColumn": "BehaviorSymptomExhibited"
+        },
+        {
+          "sourceField": "Source of Behavior Allegation",
+          "targetColumn": "SourceOfBehaviorAllegation"
+        },
+        {
+          "sourceField": "Other Source of Behavior Allegation",
+          "targetColumn": "OtherSourceOfBehaviorAllegation"
+        },
+        {
+          "sourceField": "Target of Aggression",
+          "targetColumn": "TargetOfAggression"
+        },
+        {
+          "sourceField": "Date/Time Called",
+          "targetColumn": "DateTimeCalled"
+        },
+        {
+          "sourceField": "Issue",
+          "targetColumn": "Issue"
+        },
+        {
+          "sourceField": "Response",
+          "targetColumn": "Response"
+        },
+        {
+          "sourceField": "Date/Time Missing",
+          "targetColumn": "DateTimeMissing"
+        },
+        {
+          "sourceField": "Date/Time Last Seen",
+          "targetColumn": "DateTimeLastSeen"
+        },
+        {
+          "sourceField": "Last Seen Where",
+          "targetColumn": "LastSeenWhere"
+        },
+        {
+          "sourceField": "Last Seen By First",
+          "targetColumn": "LastSeenByFirst"
+        },
+        {
+          "sourceField": "Last Seen By Last",
+          "targetColumn": "LastSeenByLast"
+        },
+        {
+          "sourceField": "Last Seen By Role",
+          "targetColumn": "LastSeenByRole"
+        },
+        {
+          "sourceField": "Date/Time Found",
+          "targetColumn": "DateTimeFound"
+        },
+        {
+          "sourceField": "Place Found",
+          "targetColumn": "PlaceFound"
+        },
+        {
+          "sourceField": "Found By First",
+          "targetColumn": "FoundByFirst"
+        },
+        {
+          "sourceField": "Found By Last",
+          "targetColumn": "FoundByLast"
+        },
+        {
+          "sourceField": "Found By Role",
+          "targetColumn": "FoundByRole"
+        },
+        {
+          "sourceField": "Post Elopement Date/Time",
+          "targetColumn": "PostElopementDateTime"
+        },
+        {
+          "sourceField": "Sent To",
+          "targetColumn": "SentTo"
+        },
+        {
+          "sourceField": "Kept for Observation",
+          "targetColumn": "KeptForObservation"
+        },
+        {
+          "sourceField": "FallType",
+          "targetColumn": "FallType"
+        },
+        {
+          "sourceField": "Found By",
+          "targetColumn": "FoundBy"
+        },
+        {
+          "sourceField": "Position When Found",
+          "targetColumn": "PositionWhenFound"
+        },
+        {
+          "sourceField": "Independent for Toileting",
+          "targetColumn": "IndependentForToileting"
+        },
+        {
+          "sourceField": "Bed Rails Involved",
+          "targetColumn": "BedRailsInvolved"
+        },
+        {
+          "sourceField": "Rails Padded",
+          "targetColumn": "RailsPadded"
+        },
+        {
+          "sourceField": "L Head Rail Type",
+          "targetColumn": "LHeadRailType"
+        },
+        {
+          "sourceField": "L Head Rail Pos",
+          "targetColumn": "LHeadRailPos"
+        },
+        {
+          "sourceField": "L Head Rail Desc",
+          "targetColumn": "LHeadRailDesc"
+        },
+        {
+          "sourceField": "R Head Rail Type",
+          "targetColumn": "RHeadRailType"
+        },
+        {
+          "sourceField": "R Head Rail Pos",
+          "targetColumn": "RHeadRailPos"
+        },
+        {
+          "sourceField": "R Head Rail Desc",
+          "targetColumn": "RHeadRailDesc"
+        },
+        {
+          "sourceField": "L Foot Rail Type",
+          "targetColumn": "LFootRailType"
+        },
+        {
+          "sourceField": "L Foot Rail Pos",
+          "targetColumn": "LFootRailPos"
+        },
+        {
+          "sourceField": "L Foot Rail Desc",
+          "targetColumn": "LFootRailDesc"
+        },
+        {
+          "sourceField": "R Foot Rail Type",
+          "targetColumn": "RFootRailType"
+        },
+        {
+          "sourceField": "R Foot Rail Pos",
+          "targetColumn": "RFootRailPos"
+        },
+        {
+          "sourceField": "R Foot Rail Desc",
+          "targetColumn": "RFootRailDesc"
+        },
+        {
+          "sourceField": "Medication Error Type",
+          "targetColumn": "MedicationErrorType"
+        },
+        {
+          "sourceField": "Person Responsible",
+          "targetColumn": "PersonResponsible"
+        },
+        {
+          "sourceField": "Date/Time Error Detected",
+          "targetColumn": "DateTimeErrorDetected"
+        },
+        {
+          "sourceField": "Error Detected By First",
+          "targetColumn": "ErrorDetectedByFirst"
+        },
+        {
+          "sourceField": "Error Detected By Last",
+          "targetColumn": "ErrorDetectedByLast"
+        },
+        {
+          "sourceField": "Medication Ordered",
+          "targetColumn": "MedicationOrdered"
+        },
+        {
+          "sourceField": "Ordered Dose",
+          "targetColumn": "OrderedDose"
+        },
+        {
+          "sourceField": "Ordered Route",
+          "targetColumn": "OrderedRoute"
+        },
+        {
+          "sourceField": "Ordered Times",
+          "targetColumn": "OrderedTimes"
+        },
+        {
+          "sourceField": "Medication Administered",
+          "targetColumn": "MedicationAdministered"
+        },
+        {
+          "sourceField": "Administered Dose",
+          "targetColumn": "AdministeredDose"
+        },
+        {
+          "sourceField": "Administered Route",
+          "targetColumn": "AdministeredRoute"
+        },
+        {
+          "sourceField": "Administered Times",
+          "targetColumn": "AdministeredTimes"
+        },
+        {
+          "sourceField": "Pharmacy",
+          "targetColumn": "Pharmacy"
+        },
+        {
+          "sourceField": "Pharmacist First",
+          "targetColumn": "PharmacistFirst"
+        },
+        {
+          "sourceField": "Pharmacist Last",
+          "targetColumn": "PharmacistLast"
+        },
+        {
+          "sourceField": "Date/Time Noticed",
+          "targetColumn": "DateTimeNoticed"
+        },
+        {
+          "sourceField": "Damaged Property Description",
+          "targetColumn": "DamagedPropertyDescription"
+        },
+        {
+          "sourceField": "Damaged Property Value",
+          "targetColumn": "DamagedPropertyValue"
+        },
+        {
+          "sourceField": "Skin Issue Type",
+          "targetColumn": "SkinIssueType"
+        },
+        {
+          "sourceField": "Skin Issue Location",
+          "targetColumn": "SkinIssueLocation"
+        },
+        {
+          "sourceField": "Wound Length",
+          "targetColumn": "WoundLength"
+        },
+        {
+          "sourceField": "Wound Width",
+          "targetColumn": "WoundWidth"
+        },
+        {
+          "sourceField": "Wound Depth",
+          "targetColumn": "WoundDepth"
+        },
+        {
+          "sourceField": "Prior History",
+          "targetColumn": "PriorHistory"
+        },
+        {
+          "sourceField": "Prior History Date",
+          "targetColumn": "PriorHistoryDate"
+        },
+        {
+          "sourceField": "New or Reocc.",
+          "targetColumn": "NewOrReocc"
+        },
+        {
+          "sourceField": "Wound MD",
+          "targetColumn": "WoundMD"
+        },
+        {
+          "sourceField": "Stage",
+          "targetColumn": "Stage"
+        },
+        {
+          "sourceField": "Bowel",
+          "targetColumn": "Bowel"
+        },
+        {
+          "sourceField": "Bladder",
+          "targetColumn": "Bladder"
+        },
+        {
+          "sourceField": "Current Weight",
+          "targetColumn": "CurrentWeight"
+        },
+        {
+          "sourceField": "Fluid Intake",
+          "targetColumn": "FluidIntake"
+        },
+        {
+          "sourceField": "Fluid Output",
+          "targetColumn": "FluidOutput"
+        },
+        {
+          "sourceField": "Dry Oral Cavity",
+          "targetColumn": "DryOralCavity"
+        },
+        {
+          "sourceField": "Thick Saliva",
+          "targetColumn": "ThickSaliva"
+        },
+        {
+          "sourceField": "Decreased Skin Turgor",
+          "targetColumn": "DecreasedSkinTurgor"
+        },
+        {
+          "sourceField": "Sunken Eyes",
+          "targetColumn": "SunkenEyes"
+        },
+        {
+          "sourceField": "Restlessness",
+          "targetColumn": "Restlessness"
+        },
+        {
+          "sourceField": "Irritable",
+          "targetColumn": "Irritable"
+        },
+        {
+          "sourceField": "Overweight",
+          "targetColumn": "Overweight"
+        },
+        {
+          "sourceField": "Planned Weight Change Prog.",
+          "targetColumn": "PlannedWeightChangeProg"
+        },
+        {
+          "sourceField": "Edema",
+          "targetColumn": "Edema"
+        },
+        {
+          "sourceField": "Popliteal Pulse",
+          "targetColumn": "PoplitealPulse"
+        },
+        {
+          "sourceField": "T. Posterior Pulse",
+          "targetColumn": "TPosteriorPulse"
+        },
+        {
+          "sourceField": "Pedal Pulse",
+          "targetColumn": "PedalPulse"
+        },
+        {
+          "sourceField": "Hyperpigmentation",
+          "targetColumn": "Hyperpigmentation"
+        },
+        {
+          "sourceField": "Dry Flaky Skin",
+          "targetColumn": "DryFlakySkin"
+        },
+        {
+          "sourceField": "Itchiness",
+          "targetColumn": "Itchiness"
+        },
+        {
+          "sourceField": "Intermittent Claudication",
+          "targetColumn": "IntermittentClaudication"
+        },
+        {
+          "sourceField": "Bleeding of Wound",
+          "targetColumn": "BleedingOfWound"
+        },
+        {
+          "sourceField": "Capillary refill",
+          "targetColumn": "Capillaryrefill"
+        },
+        {
+          "sourceField": "Leg Cool to Touch",
+          "targetColumn": "LegCoolToTouch"
+        },
+        {
+          "sourceField": "Foot Cool to Touch",
+          "targetColumn": "FootCoolToTouch"
+        },
+        {
+          "sourceField": "Becomes pale/White w/ Elevation",
+          "targetColumn": "BecomesPaleWhitewElevation"
+        },
+        {
+          "sourceField": "Increased Pain w/ Elevation",
+          "targetColumn": "IncreasedPainwElevation"
+        },
+        {
+          "sourceField": "When dangling entire foot becomes pink to red",
+          "targetColumn": "Whendanglingentirefootbecomespinktored"
+        },
+        {
+          "sourceField": "When dangling pain decreases",
+          "targetColumn": "Whendanglingpaindecreases"
+        },
+        {
+          "sourceField": "Blood Sugar",
+          "targetColumn": "BloodSugar"
+        },
+        {
+          "sourceField": "No sensation in great toe",
+          "targetColumn": "Nosensationingreattoe"
+        },
+        {
+          "sourceField": "No sensation in toe 2",
+          "targetColumn": "Nosensationintoe2"
+        },
+        {
+          "sourceField": "No sensation in toe 3",
+          "targetColumn": "Nosensationintoe3"
+        },
+        {
+          "sourceField": "No sensation in toe 4",
+          "targetColumn": "Nosensationintoe4"
+        },
+        {
+          "sourceField": "No sensation in toe 5",
+          "targetColumn": "Nosensationintoe5"
+        },
+        {
+          "sourceField": "No sensation in arch of foot",
+          "targetColumn": "Nosensationinarchoffoot"
+        },
+        {
+          "sourceField": "No sensation in heal of foot",
+          "targetColumn": "Nosensationinhealoffoot"
+        },
+        {
+          "sourceField": "Burn Degree",
+          "targetColumn": "BurnDegree"
+        },
+        {
+          "sourceField": "Skin Med Name",
+          "targetColumn": "SkinMedName"
+        },
+        {
+          "sourceField": "Skin Med Dose",
+          "targetColumn": "SkinMedDose"
+        },
+        {
+          "sourceField": "Skin Med Times",
+          "targetColumn": "SkinMedTimes"
+        },
+        {
+          "sourceField": "Skin Med Days",
+          "targetColumn": "SkinMedDays"
+        },
+        {
+          "sourceField": "Skin Med PRN",
+          "targetColumn": "SkinMedPRN"
+        },
+        {
+          "sourceField": "Skin Med Route",
+          "targetColumn": "SkinMedRoute"
+        },
+        {
+          "sourceField": "Skin Med Other",
+          "targetColumn": "SkinMedOther"
+        },
+        {
+          "sourceField": "Type of Theft Allegation",
+          "targetColumn": "TypeOfTheftAllegation"
+        },
+        {
+          "sourceField": "Source of Theft Allegation",
+          "targetColumn": "SourceOfTheftAllegation"
+        },
+        {
+          "sourceField": "Other Source of Theft Allegation",
+          "targetColumn": "OtherSourceOfTheftAllegation"
+        },
+        {
+          "sourceField": "Staff Assigned",
+          "targetColumn": "StaffAssigned"
+        },
+        {
+          "sourceField": "Factor",
+          "targetColumn": "Factor"
+        },
+        {
+          "sourceField": "Value",
+          "targetColumn": "Value"
+        },
+        {
+          "sourceField": "Factor 2",
+          "targetColumn": "Factor2"
+        },
+        {
+          "sourceField": "Value 2",
+          "targetColumn": "Value2"
+        },
+        {
+          "sourceField": "Factor 3",
+          "targetColumn": "Factor3"
+        },
+        {
+          "sourceField": "Value 3",
+          "targetColumn": "Value3"
+        },
+        {
+          "sourceField": "Factor 4",
+          "targetColumn": "Factor4"
+        },
+        {
+          "sourceField": "Value 4",
+          "targetColumn": "Value4"
+        },
+        {
+          "sourceField": "Factor 5",
+          "targetColumn": "Factor5"
+        },
+        {
+          "sourceField": "Value 5",
+          "targetColumn": "Value5"
+        },
+        {
+          "sourceField": "Factor 6",
+          "targetColumn": "Factor6"
+        },
+        {
+          "sourceField": "Value 6",
+          "targetColumn": "Value6"
+        },
+        {
+          "sourceField": "Factor 7",
+          "targetColumn": "Factor7"
+        },
+        {
+          "sourceField": "Value 7",
+          "targetColumn": "Value7"
+        },
+        {
+          "sourceField": "Factor 8",
+          "targetColumn": "Factor8"
+        },
+        {
+          "sourceField": "Value 8",
+          "targetColumn": "Value8"
+        },
+        {
+          "sourceField": "Factor 9",
+          "targetColumn": "Factor9"
+        },
+        {
+          "sourceField": "Value 9",
+          "targetColumn": "Value9"
+        },
+        {
+          "sourceField": "Factor 10",
+          "targetColumn": "Factor10"
+        },
+        {
+          "sourceField": "Value 10",
+          "targetColumn": "Value10"
+        },
+        {
+          "sourceField": "Factor 11",
+          "targetColumn": "Factor11"
+        },
+        {
+          "sourceField": "Value 11",
+          "targetColumn": "Value11"
+        },
+        {
+          "sourceField": "Factor 12",
+          "targetColumn": "Factor12"
+        },
+        {
+          "sourceField": "Value 12",
+          "targetColumn": "Value12"
+        },
+        {
+          "sourceField": "Factor 13",
+          "targetColumn": "Factor13"
+        },
+        {
+          "sourceField": "Value 13",
+          "targetColumn": "Value13"
+        },
+        {
+          "sourceField": "Factor 14",
+          "targetColumn": "Factor14"
+        },
+        {
+          "sourceField": "Value 14",
+          "targetColumn": "Value14"
+        },
+        {
+          "sourceField": "Factor 15",
+          "targetColumn": "Factor15"
+        },
+        {
+          "sourceField": "Value 15",
+          "targetColumn": "Value15"
+        },
+        {
+          "sourceField": "Factor 16",
+          "targetColumn": "Factor16"
+        },
+        {
+          "sourceField": "Value 16",
+          "targetColumn": "Value16"
+        },
+        {
+          "sourceField": "Factor 17",
+          "targetColumn": "Factor17"
+        },
+        {
+          "sourceField": "Value 17",
+          "targetColumn": "Value17"
+        },
+        {
+          "sourceField": "Factor 18",
+          "targetColumn": "Factor18"
+        },
+        {
+          "sourceField": "Value 18",
+          "targetColumn": "Value18"
+        },
+        {
+          "sourceField": "Factor 19",
+          "targetColumn": "Factor19"
+        },
+        {
+          "sourceField": "Value 19",
+          "targetColumn": "Value19"
+        },
+        {
+          "sourceField": "Factor 20",
+          "targetColumn": "Factor20"
+        },
+        {
+          "sourceField": "Value 20",
+          "targetColumn": "Value20"
+        },
+        {
+          "sourceField": "Factor 21",
+          "targetColumn": "Factor21"
+        },
+        {
+          "sourceField": "Value 21",
+          "targetColumn": "Value21"
+        },
+        {
+          "sourceField": "Factor 22",
+          "targetColumn": "Factor22"
+        },
+        {
+          "sourceField": "Value 22",
+          "targetColumn": "Value22"
+        },
+        {
+          "sourceField": "Factor 23",
+          "targetColumn": "Factor23"
+        },
+        {
+          "sourceField": "Value 23",
+          "targetColumn": "Value23"
+        },
+        {
+          "sourceField": "Factor 24",
+          "targetColumn": "Factor24"
+        },
+        {
+          "sourceField": "Value 24",
+          "targetColumn": "Value24"
+        },
+        {
+          "sourceField": "Factor 25",
+          "targetColumn": "Factor25"
+        },
+        {
+          "sourceField": "Value 25",
+          "targetColumn": "Value25"
+        },
+        {
+          "sourceField": "Factor 26",
+          "targetColumn": "Factor26"
+        },
+        {
+          "sourceField": "Value 26",
+          "targetColumn": "Value26"
+        },
+        {
+          "sourceField": "Factor 27",
+          "targetColumn": "Factor27"
+        },
+        {
+          "sourceField": "Value 27",
+          "targetColumn": "Value27"
+        },
+        {
+          "sourceField": "Factor 28",
+          "targetColumn": "Factor28"
+        },
+        {
+          "sourceField": "Value 28",
+          "targetColumn": "Value28"
+        },
+        {
+          "sourceField": "Factor 29",
+          "targetColumn": "Factor29"
+        },
+        {
+          "sourceField": "Value 29",
+          "targetColumn": "Value29"
+        },
+        {
+          "sourceField": "Factor 30",
+          "targetColumn": "Factor30"
+        },
+        {
+          "sourceField": "Value 30",
+          "targetColumn": "Value30"
+        },
+        {
+          "sourceField": "Factor 31",
+          "targetColumn": "Factor31"
+        },
+        {
+          "sourceField": "Value 31",
+          "targetColumn": "Value31"
+        },
+        {
+          "sourceField": "Factor 32",
+          "targetColumn": "Factor32"
+        },
+        {
+          "sourceField": "Value 32",
+          "targetColumn": "Value32"
+        },
+        {
+          "sourceField": "Factor 33",
+          "targetColumn": "Factor33"
+        },
+        {
+          "sourceField": "Value 33",
+          "targetColumn": "Value33"
+        },
+        {
+          "sourceField": "Factor 34",
+          "targetColumn": "Factor34"
+        },
+        {
+          "sourceField": "Value 34",
+          "targetColumn": "Value34"
+        },
+        {
+          "sourceField": "Factor 35",
+          "targetColumn": "Factor35"
+        },
+        {
+          "sourceField": "Value 35",
+          "targetColumn": "Value35"
+        },
+        {
+          "sourceField": "Factor 36",
+          "targetColumn": "Factor36"
+        },
+        {
+          "sourceField": "Value 36",
+          "targetColumn": "Value36"
+        },
+        {
+          "sourceField": "Factor 37",
+          "targetColumn": "Factor37"
+        },
+        {
+          "sourceField": "Value 37",
+          "targetColumn": "Value37"
+        },
+        {
+          "sourceField": "Factor 38",
+          "targetColumn": "Factor38"
+        },
+        {
+          "sourceField": "Value 38",
+          "targetColumn": "Value38"
+        },
+        {
+          "sourceField": "Factor 39",
+          "targetColumn": "Factor39"
+        },
+        {
+          "sourceField": "Value 39",
+          "targetColumn": "Value39"
+        },
+        {
+          "sourceField": "Factor 40",
+          "targetColumn": "Factor40"
+        },
+        {
+          "sourceField": "Value 40",
+          "targetColumn": "Value40"
+        },
+        {
+          "sourceField": "Factor 41",
+          "targetColumn": "Factor41"
+        },
+        {
+          "sourceField": "Value 41",
+          "targetColumn": "Value41"
+        },
+        {
+          "sourceField": "Factor 42",
+          "targetColumn": "Factor42"
+        },
+        {
+          "sourceField": "Value 42",
+          "targetColumn": "Value42"
+        },
+        {
+          "sourceField": "Factor 43",
+          "targetColumn": "Factor43"
+        },
+        {
+          "sourceField": "Value 43",
+          "targetColumn": "Value43"
+        },
+        {
+          "sourceField": "Factor 44",
+          "targetColumn": "Factor44"
+        },
+        {
+          "sourceField": "Value 44",
+          "targetColumn": "Value44"
+        },
+        {
+          "sourceField": "Factor 45",
+          "targetColumn": "Factor45"
+        },
+        {
+          "sourceField": "Value 45",
+          "targetColumn": "Value45"
+        },
+        {
+          "sourceField": "Factor 46",
+          "targetColumn": "Factor46"
+        },
+        {
+          "sourceField": "Value 46",
+          "targetColumn": "Value46"
+        },
+        {
+          "sourceField": "Factor 47",
+          "targetColumn": "Factor47"
+        },
+        {
+          "sourceField": "Value 47",
+          "targetColumn": "Value47"
+        },
+        {
+          "sourceField": "Factor 48",
+          "targetColumn": "Factor48"
+        },
+        {
+          "sourceField": "Value 48",
+          "targetColumn": "Value48"
+        },
+        {
+          "sourceField": "Factor 49",
+          "targetColumn": "Factor49"
+        },
+        {
+          "sourceField": "Value 49",
+          "targetColumn": "Value49"
+        },
+        {
+          "sourceField": "Factor 50",
+          "targetColumn": "Factor50"
+        },
+        {
+          "sourceField": "Value 50",
+          "targetColumn": "Value50"
+        },
+        {
+          "sourceField": "Factor 51",
+          "targetColumn": "Factor51"
+        },
+        {
+          "sourceField": "Value 51",
+          "targetColumn": "Value51"
+        },
+        {
+          "sourceField": "Factor 52",
+          "targetColumn": "Factor52"
+        },
+        {
+          "sourceField": "Value 52",
+          "targetColumn": "Value52"
+        },
+        {
+          "sourceField": "Factor 53",
+          "targetColumn": "Factor53"
+        },
+        {
+          "sourceField": "Value 53",
+          "targetColumn": "Value53"
+        },
+        {
+          "sourceField": "Factor 54",
+          "targetColumn": "Factor54"
+        },
+        {
+          "sourceField": "Value 54",
+          "targetColumn": "Value54"
+        },
+        {
+          "sourceField": "Factor 55",
+          "targetColumn": "Factor55"
+        },
+        {
+          "sourceField": "Value 55",
+          "targetColumn": "Value55"
+        },
+        {
+          "sourceField": "Factor 56",
+          "targetColumn": "Factor56"
+        },
+        {
+          "sourceField": "Value 56",
+          "targetColumn": "Value56"
+        },
+        {
+          "sourceField": "Factor 57",
+          "targetColumn": "Factor57"
+        },
+        {
+          "sourceField": "Value 57",
+          "targetColumn": "Value57"
+        },
+        {
+          "sourceField": "Factor 58",
+          "targetColumn": "Factor58"
+        },
+        {
+          "sourceField": "Value 58",
+          "targetColumn": "Value58"
+        },
+        {
+          "sourceField": "Factor 59",
+          "targetColumn": "Factor59"
+        },
+        {
+          "sourceField": "Value 59",
+          "targetColumn": "Value59"
+        },
+        {
+          "sourceField": "Factor 60",
+          "targetColumn": "Factor60"
+        },
+        {
+          "sourceField": "Value 60",
+          "targetColumn": "Value60"
+        },
+        {
+          "sourceField": "Factor 61",
+          "targetColumn": "Factor61"
+        },
+        {
+          "sourceField": "Value 61",
+          "targetColumn": "Value61"
+        },
+        {
+          "sourceField": "Factor 62",
+          "targetColumn": "Factor62"
+        },
+        {
+          "sourceField": "Value 62",
+          "targetColumn": "Value62"
+        },
+        {
+          "sourceField": "Factor 63",
+          "targetColumn": "Factor63"
+        },
+        {
+          "sourceField": "Value 63",
+          "targetColumn": "Value63"
+        },
+        {
+          "sourceField": "Inv Factor",
+          "targetColumn": "InvFactor"
+        },
+        {
+          "sourceField": "Inv Value",
+          "targetColumn": "InvValue"
+        },
+        {
+          "sourceField": "Inv Factor 2",
+          "targetColumn": "InvFactor2"
+        },
+        {
+          "sourceField": "Inv Value 2",
+          "targetColumn": "InvValue2"
+        },
+        {
+          "sourceField": "Inv Factor 3",
+          "targetColumn": "InvFactor3"
+        },
+        {
+          "sourceField": "Inv Value 3",
+          "targetColumn": "InvValue3"
+        },
+        {
+          "sourceField": "Inv Factor 4",
+          "targetColumn": "InvFactor4"
+        },
+        {
+          "sourceField": "Inv Value 4",
+          "targetColumn": "InvValue4"
+        },
+        {
+          "sourceField": "Inv Factor 5",
+          "targetColumn": "InvFactor5"
+        },
+        {
+          "sourceField": "Inv Value 5",
+          "targetColumn": "InvValue5"
+        },
+        {
+          "sourceField": "Inv Factor 6",
+          "targetColumn": "InvFactor6"
+        },
+        {
+          "sourceField": "Inv Value 6",
+          "targetColumn": "InvValue6"
+        },
+        {
+          "sourceField": "Inv Factor 7",
+          "targetColumn": "InvFactor7"
+        },
+        {
+          "sourceField": "Inv Value 7",
+          "targetColumn": "InvValue7"
+        },
+        {
+          "sourceField": "Inv Factor 8",
+          "targetColumn": "InvFactor8"
+        },
+        {
+          "sourceField": "Inv Value 8",
+          "targetColumn": "InvValue8"
+        },
+        {
+          "sourceField": "Inv Factor 9",
+          "targetColumn": "InvFactor9"
+        },
+        {
+          "sourceField": "Inv Value 9",
+          "targetColumn": "InvValue9"
+        },
+        {
+          "sourceField": "Inv Factor 10",
+          "targetColumn": "InvFactor10"
+        },
+        {
+          "sourceField": "Inv Value 10",
+          "targetColumn": "InvValue10"
+        },
+        {
+          "sourceField": "Inv Factor 11",
+          "targetColumn": "InvFactor11"
+        },
+        {
+          "sourceField": "Inv Value 11",
+          "targetColumn": "InvValue11"
+        },
+        {
+          "sourceField": "Inv Factor 12",
+          "targetColumn": "InvFactor12"
+        },
+        {
+          "sourceField": "Inv Value 12",
+          "targetColumn": "InvValue12"
+        },
+        {
+          "sourceField": "Inv Factor 13",
+          "targetColumn": "InvFactor13"
+        },
+        {
+          "sourceField": "Inv Value 13",
+          "targetColumn": "InvValue13"
+        },
+        {
+          "sourceField": "Inv Factor 14",
+          "targetColumn": "InvFactor14"
+        },
+        {
+          "sourceField": "Inv Value 14",
+          "targetColumn": "InvValue14"
+        },
+        {
+          "sourceField": "Inv Factor 15",
+          "targetColumn": "InvFactor15"
+        },
+        {
+          "sourceField": "Inv Value 15",
+          "targetColumn": "InvValue15"
+        },
+        {
+          "sourceField": "Inv Factor 16",
+          "targetColumn": "InvFactor16"
+        },
+        {
+          "sourceField": "Inv Value 16",
+          "targetColumn": "InvValue16"
+        },
+        {
+          "sourceField": "Inv Factor 17",
+          "targetColumn": "InvFactor17"
+        },
+        {
+          "sourceField": "Inv Value 17",
+          "targetColumn": "InvValue17"
+        },
+        {
+          "sourceField": "Inv Factor 18",
+          "targetColumn": "InvFactor18"
+        },
+        {
+          "sourceField": "Inv Value 18",
+          "targetColumn": "InvValue18"
+        },
+        {
+          "sourceField": "Inv Factor 19",
+          "targetColumn": "InvFactor19"
+        },
+        {
+          "sourceField": "Inv Value 19",
+          "targetColumn": "InvValue19"
+        },
+        {
+          "sourceField": "Inv Factor 20",
+          "targetColumn": "InvFactor20"
+        },
+        {
+          "sourceField": "Inv Value 20",
+          "targetColumn": "InvValue20"
+        },
+        {
+          "sourceField": "Inv Factor 21",
+          "targetColumn": "InvFactor21"
+        },
+        {
+          "sourceField": "Inv Value 21",
+          "targetColumn": "InvValue21"
+        },
+        {
+          "sourceField": "Inv Factor 22",
+          "targetColumn": "InvFactor22"
+        },
+        {
+          "sourceField": "Inv Value 22",
+          "targetColumn": "InvValue22"
+        },
+        {
+          "sourceField": "Staff Interviewed",
+          "targetColumn": "StaffInterviewed"
+        },
+        {
+          "sourceField": "Date/Time of Staff Interview",
+          "targetColumn": "DateTimeOfStaffInterview"
+        },
+        {
+          "sourceField": "Injury Present",
+          "targetColumn": "InjuryPresent"
+        },
+        {
+          "sourceField": "Injury Cause or Staff Comments",
+          "targetColumn": "InjuryCauseOrStaffComments"
+        },
+        {
+          "sourceField": "Recommendation 6",
+          "targetColumn": "Recommendation6"
+        },
+        {
+          "sourceField": "Recommendation Entered By 6",
+          "targetColumn": "RecommendationEnteredBy6"
+        },
+        {
+          "sourceField": "Recommendation Assigned To 6",
+          "targetColumn": "RecommendationAssignedTo6"
+        },
+        {
+          "sourceField": "Recommendation Due Date 6",
+          "targetColumn": "RecommendationDueDate6"
+        },
+        {
+          "sourceField": "Recommendation Implemented Date 6",
+          "targetColumn": "RecommendationImplementedDate6"
+        },
+        {
+          "sourceField": "Recommendation Status 6",
+          "targetColumn": "RecommendationStatus6"
+        },
+        {
+          "sourceField": "Recommendation 7",
+          "targetColumn": "Recommendation7"
+        },
+        {
+          "sourceField": "Recommendation Entered By 7",
+          "targetColumn": "RecommendationEnteredBy7"
+        },
+        {
+          "sourceField": "Recommendation Assigned To 7",
+          "targetColumn": "RecommendationAssignedTo7"
+        },
+        {
+          "sourceField": "Recommendation Due Date 7",
+          "targetColumn": "RecommendationDueDate7"
+        },
+        {
+          "sourceField": "Recommendation Implemented Date 7",
+          "targetColumn": "RecommendationImplementedDate7"
+        },
+        {
+          "sourceField": "Recommendation Status 7",
+          "targetColumn": "RecommendationStatus7"
+        },
+        {
+          "sourceField": "Attachment File Name 5",
+          "targetColumn": "AttachmentFileName5"
+        },
+        {
+          "sourceField": "Attachment Description 5",
+          "targetColumn": "AttachmentDescription5"
+        },
+        {
+          "sourceField": "Attachment File Name 6",
+          "targetColumn": "AttachmentFileName6"
+        },
+        {
+          "sourceField": "Attachment Description 6",
+          "targetColumn": "AttachmentDescription6"
+        },
+        {
+          "sourceField": "Attachment File Name 7",
+          "targetColumn": "AttachmentFileName7"
+        },
+        {
+          "sourceField": "Attachment Description 7",
+          "targetColumn": "AttachmentDescription7"
+        },
+        {
+          "sourceField": "Staff Interviewed 2",
+          "targetColumn": "StaffInterviewed2"
+        },
+        {
+          "sourceField": "Date/Time of Staff Interview 2",
+          "targetColumn": "DateTimeOfStaffInterview2"
+        },
+        {
+          "sourceField": "Injury Present 2",
+          "targetColumn": "InjuryPresent2"
+        },
+        {
+          "sourceField": "Injury Cause or Staff Comments 2",
+          "targetColumn": "InjuryCauseOrStaffComments2"
+        },
+        {
+          "sourceField": "Attachment File Name 8",
+          "targetColumn": "AttachmentFileName8"
+        },
+        {
+          "sourceField": "Attachment Description 8",
+          "targetColumn": "AttachmentDescription8"
+        },
+        {
+          "sourceField": "Attachment File Name 9",
+          "targetColumn": "AttachmentFileName9"
+        },
+        {
+          "sourceField": "Attachment Description 9",
+          "targetColumn": "AttachmentDescription9"
+        },
+        {
+          "sourceField": "Attachment File Name 10",
+          "targetColumn": "AttachmentFileName10"
+        },
+        {
+          "sourceField": "Attachment Description 10",
+          "targetColumn": "AttachmentDescription10"
+        },
+        {
+          "sourceField": "Attachment File Name 11",
+          "targetColumn": "AttachmentFileName11"
+        },
+        {
+          "sourceField": "Attachment Description 11",
+          "targetColumn": "AttachmentDescription11"
+        },
+        {
+          "sourceField": "Attachment File Name 12",
+          "targetColumn": "AttachmentFileName12"
+        },
+        {
+          "sourceField": "Attachment Description 12",
+          "targetColumn": "AttachmentDescription12"
+        },
+        {
+          "sourceField": "Staff Interviewed 3",
+          "targetColumn": "StaffInterviewed3"
+        },
+        {
+          "sourceField": "Date/Time of Staff Interview 3",
+          "targetColumn": "DateTimeOfStaffInterview3"
+        },
+        {
+          "sourceField": "Injury Present 3",
+          "targetColumn": "InjuryPresent3"
+        },
+        {
+          "sourceField": "Injury Cause or Staff Comments 3",
+          "targetColumn": "InjuryCauseOrStaffComments3"
+        },
+        {
+          "sourceField": "Staff Interviewed 4",
+          "targetColumn": "StaffInterviewed4"
+        },
+        {
+          "sourceField": "Date/Time of Staff Interview 4",
+          "targetColumn": "DateTimeOfStaffInterview4"
+        },
+        {
+          "sourceField": "Injury Present 4",
+          "targetColumn": "InjuryPresent4"
+        },
+        {
+          "sourceField": "Injury Cause or Staff Comments 4",
+          "targetColumn": "InjuryCauseOrStaffComments4"
+        }
+      ],
+      "eventPayloadRoot": null,
+      "primaryKeyColumns": [
+        "OccurrenceID"
+      ],
+      "sourceFilePattern": "InovalonClinicalOccurence",
+      "sourcePath": "Files/ADLS_Landing_Shortcut/Landing/EHR/Inovalon",
+      "loadSettings": {
+        "initialLoad": {
+          "isEnabled": true,
+          "latestDataConfig": {
+            "isEnabled": false,
+            "path": "Files/Latest/Netsmart"
+          }
+        },
+        "incrementalLoad": {
+          "isEnabled": true,
+          "latestDataConfig": {
+            "isEnabled": true,
+            "path": "Files/Latest/Netsmart"
+          }
+        }
+      }
+    }
+  ]
+}

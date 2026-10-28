@@ -1,0 +1,138 @@
+{
+  "configVersion": "3.0",
+  "configName": "PACEHEROSourceToLandingEntityConfig",
+  "description": "Controls Pacehero Operations entities extracted from Snowflake to the Landing layer.",
+  "subjectArea": "OPERATIONS",
+  "sourceId": "PACEHERO",
+  "sourceSystem": "Pacehero",
+  "fileType": "Parquet",
+  "isActive": true,
+  "entities": [
+    {
+      "entityName": "APPEALS",
+      "isEnabled": true,
+      "objectType": "Query",
+      "query": "SELECT * FROM EVERYAGE.APPEALS",
+      "cdcColumn": "CreatedDate",
+      "targetRelativePath": "Tenant1/Landing/EHR/Pacehero/APPEALS",
+      "enableDatePartitioning": true,
+      "loadControl": {
+        "initialLoadEnabled": true,
+        "incrementalLoadEnabled": false
+      },
+      "loadSettings": {
+        "initialLoad": {
+          "isFolder": false
+        }
+      }
+    },
+    {
+      "entityName": "CAPITATED_BILLING",
+      "isEnabled": true,
+      "objectType": "Query",
+      "query": "SELECT * FROM EVERYAGE.CAPITATED_BILLING",
+      "cdcColumn": "CreatedDate",
+      "targetRelativePath": "Tenant1/Landing/EHR/Pacehero/CAPITATED_BILLING",
+      "enableDatePartitioning": true,
+      "loadControl": {
+        "initialLoadEnabled": true,
+        "incrementalLoadEnabled": false
+      },
+      "loadSettings": {
+        "initialLoad": {
+          "isFolder": false
+        }
+      }
+    },
+    {
+      "entityName": "CENSUS",
+      "isEnabled": true,
+      "objectType": "Query",
+      "query": "SELECT * FROM EVERYAGE.CENSUS",
+      "cdcColumn": "CreatedDate",
+      "targetRelativePath": "Tenant1/Landing/EHR/Pacehero/CENSUS",
+      "enableDatePartitioning": true,
+      "loadControl": {
+        "initialLoadEnabled": true,
+        "incrementalLoadEnabled": false
+      },
+      "loadSettings": {
+        "initialLoad": {
+          "isFolder": false
+        }
+      }
+    },
+    {
+      "entityName": "CLAIMS",
+      "isEnabled": true,
+      "objectType": "Query",
+      "query": "SELECT * FROM EVERYAGE.CLAIMS",
+      "cdcColumn": "CreatedDate",
+      "targetRelativePath": "Tenant1/Landing/EHR/Pacehero/CLAIMS",
+      "enableDatePartitioning": true,
+      "loadControl": {
+        "initialLoadEnabled": true,
+        "incrementalLoadEnabled": false
+      },
+      "loadSettings": {
+        "initialLoad": {
+          "isFolder": false
+        }
+      }
+    },
+    {
+      "entityName": "COMPLIANCE",
+      "isEnabled": true,
+      "objectType": "Query",
+      "query": "SELECT * FROM EVERYAGE.COMPLIANCE",
+      "cdcColumn": "CreatedDate",
+      "targetRelativePath": "Tenant1/Landing/EHR/Pacehero/COMPLIANCE",
+      "enableDatePartitioning": true,
+      "loadControl": {
+        "initialLoadEnabled": true,
+        "incrementalLoadEnabled": false
+      },
+      "loadSettings": {
+        "initialLoad": {
+          "isFolder": false
+        }
+      }
+    },
+    {
+      "entityName": "GRIEVANCES",
+      "isEnabled": true,
+      "objectType": "Query",
+      "query": "SELECT * FROM EVERYAGE.GRIEVANCES",
+      "cdcColumn": "CreatedDate",
+      "targetRelativePath": "Tenant1/Landing/EHR/Pacehero/GRIEVANCES",
+      "enableDatePartitioning": true,
+      "loadControl": {
+        "initialLoadEnabled": true,
+        "incrementalLoadEnabled": false
+      },
+      "loadSettings": {
+        "initialLoad": {
+          "isFolder": false
+        }
+      }
+    },
+    {
+      "entityName": "UTILIZATION",
+      "isEnabled": true,
+      "objectType": "Query",
+      "query": "SELECT * FROM EVERYAGE.UTILIZATION",
+      "cdcColumn": "CreatedDate",
+      "targetRelativePath": "Tenant1/Landing/EHR/Pacehero/UTILIZATION",
+      "enableDatePartitioning": true,
+      "loadControl": {
+        "initialLoadEnabled": true,
+        "incrementalLoadEnabled": false
+      },
+      "loadSettings": {
+        "initialLoad": {
+          "isFolder": false
+        }
+      }
+    }
+  ]
+}

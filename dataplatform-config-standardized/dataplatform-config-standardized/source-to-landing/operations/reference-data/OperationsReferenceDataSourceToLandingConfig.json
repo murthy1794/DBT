@@ -1,0 +1,72 @@
+{
+  "configVersion": "3.0",
+  "configName": "ReferenceDataOPERATIONSSourceToLandingEntityConfig",
+  "description": "Controls Operations ReferenceData entities copied to the Landing layer.",
+  "subjectArea": "OPERATIONS",
+  "sourceId": "REF_OPERATIONS",
+  "sourceSystem": "ReferenceData",
+  "fileType": "CSV",
+  "isActive": true,
+  "entities": [
+    {
+      "entityName": "AnnualBudgetPayerMix",
+      "isEnabled": true,
+      "objectType": "Folder",
+      "cdcColumn": "CreatedDate",
+      "targetRelativePath": "Tenant1/Landing/ReferenceData/Operations/AnnualBudgetPayerMix",
+      "enableDatePartitioning": true,
+      "loadControl": {
+        "initialLoadEnabled": true,
+        "incrementalLoadEnabled": true
+      },
+      "loadSettings": {
+        "initialLoad": {
+          "isFolder": false
+        },
+        "incrementalLoad": {
+          "isFolder": false
+        }
+      }
+    },
+    {
+      "entityName": "PayerMix",
+      "isEnabled": true,
+      "objectType": "Folder",
+      "cdcColumn": "CreatedDate",
+      "targetRelativePath": "Tenant1/Landing/ReferenceData/Operations/PayerMix",
+      "enableDatePartitioning": true,
+      "loadControl": {
+        "initialLoadEnabled": true,
+        "incrementalLoadEnabled": true
+      },
+      "loadSettings": {
+        "initialLoad": {
+          "isFolder": false
+        },
+        "incrementalLoad": {
+          "isFolder": false
+        }
+      }
+    },
+    {
+      "entityName": "FacilityServices",
+      "isEnabled": true,
+      "objectType": "Folder",
+      "cdcColumn": "CreatedDate",
+      "targetRelativePath": "Tenant1/Landing/ReferenceData/Operations/FacilityServices",
+      "enableDatePartitioning": true,
+      "loadControl": {
+        "initialLoadEnabled": true,
+        "incrementalLoadEnabled": true
+      },
+      "loadSettings": {
+        "initialLoad": {
+          "isFolder": false
+        },
+        "incrementalLoad": {
+          "isFolder": false
+        }
+      }
+    }
+  ]
+}

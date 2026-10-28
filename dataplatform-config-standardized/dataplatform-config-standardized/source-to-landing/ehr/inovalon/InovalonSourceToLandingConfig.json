@@ -1,0 +1,32 @@
+{
+  "configVersion": "3.0",
+  "configName": "INOVALONSourceToLandingEntityConfig",
+  "description": "Controls Inovalon EHR file entities copied from ADLS to the Landing layer.",
+  "subjectArea": "EHR",
+  "sourceId": "EHR_INOVALON",
+  "sourceSystem": "Inovalon",
+  "fileType": "CSV",
+  "isActive": true,
+  "entities": [
+    {
+      "entityName": "InovalonClinicalOccurence",
+      "isEnabled": true,
+      "objectType": "Folder",
+      "cdcColumn": "CreatedDate",
+      "targetRelativePath": "Tenant1/Landing/EHR/Inovalon/InovalonClinicalOccurence",
+      "enableDatePartitioning": true,
+      "loadControl": {
+        "initialLoadEnabled": true,
+        "incrementalLoadEnabled": true
+      },
+      "loadSettings": {
+        "initialLoad": {
+          "isFolder": false
+        },
+        "incrementalLoad": {
+          "isFolder": true
+        }
+      }
+    }
+  ]
+}

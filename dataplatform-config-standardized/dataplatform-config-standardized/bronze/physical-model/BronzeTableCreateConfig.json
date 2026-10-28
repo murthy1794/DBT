@@ -1,0 +1,56 @@
+{
+  "configVersion": "3.0",
+  "configName": "BronzeTableCreateConfig",
+  "description": "Controls creation of Bronze Lakehouse Delta tables and references source-specific table-definition configurations.",
+  "isActive": true,
+  "targetBasePath": "/Tables/",
+  "sources": [
+    {
+      "subjectAreas": [
+        "EHR"
+      ],
+      "sourceSystem": "Netsmart",
+      "schemaName": "Netsmart",
+      "isEnabled": true,
+      "tableDefinitionConfigPath": "Files/BLOB_Configs_Shortcut/dataplatform-config/bronze/physical-model/netsmart/NetSmartTableDefinitionConfig.json"
+    },
+    {
+      "subjectAreas": [
+        "EHR"
+      ],
+      "sourceSystem": "Inovalon",
+      "schemaName": "Inovalon",
+      "isEnabled": true,
+      "tableDefinitionConfigPath": "Files/BLOB_Configs_Shortcut/dataplatform-config/bronze/physical-model/inovalon/InovalonTableDefinitionConfig.json"
+    },
+    {
+      "subjectAreas": [
+        "OPERATIONS"
+      ],
+      "sourceSystem": "Pacehero",
+      "schemaName": "Pacehero",
+      "isEnabled": true,
+      "tableDefinitionConfigPath": "Files/BLOB_Configs_Shortcut/dataplatform-config/bronze/physical-model/pacehero/PaceheroTableDefinitionConfig.json"
+    },
+    {
+      "subjectAreas": [
+        "EHR",
+        "HR",
+        "OPERATIONS"
+      ],
+      "sourceSystem": "ReferenceData",
+      "schemaName": "ReferenceData",
+      "isEnabled": true,
+      "tableDefinitionConfigPath": "Files/BLOB_Configs_Shortcut/dataplatform-config/bronze/physical-model/reference-data/ReferenceDataTableDefinitionConfig.json"
+    },
+    {
+      "subjectAreas": [
+        "HR"
+      ],
+      "sourceSystem": "ADP",
+      "schemaName": "ADP",
+      "isEnabled": true,
+      "tableDefinitionConfigPath": "Files/BLOB_Configs_Shortcut/dataplatform-config/bronze/physical-model/adp/AdpTableDefinitionConfig.json"
+    }
+  ]
+}

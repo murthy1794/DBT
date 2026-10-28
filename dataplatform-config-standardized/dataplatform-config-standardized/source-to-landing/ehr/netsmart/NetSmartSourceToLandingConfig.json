@@ -1,0 +1,852 @@
+{
+  "configVersion": "3.0",
+  "configName": "NETSMARTSourceToLandingEntityConfig",
+  "description": "Controls NetSmart EHR entities extracted from SQL to the Landing layer.",
+  "subjectArea": "EHR",
+  "sourceId": "EHR_NETSMART",
+  "sourceSystem": "Netsmart",
+  "fileType": "Parquet",
+  "isActive": true,
+  "entities": [
+      {
+        "entityName": "vwResidents",
+        "isEnabled": true,
+        "objectType": "Query",
+        "query": "SELECT * FROM dbo.vwResidents",
+        "cdcColumn": "CreatedDate",
+        "targetRelativePath": "Tenant1/Landing/EHR/Netsmart/vwResidents",
+        "enableDatePartitioning": true,
+        "loadControl": {
+          "initialLoadEnabled": true,
+          "incrementalLoadEnabled": true
+        },
+        "loadSettings": {
+          "initialLoad": {
+            "isFolder": false
+          },
+          "incrementalLoad": {
+            "isFolder": false
+          }
+        }
+      },
+      {
+        "entityName": "EntAddresses",
+        "isEnabled": true,
+        "objectType": "Query",
+        "query": "SELECT * FROM dbo.EntAddresses",
+        "cdcColumn": "CreatedDate",
+        "targetRelativePath": "Tenant1/Landing/EHR/Netsmart/EntAddresses",
+        "enableDatePartitioning": true,
+        "loadControl": {
+          "initialLoadEnabled": true,
+          "incrementalLoadEnabled": true
+        },
+        "loadSettings": {
+          "initialLoad": {
+            "isFolder": false
+          },
+          "incrementalLoad": {
+            "isFolder": false
+          }
+        }
+      },
+      {
+        "entityName": "EntPhones",
+        "isEnabled": true,
+        "objectType": "Query",
+        "query": "SELECT * FROM dbo.EntPhones",
+        "cdcColumn": "CreatedDate",
+        "targetRelativePath": "Tenant1/Landing/EHR/Netsmart/EntPhones",
+        "enableDatePartitioning": true,
+        "loadControl": {
+          "initialLoadEnabled": true,
+          "incrementalLoadEnabled": true
+        },
+        "loadSettings": {
+          "initialLoad": {
+            "isFolder": false
+          },
+          "incrementalLoad": {
+            "isFolder": false
+          }
+        }
+      },
+      {
+        "entityName": "Episodes",
+        "isEnabled": true,
+        "objectType": "Query",
+        "query": "SELECT * FROM dbo.Episodes",
+        "cdcColumn": "CreatedDate",
+        "targetRelativePath": "Tenant1/Landing/EHR/Netsmart/Episodes",
+        "enableDatePartitioning": true,
+        "loadControl": {
+          "initialLoadEnabled": true,
+          "incrementalLoadEnabled": true
+        },
+        "loadSettings": {
+          "initialLoad": {
+            "isFolder": false
+          },
+          "incrementalLoad": {
+            "isFolder": false
+          }
+        }
+      },
+      {
+        "entityName": "Organizations",
+        "isEnabled": true,
+        "objectType": "Query",
+        "query": "SELECT * FROM dbo.Organizations",
+        "cdcColumn": "CreatedDate",
+        "targetRelativePath": "Tenant1/Landing/EHR/Netsmart/Organizations",
+        "enableDatePartitioning": true,
+        "loadControl": {
+          "initialLoadEnabled": true,
+          "incrementalLoadEnabled": true
+        },
+        "loadSettings": {
+          "initialLoad": {
+            "isFolder": false
+          },
+          "incrementalLoad": {
+            "isFolder": false
+          }
+        }
+      },
+      {
+        "entityName": "Facilities",
+        "isEnabled": true,
+        "objectType": "Query",
+        "query": "SELECT * FROM dbo.Facilities",
+        "cdcColumn": "CreatedDate",
+        "targetRelativePath": "Tenant1/Landing/EHR/Netsmart/Facilities",
+        "enableDatePartitioning": true,
+        "loadControl": {
+          "initialLoadEnabled": true,
+          "incrementalLoadEnabled": true
+        },
+        "loadSettings": {
+          "initialLoad": {
+            "isFolder": false
+          },
+          "incrementalLoad": {
+            "isFolder": false
+          }
+        }
+      },
+      {
+        "entityName": "Entities",
+        "isEnabled": true,
+        "objectType": "Query",
+        "query": "SELECT * FROM dbo.Entities",
+        "cdcColumn": "CreatedDate",
+        "targetRelativePath": "Tenant1/Landing/EHR/Netsmart/Entities",
+        "enableDatePartitioning": true,
+        "loadControl": {
+          "initialLoadEnabled": true,
+          "incrementalLoadEnabled": true
+        },
+        "loadSettings": {
+          "initialLoad": {
+            "isFolder": false
+          },
+          "incrementalLoad": {
+            "isFolder": false
+          }
+        }
+      },
+      {
+        "entityName": "vwCoreCensus",
+        "isEnabled": true,
+        "objectType": "Query",
+        "query": "SELECT * FROM dbo.vwCoreCensus",
+        "cdcColumn": "CreatedDate",
+        "targetRelativePath": "Tenant1/Landing/EHR/Netsmart/vwCoreCensus",
+        "enableDatePartitioning": true,
+        "loadControl": {
+          "initialLoadEnabled": true,
+          "incrementalLoadEnabled": true
+        },
+        "loadSettings": {
+          "initialLoad": {
+            "isFolder": false
+          },
+          "incrementalLoad": {
+            "isFolder": false
+          }
+        }
+      },
+      {
+        "entityName": "EpsCensusTrans",
+        "isEnabled": true,
+        "objectType": "Query",
+        "query": "SELECT * FROM dbo.EpsCensusTrans",
+        "cdcColumn": "CreatedDate",
+        "targetRelativePath": "Tenant1/Landing/EHR/Netsmart/EpsCensusTrans",
+        "enableDatePartitioning": true,
+        "loadControl": {
+          "initialLoadEnabled": true,
+          "incrementalLoadEnabled": true
+        },
+        "loadSettings": {
+          "initialLoad": {
+            "isFolder": false
+          },
+          "incrementalLoad": {
+            "isFolder": false
+          }
+        }
+      },
+      {
+        "entityName": "MiscCodes",
+        "isEnabled": true,
+        "objectType": "Query",
+        "query": "SELECT * FROM dbo.MiscCodes",
+        "cdcColumn": "CreatedDate",
+        "targetRelativePath": "Tenant1/Landing/EHR/Netsmart/MiscCodes",
+        "enableDatePartitioning": true,
+        "loadControl": {
+          "initialLoadEnabled": true,
+          "incrementalLoadEnabled": true
+        },
+        "loadSettings": {
+          "initialLoad": {
+            "isFolder": false
+          },
+          "incrementalLoad": {
+            "isFolder": false
+          }
+        }
+      },
+      {
+        "entityName": "EpsOrganizations",
+        "isEnabled": true,
+        "objectType": "Query",
+        "query": "SELECT * FROM dbo.EpsOrganizations",
+        "cdcColumn": "CreatedDate",
+        "targetRelativePath": "Tenant1/Landing/EHR/Netsmart/EpsOrganizations",
+        "enableDatePartitioning": true,
+        "loadControl": {
+          "initialLoadEnabled": true,
+          "incrementalLoadEnabled": true
+        },
+        "loadSettings": {
+          "initialLoad": {
+            "isFolder": false
+          },
+          "incrementalLoad": {
+            "isFolder": false
+          }
+        }
+      },
+      {
+        "entityName": "RETCMED0",
+        "isEnabled": true,
+        "objectType": "Query",
+        "query": "SELECT * FROM dbo.RETCMED0",
+        "cdcColumn": "CreatedDate",
+        "targetRelativePath": "Tenant1/Landing/EHR/Netsmart/RETCMED0",
+        "enableDatePartitioning": true,
+        "loadControl": {
+          "initialLoadEnabled": true,
+          "incrementalLoadEnabled": true
+        },
+        "loadSettings": {
+          "initialLoad": {
+            "isFolder": false
+          },
+          "incrementalLoad": {
+            "isFolder": false
+          }
+        }
+      },
+      {
+        "entityName": "ResMeds",
+        "isEnabled": true,
+        "objectType": "Query",
+        "query": "SELECT * FROM dbo.ResMeds",
+        "cdcColumn": "CreatedDate",
+        "targetRelativePath": "Tenant1/Landing/EHR/Netsmart/ResMeds",
+        "enableDatePartitioning": true,
+        "loadControl": {
+          "initialLoadEnabled": true,
+          "incrementalLoadEnabled": true
+        },
+        "loadSettings": {
+          "initialLoad": {
+            "isFolder": false
+          },
+          "incrementalLoad": {
+            "isFolder": false
+          }
+        }
+      },
+      {
+        "entityName": "RETCTBL0",
+        "isEnabled": true,
+        "objectType": "Query",
+        "query": "SELECT * FROM dbo.RETCTBL0",
+        "cdcColumn": "CreatedDate",
+        "targetRelativePath": "Tenant1/Landing/EHR/Netsmart/RETCTBL0",
+        "enableDatePartitioning": true,
+        "loadControl": {
+          "initialLoadEnabled": true,
+          "incrementalLoadEnabled": true
+        },
+        "loadSettings": {
+          "initialLoad": {
+            "isFolder": false
+          },
+          "incrementalLoad": {
+            "isFolder": false
+          }
+        }
+      },
+      {
+        "entityName": "RETCSCH0",
+        "isEnabled": true,
+        "objectType": "Query",
+        "query": "SELECT * FROM dbo.RETCSCH0",
+        "cdcColumn": "CreatedDate",
+        "targetRelativePath": "Tenant1/Landing/EHR/Netsmart/RETCSCH0",
+        "enableDatePartitioning": true,
+        "loadControl": {
+          "initialLoadEnabled": true,
+          "incrementalLoadEnabled": true
+        },
+        "loadSettings": {
+          "initialLoad": {
+            "isFolder": false
+          },
+          "incrementalLoad": {
+            "isFolder": false
+          }
+        }
+      },
+      {
+        "entityName": "ResAdvDirectives",
+        "isEnabled": true,
+        "objectType": "Query",
+        "query": "SELECT * FROM dbo.ResAdvDirectives",
+        "cdcColumn": "CreatedDate",
+        "targetRelativePath": "Tenant1/Landing/EHR/Netsmart/ResAdvDirectives",
+        "enableDatePartitioning": true,
+        "loadControl": {
+          "initialLoadEnabled": true,
+          "incrementalLoadEnabled": true
+        },
+        "loadSettings": {
+          "initialLoad": {
+            "isFolder": false
+          },
+          "incrementalLoad": {
+            "isFolder": false
+          }
+        }
+      },
+      {
+        "entityName": "BedService",
+        "isEnabled": true,
+        "objectType": "Query",
+        "query": "SELECT * FROM dbo.BedService",
+        "cdcColumn": "CreatedDate",
+        "targetRelativePath": "Tenant1/Landing/EHR/Netsmart/BedService",
+        "enableDatePartitioning": true,
+        "loadControl": {
+          "initialLoadEnabled": true,
+          "incrementalLoadEnabled": true
+        },
+        "loadSettings": {
+          "initialLoad": {
+            "isFolder": false
+          },
+          "incrementalLoad": {
+            "isFolder": false
+          }
+        }
+      },
+      {
+        "entityName": "LeaveTypes",
+        "isEnabled": true,
+        "objectType": "Query",
+        "query": "SELECT * FROM dbo.LeaveTypes",
+        "cdcColumn": "CreatedDate",
+        "targetRelativePath": "Tenant1/Landing/EHR/Netsmart/LeaveTypes",
+        "enableDatePartitioning": true,
+        "loadControl": {
+          "initialLoadEnabled": true,
+          "incrementalLoadEnabled": true
+        },
+        "loadSettings": {
+          "initialLoad": {
+            "isFolder": false
+          },
+          "incrementalLoad": {
+            "isFolder": false
+          }
+        }
+      },
+      {
+        "entityName": "Services",
+        "isEnabled": true,
+        "objectType": "Query",
+        "query": "SELECT * FROM dbo.Services",
+        "cdcColumn": "CreatedDate",
+        "targetRelativePath": "Tenant1/Landing/EHR/Netsmart/Services",
+        "enableDatePartitioning": true,
+        "loadControl": {
+          "initialLoadEnabled": true,
+          "incrementalLoadEnabled": true
+        },
+        "loadSettings": {
+          "initialLoad": {
+            "isFolder": false
+          },
+          "incrementalLoad": {
+            "isFolder": false
+          }
+        }
+      },
+      {
+        "entityName": "ResRugs",
+        "isEnabled": true,
+        "objectType": "Query",
+        "query": "SELECT * FROM dbo.ResRugs",
+        "cdcColumn": "CreatedDate",
+        "targetRelativePath": "Tenant1/Landing/EHR/Netsmart/ResRugs",
+        "enableDatePartitioning": true,
+        "loadControl": {
+          "initialLoadEnabled": true,
+          "incrementalLoadEnabled": true
+        },
+        "loadSettings": {
+          "initialLoad": {
+            "isFolder": false
+          },
+          "incrementalLoad": {
+            "isFolder": false
+          }
+        }
+      },
+      {
+        "entityName": "vwResDiagnoses",
+        "isEnabled": true,
+        "objectType": "Query",
+        "query": "SELECT * FROM dbo.vwResDiagnoses",
+        "cdcColumn": "CreatedDate",
+        "targetRelativePath": "Tenant1/Landing/EHR/Netsmart/vwResDiagnoses",
+        "enableDatePartitioning": true,
+        "loadControl": {
+          "initialLoadEnabled": true,
+          "incrementalLoadEnabled": true
+        },
+        "loadSettings": {
+          "initialLoad": {
+            "isFolder": false
+          },
+          "incrementalLoad": {
+            "isFolder": false
+          }
+        }
+      },
+      {
+        "entityName": "ResPhysOrderDiagnoses",
+        "isEnabled": true,
+        "objectType": "Query",
+        "query": "SELECT * FROM dbo.ResPhysOrderDiagnoses",
+        "cdcColumn": "CreatedDate",
+        "targetRelativePath": "Tenant1/Landing/EHR/Netsmart/ResPhysOrderDiagnoses",
+        "enableDatePartitioning": true,
+        "loadControl": {
+          "initialLoadEnabled": true,
+          "incrementalLoadEnabled": true
+        },
+        "loadSettings": {
+          "initialLoad": {
+            "isFolder": false
+          },
+          "incrementalLoad": {
+            "isFolder": false
+          }
+        }
+      },
+      {
+        "entityName": "ResMedsFrequency",
+        "isEnabled": true,
+        "objectType": "Query",
+        "query": "SELECT * FROM dbo.ResMedsFrequency",
+        "cdcColumn": "CreatedDate",
+        "targetRelativePath": "Tenant1/Landing/EHR/Netsmart/ResMedsFrequency",
+        "enableDatePartitioning": true,
+        "loadControl": {
+          "initialLoadEnabled": true,
+          "incrementalLoadEnabled": true
+        },
+        "loadSettings": {
+          "initialLoad": {
+            "isFolder": false
+          },
+          "incrementalLoad": {
+            "isFolder": false
+          }
+        }
+      },
+      {
+        "entityName": "ICDConditionsXRef",
+        "isEnabled": true,
+        "objectType": "Query",
+        "query": "SELECT * FROM dbo.ICDConditionsXRef",
+        "cdcColumn": "CreatedDate",
+        "targetRelativePath": "Tenant1/Landing/EHR/Netsmart/ICDConditionsXRef",
+        "enableDatePartitioning": true,
+        "loadControl": {
+          "initialLoadEnabled": true,
+          "incrementalLoadEnabled": true
+        },
+        "loadSettings": {
+          "initialLoad": {
+            "isFolder": false
+          },
+          "incrementalLoad": {
+            "isFolder": false
+          }
+        }
+      },
+      {
+        "entityName": "MdsImportDetail",
+        "isEnabled": true,
+        "objectType": "Query",
+        "query": "SELECT * FROM dbo.MdsImportDetail",
+        "cdcColumn": "CreatedDate",
+        "targetRelativePath": "Tenant1/Landing/EHR/Netsmart/MdsImportDetail",
+        "enableDatePartitioning": true,
+        "loadControl": {
+          "initialLoadEnabled": true,
+          "incrementalLoadEnabled": true
+        },
+        "loadSettings": {
+          "initialLoad": {
+            "isFolder": false
+          },
+          "incrementalLoad": {
+            "isFolder": false
+          }
+        }
+      },
+      {
+        "entityName": "EpsBillSequence",
+        "isEnabled": true,
+        "objectType": "Query",
+        "query": "SELECT * FROM dbo.EpsBillSequence",
+        "cdcColumn": "CreatedDate",
+        "targetRelativePath": "Tenant1/Landing/EHR/Netsmart/EpsBillSequence",
+        "enableDatePartitioning": true,
+        "loadControl": {
+          "initialLoadEnabled": true,
+          "incrementalLoadEnabled": true
+        },
+        "loadSettings": {
+          "initialLoad": {
+            "isFolder": false
+          },
+          "incrementalLoad": {
+            "isFolder": false
+          }
+        }
+      },
+      {
+        "entityName": "EpsCPProblems",
+        "isEnabled": true,
+        "objectType": "Query",
+        "query": "SELECT * FROM dbo.EpsCPProblems",
+        "cdcColumn": "CreatedDate",
+        "targetRelativePath": "Tenant1/Landing/EHR/Netsmart/EpsCPProblems",
+        "enableDatePartitioning": true,
+        "loadControl": {
+          "initialLoadEnabled": true,
+          "incrementalLoadEnabled": true
+        },
+        "loadSettings": {
+          "initialLoad": {
+            "isFolder": false
+          },
+          "incrementalLoad": {
+            "isFolder": false
+          }
+        }
+      },
+      {
+        "entityName": "EpsCPGoals",
+        "isEnabled": true,
+        "objectType": "Query",
+        "query": "SELECT * FROM dbo.EpsCPGoals",
+        "cdcColumn": "CreatedDate",
+        "targetRelativePath": "Tenant1/Landing/EHR/Netsmart/EpsCPGoals",
+        "enableDatePartitioning": true,
+        "loadControl": {
+          "initialLoadEnabled": true,
+          "incrementalLoadEnabled": true
+        },
+        "loadSettings": {
+          "initialLoad": {
+            "isFolder": false
+          },
+          "incrementalLoad": {
+            "isFolder": false
+          }
+        }
+      },
+      {
+        "entityName": "EpsCPInterventions",
+        "isEnabled": true,
+        "objectType": "Query",
+        "query": "SELECT * FROM dbo.EpsCPInterventions",
+        "cdcColumn": "CreatedDate",
+        "targetRelativePath": "Tenant1/Landing/EHR/Netsmart/EpsCPInterventions",
+        "enableDatePartitioning": true,
+        "loadControl": {
+          "initialLoadEnabled": true,
+          "incrementalLoadEnabled": true
+        },
+        "loadSettings": {
+          "initialLoad": {
+            "isFolder": false
+          },
+          "incrementalLoad": {
+            "isFolder": false
+          }
+        }
+      },
+      {
+        "entityName": "EpsCPHeader",
+        "isEnabled": true,
+        "objectType": "Query",
+        "query": "SELECT * FROM dbo.EpsCPHeader",
+        "cdcColumn": "CreatedDate",
+        "targetRelativePath": "Tenant1/Landing/EHR/Netsmart/EpsCPHeader",
+        "enableDatePartitioning": true,
+        "loadControl": {
+          "initialLoadEnabled": true,
+          "incrementalLoadEnabled": true
+        },
+        "loadSettings": {
+          "initialLoad": {
+            "isFolder": false
+          },
+          "incrementalLoad": {
+            "isFolder": false
+          }
+        }
+      },
+      {
+        "entityName": "EpsCPGoalInterventions",
+        "isEnabled": true,
+        "objectType": "Query",
+        "query": "SELECT * FROM dbo.EpsCPGoalInterventions",
+        "cdcColumn": "CreatedDate",
+        "targetRelativePath": "Tenant1/Landing/EHR/Netsmart/EpsCPGoalInterventions",
+        "enableDatePartitioning": true,
+        "loadControl": {
+          "initialLoadEnabled": true,
+          "incrementalLoadEnabled": true
+        },
+        "loadSettings": {
+          "initialLoad": {
+            "isFolder": false
+          },
+          "incrementalLoad": {
+            "isFolder": false
+          }
+        }
+      },
+      {
+        "entityName": "hmxvw_PayersPlans",
+        "isEnabled": true,
+        "objectType": "Query",
+        "query": "SELECT * FROM dbo.hmxvw_PayersPlans",
+        "cdcColumn": "CreatedDate",
+        "targetRelativePath": "Tenant1/Landing/EHR/Netsmart/hmxvw_PayersPlans",
+        "enableDatePartitioning": true,
+        "loadControl": {
+          "initialLoadEnabled": true,
+          "incrementalLoadEnabled": true
+        },
+        "loadSettings": {
+          "initialLoad": {
+            "isFolder": false
+          },
+          "incrementalLoad": {
+            "isFolder": false
+          }
+        }
+      },
+      {
+        "entityName": "OrgInactive",
+        "isEnabled": true,
+        "objectType": "Query",
+        "query": "SELECT * FROM dbo.OrgInactive",
+        "cdcColumn": "CreatedDate",
+        "targetRelativePath": "Tenant1/Landing/EHR/Netsmart/OrgInactive",
+        "enableDatePartitioning": true,
+        "loadControl": {
+          "initialLoadEnabled": true,
+          "incrementalLoadEnabled": true
+        },
+        "loadSettings": {
+          "initialLoad": {
+            "isFolder": false
+          },
+          "incrementalLoad": {
+            "isFolder": false
+          }
+        }
+      },
+      {
+        "entityName": "EpsCPGoalInterventions",
+        "isEnabled": true,
+        "objectType": "Query",
+        "query": "SELECT * FROM dbo.EpsCPGoalInterventions",
+        "cdcColumn": "CreatedDate",
+        "targetRelativePath": "Tenant1/Landing/EHR/Netsmart/EpsCPGoalInterventions",
+        "enableDatePartitioning": true,
+        "loadControl": {
+          "initialLoadEnabled": true,
+          "incrementalLoadEnabled": true
+        },
+        "loadSettings": {
+          "initialLoad": {
+            "isFolder": false
+          },
+          "incrementalLoad": {
+            "isFolder": false
+          }
+        }
+      },
+      {
+        "entityName": "AssessQuestion",
+        "isEnabled": true,
+        "objectType": "Query",
+        "query": "SELECT * FROM dbo.AssessQuestion",
+        "cdcColumn": "CreatedDate",
+        "targetRelativePath": "Tenant1/Landing/EHR/Netsmart/AssessQuestion",
+        "enableDatePartitioning": true,
+        "loadControl": {
+          "initialLoadEnabled": true,
+          "incrementalLoadEnabled": true
+        },
+        "loadSettings": {
+          "initialLoad": {
+            "isFolder": false
+          },
+          "incrementalLoad": {
+            "isFolder": false
+          }
+        }
+      },
+      {
+        "entityName": "AssessTempDtl",
+        "isEnabled": true,
+        "objectType": "Query",
+        "query": "SELECT * FROM dbo.AssessTempDtl",
+        "cdcColumn": "CreatedDate",
+        "targetRelativePath": "Tenant1/Landing/EHR/Netsmart/AssessTempDtl",
+        "enableDatePartitioning": true,
+        "loadControl": {
+          "initialLoadEnabled": true,
+          "incrementalLoadEnabled": true
+        },
+        "loadSettings": {
+          "initialLoad": {
+            "isFolder": false
+          },
+          "incrementalLoad": {
+            "isFolder": false
+          }
+        }
+      },
+      {
+        "entityName": "AssessTemplate",
+        "isEnabled": true,
+        "objectType": "Query",
+        "query": "SELECT * FROM dbo.AssessTemplate",
+        "cdcColumn": "CreatedDate",
+        "targetRelativePath": "Tenant1/Landing/EHR/Netsmart/AssessTemplate",
+        "enableDatePartitioning": true,
+        "loadControl": {
+          "initialLoadEnabled": true,
+          "incrementalLoadEnabled": true
+        },
+        "loadSettings": {
+          "initialLoad": {
+            "isFolder": false
+          },
+          "incrementalLoad": {
+            "isFolder": false
+          }
+        }
+      },
+      {
+        "entityName": "EpsAssessments",
+        "isEnabled": true,
+        "objectType": "Query",
+        "query": "SELECT * FROM dbo.EpsAssessments WHERE DateCreated > '2022-09-30   00:00:00.000'",
+        "cdcColumn": "CreatedDate",
+        "targetRelativePath": "Tenant1/Landing/EHR/Netsmart/EpsAssessments",
+        "enableDatePartitioning": true,
+        "loadControl": {
+          "initialLoadEnabled": true,
+          "incrementalLoadEnabled": true
+        },
+        "loadSettings": {
+          "initialLoad": {
+            "isFolder": false
+          },
+          "incrementalLoad": {
+            "isFolder": false
+          }
+        }
+      },
+      {
+        "entityName": "vwEpsAssessDtl",
+        "isEnabled": true,
+        "objectType": "Query",
+        "query": "SELECT * FROM dbo.vwEpsAssessDtl WHERE DateCreated > '2022-09-30   00:00:00.000'",
+        "cdcColumn": "CreatedDate",
+        "targetRelativePath": "Tenant1/Landing/EHR/Netsmart/vwEpsAssessDtl",
+        "enableDatePartitioning": true,
+        "loadControl": {
+          "initialLoadEnabled": true,
+          "incrementalLoadEnabled": true
+        },
+        "loadSettings": {
+          "initialLoad": {
+            "isFolder": false
+          },
+          "incrementalLoad": {
+            "isFolder": false
+          }
+        }
+      },
+      {
+        "entityName": "vwEpsCPGoalInterventions",
+        "isEnabled": true,
+        "objectType": "Query",
+        "query": "SELECT * FROM dbo.vwEpsCPGoalInterventions",
+        "cdcColumn": "CreatedDate",
+        "targetRelativePath": "Tenant1/Landing/EHR/Netsmart/vwEpsCPGoalInterventions",
+        "enableDatePartitioning": true,
+        "loadControl": {
+          "initialLoadEnabled": true,
+          "incrementalLoadEnabled": true
+        },
+        "loadSettings": {
+          "initialLoad": {
+            "isFolder": false
+          },
+          "incrementalLoad": {
+            "isFolder": false
+          }
+        }
+      }
+    ]  
+}

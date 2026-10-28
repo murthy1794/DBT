@@ -1,0 +1,55 @@
+{
+  "configVersion": "3.0",
+  "configName": "BronzeDataProcessingConfig",
+  "description": "Controls source-level Landing-to-Bronze processing and routes each source to one consolidated source-specific Bronze processing configuration.",
+  "isActive": true,
+  "sources": [
+    {
+      "subjectAreas": [
+        "EHR"
+      ],
+      "sourceSystem": "Netsmart",
+      "processingStrategy": "FULL_SNAPSHOT",
+      "isEnabled": true,
+      "processingConfigPath": "Files/BLOB_Configs_Shortcut/dataplatform-config/bronze/processing/netsmart/NetSmartBronzeProcessingConfig.json"
+    },
+    {
+      "subjectAreas": [
+        "EHR"
+      ],
+      "sourceSystem": "Inovalon",
+      "processingStrategy": "FULL_SNAPSHOT",
+      "isEnabled": true,
+      "processingConfigPath": "Files/BLOB_Configs_Shortcut/dataplatform-config/bronze/processing/inovalon/InovalonBronzeProcessingConfig.json"
+    },
+    {
+      "subjectAreas": [
+        "OPERATIONS"
+      ],
+      "sourceSystem": "Pacehero",
+      "processingStrategy": "FULL_SNAPSHOT",
+      "isEnabled": true,
+      "processingConfigPath": "Files/BLOB_Configs_Shortcut/dataplatform-config/bronze/processing/pacehero/PaceheroBronzeProcessingConfig.json"
+    },
+    {
+      "subjectAreas": [
+        "EHR",
+        "HR",
+        "OPERATIONS"
+      ],
+      "sourceSystem": "ReferenceData",
+      "processingStrategy": "FULL_SNAPSHOT",
+      "isEnabled": true,
+      "processingConfigPath": "Files/BLOB_Configs_Shortcut/dataplatform-config/bronze/processing/reference-data/ReferenceDataBronzeProcessingConfig.json"
+    },
+    {
+      "subjectAreas": [
+        "HR"
+      ],
+      "sourceSystem": "ADP",
+      "processingStrategy": "FULL_SNAPSHOT",
+      "isEnabled": true,
+      "processingConfigPath": "Files/BLOB_Configs_Shortcut/dataplatform-config/bronze/processing/adp/AdpBronzeProcessingConfig.json"
+    }
+  ]
+}

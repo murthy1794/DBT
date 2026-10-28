@@ -1,0 +1,52 @@
+{
+  "configVersion": "3.0",
+  "configName": "ReferenceDataEHRSourceToLandingEntityConfig",
+  "description": "Controls EHR ReferenceData entities copied to the Landing layer for initial and incremental loads.",
+  "subjectArea": "EHR",
+  "sourceId": "REF_EHR",
+  "sourceSystem": "ReferenceData",
+  "fileType": "CSV",
+  "isActive": true,
+  "entities": [
+    {
+      "entityName": "ShiftDetail",
+      "isEnabled": true,
+      "objectType": "Folder",
+      "cdcColumn": "CreatedDate",
+      "targetRelativePath": "Tenant1/Landing/ReferenceData/EHR/ShiftDetail",
+      "enableDatePartitioning": true,
+      "loadControl": {"initialLoadEnabled": true, "incrementalLoadEnabled": true},
+      "loadSettings": {"initialLoad": {"isFolder": false}, "incrementalLoad": {"isFolder": false}}
+    },
+    {
+      "entityName": "AntibioticsUTINonUTI",
+      "isEnabled": true,
+      "objectType": "Folder",
+      "cdcColumn": "CreatedDate",
+      "targetRelativePath": "Tenant1/Landing/ReferenceData/EHR/AntibioticsUTINonUTI",
+      "enableDatePartitioning": true,
+      "loadControl": {"initialLoadEnabled": true, "incrementalLoadEnabled": true},
+      "loadSettings": {"initialLoad": {"isFolder": false}, "incrementalLoad": {"isFolder": false}}
+    },
+    {
+      "entityName": "ICD10InfectionCodes",
+      "isEnabled": true,
+      "objectType": "Folder",
+      "cdcColumn": "CreatedDate",
+      "targetRelativePath": "Tenant1/Landing/ReferenceData/EHR/ICD10InfectionCodes",
+      "enableDatePartitioning": true,
+      "loadControl": {"initialLoadEnabled": true, "incrementalLoadEnabled": true},
+      "loadSettings": {"initialLoad": {"isFolder": false}, "incrementalLoad": {"isFolder": false}}
+    },
+    {
+      "entityName": "BeersList",
+      "isEnabled": true,
+      "objectType": "Folder",
+      "cdcColumn": "CreatedDate",
+      "targetRelativePath": "Tenant1/Landing/ReferenceData/EHR/BeersList",
+      "enableDatePartitioning": true,
+      "loadControl": {"initialLoadEnabled": true, "incrementalLoadEnabled": true},
+      "loadSettings": {"initialLoad": {"isFolder": false}, "incrementalLoad": {"isFolder": false}}
+    }
+  ]
+}

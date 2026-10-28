@@ -1,0 +1,19 @@
+version: 2
+
+sources: 
+  # First source group for the 'default' schema
+  - name: default_source  
+    database: dbt_catalog
+    schema: default
+    tables:
+      - name: my_first_dbt_model  # Put tables belonging to 'default' here
+
+  # Second source group for the 'source' schema
+  - name: source  
+    database: dbt_catalog
+    schema: source
+    tables:
+      - name: accounts
+      - name: beneficiary
+      - name: dim_date
+      - name: dim_store

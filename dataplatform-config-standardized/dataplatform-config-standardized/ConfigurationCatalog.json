@@ -1,0 +1,32 @@
+{
+  "configVersion": "3.0",
+  "configName": "EveryAgeConfigurationCatalog",
+  "description": "Catalog of active configuration artifacts in the standardized EveryAge data-platform configuration framework.",
+  "artifacts": [
+    {
+      "configName": "EveryAgeOrchestrationConfig",
+      "description": "Fabric orchestration profiles and activity controls.",
+      "path": "dataplatform-config/orchestration/EveryAgeOrchestrationConfig.json"
+    },
+    {
+      "configName": "SourceToLandingConfig",
+      "description": "Source-level Source-to-Landing control and entity-config references.",
+      "path": "dataplatform-config/source-to-landing/SourceToLandingConfig.json"
+    },
+    {
+      "configName": "BronzeTableCreateConfig",
+      "description": "Bronze physical-model/table-creation routing.",
+      "path": "dataplatform-config/bronze/physical-model/BronzeTableCreateConfig.json"
+    },
+    {
+      "configName": "BronzeDataProcessingConfig",
+      "description": "Source-level Landing-to-Bronze routing.",
+      "path": "dataplatform-config/bronze/processing/BronzeDataProcessingConfig.json"
+    },
+    {
+      "configName": "SilverStagingConfig",
+      "description": "Silver staging table processing.",
+      "path": "dataplatform-config/silver/SilverStagingConfig.json"
+    }
+  ]
+}
